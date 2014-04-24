@@ -13,7 +13,11 @@ class Main extends CI_Controller {
 			$this->parser->parse('admintemplate', $data);
 			$this->load->view('admintemplate');
 		}else{
-			header('location: /login');
+			$data = array(
+				'title' => 'Home | All I Want This Christmas'
+			);
+
+			$this->parser->parse('admintemplate', $data);
 		}
 	}
 
