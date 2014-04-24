@@ -12,6 +12,11 @@
   </head>
   
   <body>  
+
+  <div class="sb-slidebar sb-left">
+      <p>test</p>
+    </div>
+
     <div id="sb-site">
       <h1>Left Slidebar Only Example</h1>
       <p>This example only uses the left Slidebar. The usual control classes are here for testing purposes.</p>
@@ -33,9 +38,7 @@
       </ul>
     </div>
     
-    <div class="sb-slidebar sb-left">
-      <p>test</p>
-    </div>
+    
         
     <!-- jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -44,8 +47,13 @@
     <script src="/js/slidebars.min.js"></script>
     <script>
       (function($) {
-        $(document).ready(function() {
-          $.slidebars();
+        $(document).ready(function(){
+          var mySlidebars = new $.slidebars({
+            siteClose: false, // true or false
+            disableOver: false, // integer or false
+            hideControlClasses: false, // true or false
+          });
+          mySlidebars.open('left');
         });
       }) (jQuery);
     </script>

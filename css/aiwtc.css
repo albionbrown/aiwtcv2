@@ -1,73 +1,9 @@
-/*
-Syntax error: Invalid CSS after "...ackground.gif')": expected expression (e.g. 1px, bold), was ";"
-        on line 3 of C:/wamp/www/aiwtcv2/sass/aiwtc.sass
+/* line 2, ../sass/aiwtc.scss */
+#sb-site {
+  background: url("/images/background.gif") repeat;
+}
 
-1: C:/wamp/www/aiwtcv2/sass/aiwtc.sass
-
-Backtrace:
-C:/wamp/www/aiwtcv2/sass/aiwtc.sass:3
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/scss/parser.rb:1147:in `expected'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/script/lexer.rb:199:in `expected!'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/script/parser.rb:486:in `assert_done'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/script/parser.rb:50:in `parse'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/script/parser.rb:166:in `parse'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/script.rb:31:in `parse'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:880:in `parse_script'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:608:in `parse_property'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:597:in `parse_property_or_rule'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:578:in `parse_line'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:471:in `build_tree'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:490:in `block in append_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:489:in `each'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:489:in `append_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:480:in `block in build_tree'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:473:in `each'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:473:in `build_tree'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:490:in `block in append_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:489:in `each'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:489:in `append_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:345:in `_to_tree'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:315:in `_render'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:262:in `render'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `block (2 levels) in compile'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `block in compile'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `block (2 levels) in run'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `block in run'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:147:in `recompile'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `call'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `run_callback'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:55:in `callback_action'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:35:in `update'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:39:in `block in modified'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `each'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `modified'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:18:in `refresh'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block (2 levels) in run'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `each'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block in run'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `loop'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `run'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/monitor.rb:26:in `run'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm.rb:70:in `monitor'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:87:in `perform'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:30:in `block in <top (required)>'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:44:in `call'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:44:in `<top (required)>'
-C:/Ruby200-x64/bin/compass:23:in `load'
-C:/Ruby200-x64/bin/compass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"...ackground.gif')\": expected expression (e.g. 1px, bold), was \";\"\A         on line 3 of C:/wamp/www/aiwtcv2/sass/aiwtc.sass\A \A 1: C:/wamp/www/aiwtcv2/sass/aiwtc.sass"; }
+/* line 5, ../sass/aiwtc.scss */
+h1 {
+  margin: 0px;
+}
