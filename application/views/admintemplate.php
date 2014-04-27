@@ -10,23 +10,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
 
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/jquery.multilevelpushmenu.css">
         <link rel="stylesheet" href="/css/responsive.css">
+        <link rel="stylesheet" href="/css/aiwtc.css">
         <script type="text/javascript" src="http://oss.maxcdn.com/libs/modernizr/2.6.2/modernizr.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-        <div id="pushobj">
-            resize browser window to see menu scaling
+        
+        <div id="header_menu">
+            test
         </div>
         <div id="menu">
             <nav>
-                <h2><i class="fa fa-reorder"></i>All Categories</h2>
+                <h2><i class="fa fa-reorder"></i>username</h2>
                 <ul>
                     <li>
                         <a href="#"><i class="fa fa-laptop"></i>Devices</a>
@@ -180,6 +179,11 @@
                     </li>
                 </ul>
             </nav>
+        </div>
+        <div id="pushobj">
+            
+            Put views here
+
         </div>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

@@ -11,7 +11,7 @@
 	position: absolute;
 	overflow: hidden;
 	top: 0;
-	background: #336ca6;
+	background: #444;
 	width: auto;
 	min-height: 100%;
 	font-family: 'Open Sans Condensed', sans-serif;
@@ -38,14 +38,14 @@
 }
 
 .multilevelpushmenu_wrapper .multilevelpushmenu_inactive {
-	background: #2e6196;
+	background: #444;
 }
 
 .multilevelpushmenu_wrapper h2 {
 	font-size: 1.5em;
 	line-height: 1em;
 	font-weight: bold;
-	color: #1f4164;
+	color: #fff;
 	padding: 0 .4em 0 .4em;
 }
 
@@ -57,12 +57,12 @@
 
 .multilevelpushmenu_wrapper li {
 	cursor: pointer;
-	border-top: 1px solid #295685;
+	border-top: 1px solid #626161;
 	padding: .4em .4em .4em .4em;
 }
 
 .multilevelpushmenu_wrapper li:last-child {
-	border-bottom: 1px solid #295685;
+	border-bottom: 1px solid #626161;
 }
 
 .multilevelpushmenu_wrapper li:hover {

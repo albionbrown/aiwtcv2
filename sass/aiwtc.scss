@@ -1,7 +1,25 @@
 
-#sb-site {
-	background: url("/images/background.gif") repeat;
+body {
+	background: url("../images/background.gif") repeat;
 }
+
 h1 {
 	margin: 0px;
+}
+
+#header_menu{
+	background-color: #444;
+	color: #fff;
+	height: 70px;
+	width: 100%;
+}
+
+#pushobj{
+	margin-top: 70px;
+}
+
+i.fa-reorder{
+	background: url("../images/toggle.png") no-repeat;
+	height: 25px;
+	width: 25px;
 }
