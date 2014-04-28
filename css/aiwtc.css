@@ -32,6 +32,17 @@ i.fa-reorder {
 .multilevelpushmenu_wrapper li {
   width: 100px;
   height: 100px;
+  background: url("../images/button_background.gif") repeat-x;
+}
+/* line 32, ../sass/aiwtc.scss */
+.multilevelpushmenu_wrapper li:hover {
+  background: url("../images/button_background_hover.gif") repeat-x;
+}
+
+/* line 37, ../sass/aiwtc.scss */
+#menu ul a {
+  height: 100px;
+  width: 100px;
   float: left;
   margin: 5px 6px;
   padding: 0px;

@@ -27,24 +27,30 @@
             <nav>
                 <h2><i class="fa fa-reorder"></i>username</h2>
                 <ul>
-                    <li>
-                        <a href="#"><i class="fa fa-laptop"></i>Devices</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-laptop"></i>Test</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-laptop"></i>Devices</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-laptop"></i>Test</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-laptop"></i>Devices</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-laptop"></i>Test</a>
-                    </li>
+                    <a href="http://www.google.co.uk"><li class="fa fa-laptop">
+                        Home
+                    </li></a>
+                    <a href="http://www.google.co.uk"><li class="fa fa-laptop">
+                        My Wishlist
+                    </li></a>
+                    <a href="http://www.google.co.uk"><li class="fa fa-laptop">
+                        Gifts
+                    </li></a>
+                    <a href="http://www.google.co.uk"><li class="fa fa-laptop">
+                        Groups
+                    </li></a>
+                    <a href="http://www.google.co.uk"><li class="fa fa-laptop">
+                        Profile
+                    </li></a>
+                    <a href="http://www.google.co.uk"><li class="fa fa-laptop">
+                        Help
+                    </li></a>
+                    <a href="http://www.google.co.uk"><li class="fa fa-laptop">
+                        Contact
+                    </li></a>
+                    <a href="http://www.google.co.uk"><li class="fa fa-laptop">
+                        Log Out
+                    </li></a>
                 </ul>
             </nav>
         </div>

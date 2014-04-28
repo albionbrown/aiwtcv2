@@ -27,6 +27,16 @@ i.fa-reorder{
 .multilevelpushmenu_wrapper li{
 	width: 100px;
 	height: 100px;
+	background: url("../images/button_background.gif") repeat-x;
+
+	&:hover{
+		background: url("../images/button_background_hover.gif") repeat-x;
+	}
+}
+
+#menu ul a{
+	height: 100px;
+	width: 100px;
 	float: left;
 	margin: 5px 6px;
 	padding: 0px;
