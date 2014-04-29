@@ -14,7 +14,8 @@ class Main extends CI_Controller {
 			$this->load->view('admintemplate');
 		}else{
 			$data = array(
-				'title' => 'Home | All I Want This Christmas'
+				'title' => 'Home | All I Want This Christmas',
+				'main_content' => $this->load->view('home', '', true)
 			);
 
 			$this->parser->parse('admintemplate', $data);

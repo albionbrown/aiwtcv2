@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>{title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
 
@@ -34,19 +34,19 @@
                         My Wishlist
                     </li></a>
                     <a href="http://www.google.co.uk"><li class="fa fa-laptop">
-                        Gifts
-                    </li></a>
-                    <a href="http://www.google.co.uk"><li class="fa fa-laptop">
                         Groups
                     </li></a>
                     <a href="http://www.google.co.uk"><li class="fa fa-laptop">
-                        Profile
+                        Shopping List
+                    </li></a>
+                    <a href="http://www.google.co.uk"><li class="fa fa-laptop">
+                        Gift ideas
                     </li></a>
                     <a href="http://www.google.co.uk"><li class="fa fa-laptop">
                         Help
                     </li></a>
                     <a href="http://www.google.co.uk"><li class="fa fa-laptop">
-                        Contact
+                        Profile
                     </li></a>
                     <a href="http://www.google.co.uk"><li class="fa fa-laptop">
                         Log Out
@@ -56,7 +56,11 @@
         </div>
         <div id="pushobj">
             
-            Put views here
+            <?php 
+
+                echo @$main_content;
+
+            ?>
 
         </div>
 
