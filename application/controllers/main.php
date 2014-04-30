@@ -7,25 +7,28 @@ class Main extends CI_Controller {
 	{
 		if(isset($_SESSION['userid'])){
 			$data = array(
-				'title' => 'Home | All I Want This Christmas'
-			);
-
-			$this->parser->parse('admintemplate', $data);
-			$this->load->view('admintemplate');
-		}else{
-			$data = array(
 				'title' => 'Home | All I Want This Christmas',
 				'main_content' => $this->load->view('home', '', true)
 			);
 
 			$this->parser->parse('admintemplate', $data);
+			$this->load->view('admintemplate');
+		}else{
+
+			$data = array(
+				'title' => 'Log In | All I Want This Christmas',
+				'loginboxes' => $this->load->view('login', '', true)
+			);
+
+			$this->parser->parse('logintemplate', $data);
 		}
 	}
 
 	public function login()
 	{
 		$data = array(
-			'title' => 'Log In | All I Want This Christmas'
+			'title' => 'Log In | All I Want This Christmas',
+			'loginboxes' => $this->load->view('login', '', true)
 			);
 
 		$this->parser->parse('logintemplate', $data);
