@@ -1,18 +1,20 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+session_start();
+
 class Main extends CI_Controller {
 
 	
 	public function index()
 	{
 		if(isset($_SESSION['userid'])){
+			
 			$data = array(
 				'title' => 'Home | All I Want This Christmas',
 				'main_content' => $this->load->view('home', '', true)
 			);
 
 			$this->parser->parse('admintemplate', $data);
-			$this->load->view('admintemplate');
 		}else{
 
 			$data = array(
@@ -32,6 +34,25 @@ class Main extends CI_Controller {
 			);
 
 		$this->parser->parse('logintemplate', $data);
+	}
+
+	public function logout()
+	{
+		unset($_SESSION['userid']);
+		header('location: index');
+	}
+
+	public function verify_login()
+	{
+		$email = $_POST['email'];
+		$pwd = $_POST['password'];
+		$this->load->model('login');
+		$check = $this->login->checkdb($email, $pwd);
+		if($check == TRUE){
+			header('location: /home');
+		}else{
+			header('locaiton: /login');
+		}
 	}
 }
 

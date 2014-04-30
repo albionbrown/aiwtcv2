@@ -42,6 +42,8 @@ $route['default_controller'] = "main";
 $route['index'] = "main/index";
 $route['home'] = "main/index";
 $route['login'] = "main/login";
+$route['logout'] = "main/logout";
+$route['verify_login'] = "../models/login";
 $route['404_override'] = '';
 
 

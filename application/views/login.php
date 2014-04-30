@@ -1,6 +1,6 @@
 <div id="login_boxes">
 <h2>Already have an account? Log in here.</h2>
-	<?php echo form_open('site/verify_log_in');?>
+	<?php echo form_open('main/verify_login');?>
 		
 		<?php $email_data = array(
               'name'        => 'email',
@@ -30,5 +30,6 @@
 
 	$result = @$_GET['result']; 
 	echo "<p>$result</p>";
+	echo @$_SESSION['userid'];
 ?>
 </div>

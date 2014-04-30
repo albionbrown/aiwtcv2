@@ -1,17 +1,49 @@
 
 body {
 	background: url("../images/background.gif") repeat;
+	overflow-y: hidden;
 }
 
-h1 {
+h1,
+h2,
+h3 {
 	margin: 0px;
 }
 
-#header_menu{
+#header_bar{
 	background-color: #444;
 	color: #fff;
 	height: 70px;
 	width: 100%;
+
+	#header_profile{
+		float: right;
+		border-radius: 10px;
+		background-color: #626161;
+		margin: 8px;
+		height: 52px;
+		min-width: 200px;
+
+		h2 {
+			float: left;
+		}
+
+		a {
+			height: 54px;
+			border-radius: 10px;
+			width: 100%;
+		}
+
+		img {
+			border-top-right-radius: 10px;
+			border-bottom-right-radius: 10px;
+			height: 50px;
+			width: 50px;
+			float: right;
+			margin: 1px;
+		}
+
+	}
 }
 
 #menu{

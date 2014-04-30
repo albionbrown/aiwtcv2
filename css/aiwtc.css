@@ -1,46 +1,77 @@
 /* line 2, ../sass/aiwtc.scss */
 body {
   background: url("../images/background.gif") repeat;
+  overflow-y: hidden;
 }
 
-/* line 6, ../sass/aiwtc.scss */
-h1 {
+/* line 9, ../sass/aiwtc.scss */
+h1,
+h2,
+h3 {
   margin: 0px;
 }
 
-/* line 10, ../sass/aiwtc.scss */
-#header_menu {
+/* line 13, ../sass/aiwtc.scss */
+#header_bar {
   background-color: #444;
   color: #fff;
   height: 70px;
   width: 100%;
 }
+/* line 19, ../sass/aiwtc.scss */
+#header_bar #header_profile {
+  float: right;
+  border-radius: 10px;
+  background-color: #626161;
+  margin: 8px;
+  height: 52px;
+  min-width: 200px;
+}
+/* line 27, ../sass/aiwtc.scss */
+#header_bar #header_profile h2 {
+  float: left;
+}
+/* line 31, ../sass/aiwtc.scss */
+#header_bar #header_profile a {
+  height: 54px;
+  border-radius: 10px;
+  width: 100%;
+}
+/* line 37, ../sass/aiwtc.scss */
+#header_bar #header_profile img {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 50px;
+  width: 50px;
+  float: right;
+  margin: 1px;
+}
 
-/* line 21, ../sass/aiwtc.scss */
+/* line 53, ../sass/aiwtc.scss */
 #pushobj {
   margin-top: 70px;
   postion: relative;
 }
 
-/* line 26, ../sass/aiwtc.scss */
+/* line 58, ../sass/aiwtc.scss */
 i.fa-reorder {
   background: url("../images/toggle.png") no-repeat;
   height: 25px;
   width: 25px;
 }
 
-/* line 32, ../sass/aiwtc.scss */
+/* line 64, ../sass/aiwtc.scss */
 .multilevelpushmenu_wrapper li {
   width: 100px;
   height: 100px;
   background: url("../images/button_background.gif") repeat-x;
 }
-/* line 37, ../sass/aiwtc.scss */
+/* line 69, ../sass/aiwtc.scss */
 .multilevelpushmenu_wrapper li:hover {
   background: url("../images/button_background_hover.gif") repeat-x;
 }
 
-/* line 42, ../sass/aiwtc.scss */
+/* line 74, ../sass/aiwtc.scss */
 #menu ul a {
   height: 100px;
   width: 100px;
@@ -51,7 +82,7 @@ i.fa-reorder {
 }
 
 /* ---------- LOG IN -----------*/
-/* line 52, ../sass/aiwtc.scss */
+/* line 84, ../sass/aiwtc.scss */
 .input {
   border: 1px solid #AB0013;
   border-radius: 3px;
@@ -66,7 +97,7 @@ i.fa-reorder {
   outline: 0;
   margin-right: 5px;
 }
-/* line 66, ../sass/aiwtc.scss */
+/* line 98, ../sass/aiwtc.scss */
 .input:hover {
   box-shadow: inset 0 1px 2px #fbb277, 0 0 5px #ab0013;
 }
