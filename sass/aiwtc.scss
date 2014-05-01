@@ -1,7 +1,12 @@
 
 body {
 	background: url("../images/background.gif") repeat;
-	overflow-y: hidden;
+	overflow: hidden;
+}
+
+.page-container{
+	width: 100%;
+	height: 100%;
 }
 
 h1,
@@ -15,6 +20,7 @@ h3 {
 	color: #fff;
 	height: 70px;
 	width: 100%;
+	position: fixed;
 
 	#header_profile{
 		float: right;
@@ -47,12 +53,15 @@ h3 {
 }
 
 #menu{
-	
+	position: fixed;
+	top: 70px;
 }
 
 #pushobj{
 	margin-top: 70px;
-	postion: relative;
+	width: 100%;
+	height:100%;
+	overflow-y: scroll;
 }
 
 i.fa-reorder{

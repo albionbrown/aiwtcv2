@@ -51,7 +51,8 @@ class Main extends CI_Controller {
 		if($check == TRUE){
 			header('location: /home');
 		}else{
-			header('locaiton: /login');
+			$this->session->set_flashdata('result', 'Incorrect email/password. Please try again.');
+			header('location: /login');
 		}
 	}
 }

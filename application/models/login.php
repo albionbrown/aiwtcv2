@@ -20,6 +20,8 @@
 					if($query->num_rows() == 1){
 						$match = TRUE;
 						$_SESSION['userid'] = $row['userid'];
+					}else{
+						$match = false;
 					}
 				}
 			}

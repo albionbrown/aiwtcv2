@@ -29,7 +29,7 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
+        <div class="page-contrainer">
         <div id="header_bar">
             <div id="header_profile">
             <?php echo "<h2>".$username."</h2>"; ?>
@@ -76,9 +76,9 @@
             ?>
 
         </div>
-
+        </div>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="/js/jquery.multilevelpushmenu.min.js"></script>
+        <script src="/js/jquery.multilevelpushmenu.js"></script>
         <script type="text/javascript" src="/js/responsive.js"></script>
     </body>
 </html>

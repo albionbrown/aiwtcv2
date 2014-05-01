@@ -5,8 +5,15 @@ $(document).ready(function(){
 		menuWidth: '228px',
 		menuHeight: '100%'
 	});
+
+	var $windowWidth = $(window).width();
+	var $width = $windowWidth - 228;
+	$('#pushobj').css('width', $width);
 });
 
 $(window).resize(function () {
 	$( '#menu' ).multilevelpushmenu( 'redraw' );
+	var $windowWidth = $(window).width();
+	var $width = $windowWidth - 228;
+	$('#pushobj').css('width', $width);
 });
