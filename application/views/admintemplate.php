@@ -6,6 +6,8 @@
         $sname = $row['sname'];
         $username = ucwords($fname." ".$sname);
     }
+    //$this->load->model('general');
+    $email = $this->general->getemail();
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +35,7 @@
         <div id="header_bar">
             <div id="header_profile">
             <?php echo "<h2>".$username."</h2>"; ?>
-            <img src=<?php echo "/profile/profile_pictures/".$userid.".jpg" ?> >
+            <img src=<?php echo "http://www.gravatar.com/avatar/" . md5(strtolower(trim( $email ))); ?>
             </div>
         </div>
         <div id="menu">
