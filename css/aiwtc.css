@@ -73,20 +73,21 @@ i.fa-reorder {
   background: url("../images/toggle.png") no-repeat;
   height: 25px;
   width: 25px;
+  display: none;
 }
 
-/* line 73, ../sass/aiwtc.scss */
+/* line 74, ../sass/aiwtc.scss */
 .multilevelpushmenu_wrapper li {
   width: 100px;
   height: 100px;
   background: url("../images/button_background.gif") repeat-x;
 }
-/* line 78, ../sass/aiwtc.scss */
+/* line 79, ../sass/aiwtc.scss */
 .multilevelpushmenu_wrapper li:hover {
   background: url("../images/button_background_hover.gif") repeat-x;
 }
 
-/* line 83, ../sass/aiwtc.scss */
+/* line 84, ../sass/aiwtc.scss */
 #menu ul a {
   height: 100px;
   width: 100px;
@@ -97,7 +98,7 @@ i.fa-reorder {
 }
 
 /* ---------- LOG IN -----------*/
-/* line 93, ../sass/aiwtc.scss */
+/* line 94, ../sass/aiwtc.scss */
 .input {
   border: 1px solid #AB0013;
   border-radius: 3px;
@@ -112,7 +113,14 @@ i.fa-reorder {
   outline: 0;
   margin-right: 5px;
 }
-/* line 107, ../sass/aiwtc.scss */
+/* line 108, ../sass/aiwtc.scss */
 .input:hover {
   box-shadow: inset 0 1px 2px #fbb277, 0 0 5px #ab0013;
 }
+
+/* ---------- RESPONSIVE ----------- */
+/*@media (min-width: 300px) {
+	i.fa-reorder {
+		display: none; 
+	}
+}*/

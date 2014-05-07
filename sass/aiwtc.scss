@@ -68,6 +68,7 @@ i.fa-reorder{
 	background: url("../images/toggle.png") no-repeat;
 	height: 25px;
 	width: 25px;
+	display: none;
 }
 
 .multilevelpushmenu_wrapper li{
@@ -108,3 +109,10 @@ i.fa-reorder{
 		box-shadow: inset 0 1px 2px rgba(251,178,119,1),0 0 5px rgba(171,0,19,1);
 	}
 }
+
+/* ---------- RESPONSIVE ----------- */
+/*@media (min-width: 300px) {
+	i.fa-reorder {
+		display: none; 
+	}
+}*/

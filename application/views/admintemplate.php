@@ -78,7 +78,7 @@
         </div>
         </div>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="/js/jquery.multilevelpushmenu.js"></script>
-        <script type="text/javascript" src="/js/responsive.js"></script>
+        <script src="/js/jquery.multilevelpushmenu.min.js"></script>
+        <script src="/js/responsive.js"></script>
     </body>
 </html>
