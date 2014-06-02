@@ -25,7 +25,12 @@
         <link rel="stylesheet" href="/css/jquery.multilevelpushmenu.css">
         <link rel="stylesheet" href="/css/responsive.css">
         <link rel="stylesheet" href="/css/aiwtc.css">
+        <link rel="icon" type="image/png" href="/images/favicon.png">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="http://oss.maxcdn.com/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="/js/jquery.multilevelpushmenu.min.js"></script>
+        <script src="/js/responsive.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -35,36 +40,36 @@
         <div id="header_bar">
             <div id="header_profile">
             <?php echo "<h2>".$username."</h2>"; ?>
-            <img src=<?php echo "http://www.gravatar.com/avatar/" . md5(strtolower(trim( $email ))); ?>
+            <img src=<?php echo "http://www.gravatar.com/avatar/" . md5(trim($email))?>>
             </div>
         </div>
         <div id="menu">
             <nav>
-                <h2><i class="fa fa-reorder"></i><?php echo $username; ?></h2>
+                <i class="fa fa-reorder"></i>
                 <ul>
-                    <a href="http://www.google.co.uk"><li class="fa fa-laptop">
+                    <a href="/home"><li class="fa fa-laptop">
                         Home
                     </li></a>
-                    <a href="http://www.google.co.uk"><li class="fa fa-laptop">
-                        My Wishlist
+                    <a href="/my_wishlist"><li class="fa fa-laptop">
+                        <img src="/images/my_wishlist.png" height="100%" width="100%">
                     </li></a>
-                    <a href="http://www.google.co.uk"><li class="fa fa-laptop">
+                    <a href="/groups"><li class="fa fa-laptop">
                         Groups
                     </li></a>
-                    <a href="http://www.google.co.uk"><li class="fa fa-laptop">
-                        Shopping List
+                    <a href="/gifts"><li class="fa fa-laptop">
+                        <img src="/images/shopping_list.png" height="100%" width="100%">
                     </li></a>
                     <a href="http://www.google.co.uk"><li class="fa fa-laptop">
                         Gift ideas
                     </li></a>
                     <a href="http://www.google.co.uk"><li class="fa fa-laptop">
-                        Help
+                        <img src="/images/help.png" height="100%" width="100%">
                     </li></a>
-                    <a href="http://www.google.co.uk"><li class="fa fa-laptop">
-                        Profile
+                    <a href="/profile"><li class="fa fa-laptop">
+                        <img src="/images/profile.png" height="100%" width="100%">
                     </li></a>
                     <a href="/logout"><li class="fa fa-laptop">
-                        Log Out
+                        <img src="/images/logout.png" height="100%" width="100%">
                     </li></a>
                 </ul>
             </nav>
@@ -79,8 +84,5 @@
 
         </div>
         </div>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="/js/jquery.multilevelpushmenu.min.js"></script>
-        <script src="/js/responsive.js"></script>
     </body>
 </html>

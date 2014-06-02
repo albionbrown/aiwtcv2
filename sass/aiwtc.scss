@@ -1,4 +1,16 @@
 
+@font-face {
+    font-family: 'patrickhand-regular';
+    src: url('fonts/patrickhand-regular.eot');
+    src: url('fonts/patrickhand-regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/patrickhand-regular.woff') format('woff'),
+         url('fonts/patrickhand-regular.ttf') format('truetype'),
+         url('fonts/patrickhand-regular.svg#patrick_handregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
 	background: url("../images/background.gif") repeat;
 	overflow: hidden;
@@ -9,10 +21,19 @@ body {
 	height: 100%;
 }
 
-h1,
+h1 {
+	font-family: 'patrickhand-regular';
+	color: #e60a1e;
+}
+
 h2,
 h3 {
+	font-family: "open sans";
 	margin: 0px;
+}
+
+p {
+	font-family: "open sans";
 }
 
 #header_bar{
@@ -74,10 +95,11 @@ i.fa-reorder{
 .multilevelpushmenu_wrapper li{
 	width: 100px;
 	height: 100px;
-	background: url("../images/button_background.gif") repeat-x;
+	background-color: #fff;
 
-	&:hover{
-		background: url("../images/button_background_hover.gif") repeat-x;
+	&:active{
+		background-color: #e60a1e;
+		color: #fff;
 	}
 }
 
@@ -92,7 +114,7 @@ i.fa-reorder{
 
 /* ---------- LOG IN -----------*/
 .input{
-	border: 1px solid #AB0013;
+	border: 1px solid #e60a1e;
 	border-radius: 3px;
 	box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
 	width:200px;
@@ -100,14 +122,10 @@ i.fa-reorder{
 	padding: 0px 0px 0px 10px;
 	font-size: 15px;
 	font-weight: bold;
-	font-family: arial;
+	font-family: "open sans";
 	color: #444;
 	outline: 0;
 	margin-right: 5px;
-
-	&:hover{
-		box-shadow: inset 0 1px 2px rgba(251,178,119,1),0 0 5px rgba(171,0,19,1);
-	}
 }
 
 /* ---------- RESPONSIVE ----------- */

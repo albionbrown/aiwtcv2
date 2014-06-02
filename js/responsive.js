@@ -9,6 +9,9 @@ $(document).ready(function(){
 	var $windowWidth = $(window).width();
 	var $width = $windowWidth - 228;
 	$('#pushobj').css('width', $width);
+	var $windowHeight = $(window).height();
+	var $height = $windowHeight - 70;
+	$('#pushobj').css('height', $height);
 });
 
 $(window).resize(function () {
@@ -16,4 +19,7 @@ $(window).resize(function () {
 	var $windowWidth = $(window).width();
 	var $width = $windowWidth - 228;
 	$('#pushobj').css('width', $width);
+	var $windowHeight = $(window).height();
+	var $height = $windowHeight - 70;
+	$('#pushobj').css('height', $height);
 });
