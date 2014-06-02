@@ -11,9 +11,14 @@
 
 }
 
-body {
+html.logged-in body {
 	background: url("../images/background.gif") repeat;
 	overflow: hidden;
+}
+
+html.logged-out body {
+	background-color: rgb(230, 10, 30);
+	color: #fff;
 }
 
 .page-container{
@@ -29,12 +34,57 @@ h1 {
 h2,
 h3 {
 	font-family: "open sans";
-	margin: 0px;
+	margin: 5px;
+	font-weight: 300;
+}
+
+h2 {
+	font-size: 20px;
 }
 
 p {
 	font-family: "open sans";
 }
+
+/* ---------- LOGIN PAGE ------------*/
+
+img.login_logo {
+	width:100%;
+	height: auto;
+}
+
+body.login #boxes {
+	padding-top: 121px;
+}
+
+.input{
+	border: 1px solid #e60a1e;
+	border-radius: 3px;
+	height: 50px;
+	padding: 0px 0px 0px 10px;
+	font-size: 15px;
+	font-family: "open sans";
+	color: #444;
+	outline: 0;
+}
+
+::-webkit-input-placeholder {
+   font-family: "open sans";
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   font-family: "open sans"; 
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-family: "open sans"; 
+}
+
+:-ms-input-placeholder {  
+   font-family: "open sans";
+}
+
+/* ----------  -----------*/
 
 #header_bar{
 	background-color: #444;
@@ -111,26 +161,3 @@ i.fa-reorder{
 	padding: 0px;
 	border: 1px solid #626161;
 }
-
-/* ---------- LOG IN -----------*/
-.input{
-	border: 1px solid #e60a1e;
-	border-radius: 3px;
-	box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-	width:200px;
-	min-height: 50px;
-	padding: 0px 0px 0px 10px;
-	font-size: 15px;
-	font-weight: bold;
-	font-family: "open sans";
-	color: #444;
-	outline: 0;
-	margin-right: 5px;
-}
-
-/* ---------- RESPONSIVE ----------- */
-/*@media (min-width: 300px) {
-	i.fa-reorder {
-		display: none; 
-	}
-}*/

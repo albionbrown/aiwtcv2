@@ -7,36 +7,95 @@
 }
 
 /* line 14, ../sass/aiwtc.scss */
-body {
+html.logged-in body {
   background: url("../images/background.gif") repeat;
   overflow: hidden;
 }
 
 /* line 19, ../sass/aiwtc.scss */
+html.logged-out body {
+  background-color: #e60a1e;
+  color: #fff;
+}
+
+/* line 24, ../sass/aiwtc.scss */
 .page-container {
   width: 100%;
   height: 100%;
 }
 
-/* line 24, ../sass/aiwtc.scss */
+/* line 29, ../sass/aiwtc.scss */
 h1 {
   font-family: 'patrickhand-regular';
   color: #e60a1e;
 }
 
-/* line 30, ../sass/aiwtc.scss */
+/* line 35, ../sass/aiwtc.scss */
 h2,
 h3 {
   font-family: "open sans";
-  margin: 0px;
+  margin: 5px;
+  font-weight: 300;
 }
 
-/* line 35, ../sass/aiwtc.scss */
+/* line 41, ../sass/aiwtc.scss */
+h2 {
+  font-size: 20px;
+}
+
+/* line 45, ../sass/aiwtc.scss */
 p {
   font-family: "open sans";
 }
 
-/* line 39, ../sass/aiwtc.scss */
+/* ---------- LOGIN PAGE ------------*/
+/* line 51, ../sass/aiwtc.scss */
+img.login_logo {
+  width: 100%;
+  height: auto;
+}
+
+/* line 56, ../sass/aiwtc.scss */
+body.login #boxes {
+  padding-top: 121px;
+}
+
+/* line 60, ../sass/aiwtc.scss */
+.input {
+  border: 1px solid #e60a1e;
+  border-radius: 3px;
+  height: 50px;
+  padding: 0px 0px 0px 10px;
+  font-size: 15px;
+  font-family: "open sans";
+  color: #444;
+  outline: 0;
+}
+
+/* line 71, ../sass/aiwtc.scss */
+::-webkit-input-placeholder {
+  font-family: "open sans";
+}
+
+/* line 75, ../sass/aiwtc.scss */
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-family: "open sans";
+}
+
+/* line 79, ../sass/aiwtc.scss */
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-family: "open sans";
+}
+
+/* line 83, ../sass/aiwtc.scss */
+:-ms-input-placeholder {
+  font-family: "open sans";
+}
+
+/* ----------  -----------*/
+/* line 89, ../sass/aiwtc.scss */
 #header_bar {
   background-color: #444;
   color: #fff;
@@ -44,7 +103,7 @@ p {
   width: 100%;
   position: fixed;
 }
-/* line 46, ../sass/aiwtc.scss */
+/* line 96, ../sass/aiwtc.scss */
 #header_bar #header_profile {
   float: right;
   border-radius: 10px;
@@ -53,17 +112,17 @@ p {
   height: 52px;
   min-width: 200px;
 }
-/* line 54, ../sass/aiwtc.scss */
+/* line 104, ../sass/aiwtc.scss */
 #header_bar #header_profile h2 {
   float: left;
 }
-/* line 58, ../sass/aiwtc.scss */
+/* line 108, ../sass/aiwtc.scss */
 #header_bar #header_profile a {
   height: 54px;
   border-radius: 10px;
   width: 100%;
 }
-/* line 64, ../sass/aiwtc.scss */
+/* line 114, ../sass/aiwtc.scss */
 #header_bar #header_profile img {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -73,13 +132,13 @@ p {
   margin: 1px;
 }
 
-/* line 76, ../sass/aiwtc.scss */
+/* line 126, ../sass/aiwtc.scss */
 #menu {
   position: fixed;
   top: 70px;
 }
 
-/* line 81, ../sass/aiwtc.scss */
+/* line 131, ../sass/aiwtc.scss */
 #pushobj {
   margin-top: 70px;
   width: 100%;
@@ -87,7 +146,7 @@ p {
   overflow-y: scroll;
 }
 
-/* line 88, ../sass/aiwtc.scss */
+/* line 138, ../sass/aiwtc.scss */
 i.fa-reorder {
   background: url("../images/toggle.png") no-repeat;
   height: 25px;
@@ -95,19 +154,19 @@ i.fa-reorder {
   display: none;
 }
 
-/* line 95, ../sass/aiwtc.scss */
+/* line 145, ../sass/aiwtc.scss */
 .multilevelpushmenu_wrapper li {
   width: 100px;
   height: 100px;
   background-color: #fff;
 }
-/* line 100, ../sass/aiwtc.scss */
+/* line 150, ../sass/aiwtc.scss */
 .multilevelpushmenu_wrapper li:active {
   background-color: #e60a1e;
   color: #fff;
 }
 
-/* line 106, ../sass/aiwtc.scss */
+/* line 156, ../sass/aiwtc.scss */
 #menu ul a {
   height: 100px;
   width: 100px;
@@ -116,27 +175,3 @@ i.fa-reorder {
   padding: 0px;
   border: 1px solid #626161;
 }
-
-/* ---------- LOG IN -----------*/
-/* line 116, ../sass/aiwtc.scss */
-.input {
-  border: 1px solid #e60a1e;
-  border-radius: 3px;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-  width: 200px;
-  min-height: 50px;
-  padding: 0px 0px 0px 10px;
-  font-size: 15px;
-  font-weight: bold;
-  font-family: "open sans";
-  color: #444;
-  outline: 0;
-  margin-right: 5px;
-}
-
-/* ---------- RESPONSIVE ----------- */
-/*@media (min-width: 300px) {
-	i.fa-reorder {
-		display: none; 
-	}
-}*/
