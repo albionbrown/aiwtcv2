@@ -83,7 +83,7 @@
 				<br>
 				<?php $email_data = array(
 		              'name'        => 'email',
-		              'class'       => 'input col-md-12',
+		              'class'       => 'input col-md-12 long',
 		              'placeholder' => 'Email Address'
 		            );
 
@@ -91,7 +91,7 @@
 				<br>
 				<?php $location_data = array(
 		              'name'        => 'location',
-		              'class'       => 'input col-md-12',
+		              'class'       => 'input col-md-12 long',
 		              'placeholder' => 'City'
 		            );
 

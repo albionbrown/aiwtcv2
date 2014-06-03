@@ -13,3 +13,21 @@ body {
 	z-index: 1;
 }
 
+.input {
+	width: 50%;
+	min-width: 150px;
+}
+
+.long {
+	width: 100%;
+}
+
+@media (max-width: 407px) {
+	.input {
+		width: 100% !important;
+	}
+}
+
+
+
+
