@@ -136,49 +136,37 @@ class Main extends CI_Controller {
 		$pwd      = $_POST['password'];
 		$cpwd     = $_POST['confirm'];
 
-		unset($error5);
-		$check = $this->login->dblookupemail($email);
-		if($check == TRUE){
-			$error5 = "This email has already been registered.";
-			$this->session->set_flashdata('error5', $error5);
-		}
+		unset($errors);
+		$errors = array();
 
-		unset($error6);
 		$check = $this->login->dblookupemail($email);
 		if($check == TRUE){
-			$error5 = "This email has already been registered.";
-			$this->session->set_flashdata('error5', $error5);
+			array_push($errors, "This email has already been registered");
 		}
 
 		$check = $this->login->check_email($email);
-		unset($error1);
 		if($check == FALSE){
-			$error1 = "Invalid email address";
-			$this->session->set_flashdata('error1', $error1);
+			array_push($errors, "Invalid email address");
 		}
 
 		$check = $this->login->pwdlength($pwd);
-		unset($error2);
-		unset($error3);
 		if($check == FALSE){
-			$error2 = "Your password is not long enough";
-			$this->session->set_flashdata('error2', $error2);
+			array_push($errors, "Your password is not long enough");
 		}elseif($check == TRUE){
 			$check = $this->login->pwdmatch($pwd, $cpwd);
 			if($check == FALSE){
-				$error3 = "Your passwords do not match.";
-				$this->session->set_flashdata('error3', $error3);
+				array_push($errors, "Your passwords do not match");
 			}
 		}
 
 
 		$check = $this->login->namecheck($fname, $sname);
-		unset($error4);
 		if($check == FALSE){
-			$error3 = "Please enter your first name and surname";
-			$this->session->set_flashdata('error3', $error3);
+			array_push($errors, "Please enter your first name and surname");
 		}
 
+		$errors = serialize($errors);
+		$this->session->set_flashdata('reg_errors', $errors);
 		header("Location: /index");
 
 	}

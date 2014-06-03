@@ -15,16 +15,13 @@
 				$pwdfromdb = $row['pwd'];
 				$decodedemail = $this->encrypt->decode($emailfromdb, $key);
 				$decodedpwd = $this->encrypt->decode($pwdfromdb, $key);
-				//echo $decodedemail;
-				//die($decodedpwd);
 
 				if($decodedemail === $email && $decodedpwd === $password){
 					$query = $this->db->query("SELECT email AND pwd FROM users WHERE email='$emailfromdb' AND pwd='$pwdfromdb'");
 					if($query->num_rows() == 1){
-						$match = TRUE;
 						$_SESSION['userid'] = $row['userid'];
 					}else{
-						$match = false;
+						$this->session->set_flashdata('log_errors', 'Incorrect email/password');
 					}
 				}
 			}

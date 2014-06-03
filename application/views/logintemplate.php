@@ -31,7 +31,7 @@
 				<?php $email_data = array(
 		              'name'        => 'email',
 		              'class'       => 'text-input col-md-6',
-		              'placeholder' => 'Email Address'
+		              'placeholder' => 'Email'
 		            );
 
 				echo form_input($email_data);
@@ -48,12 +48,15 @@
 
 				<?php $form_submit = array(
 		              'name'        => 'submit',
-		              'class'       => 'submit',
+		              'class'       => 'submit long',
 		            );
 
 				echo form_submit($form_submit, 'Log in');
 			echo form_close(); ?>
 		</div>
+		<div id="log_errors" class="clearfix"><p>
+			<?php echo @$this->session->flashdata('log_errors'); ?>
+		</p></div>
 
 		<div id="register_boxes" class="col-sm-12">
 
@@ -112,14 +115,18 @@
 				<br>
 				<?php $form_submit = array(
 		              'name'        => 'submit',
-		              'class'       => 'submit',
+		              'class'       => 'submit long',
 		            );
 
 				echo form_submit($form_submit, 'Register') ?>
-			<?php echo form_close();?>
-
+			<?php echo form_close(); ?>
+			<div id="reg_errors">
+			<?php
+				$errors = $this->session->flashdata('reg_errors');
+				echo $errors = unserialize($errors);
+			?>
+			</div>
 			<p>All I Want This Christmas uses Gravatar for your profile picture. To use your Gravatar, sign up with the same email you registered with Gravatar and you're done! Don't have a Gravatar account? <a href="https://en.gravatar.com/" target="_blank">Click here!</a></p>
-			<div id="errors"></div>
 		</div>
 		</div>
 	</body>

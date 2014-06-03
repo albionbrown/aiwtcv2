@@ -11,7 +11,7 @@
 	position: absolute;
 	overflow: hidden;
 	top: 0;
-	background: #444;
+	background-color: #444;
 	width: auto;
 	min-height: 100%;
 	font-family: 'Open Sans Condensed', sans-serif;

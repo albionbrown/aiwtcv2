@@ -8,13 +8,13 @@
 
 /* line 14, ../sass/aiwtc.scss */
 html.logged-in body {
-  background: url("../images/background.gif") repeat;
+  background-color: #e60a1e;
   overflow: hidden;
 }
 
 /* line 19, ../sass/aiwtc.scss */
 html.logged-out body {
-  background: url("/images/login_background.png") repeat;
+  background: url("/images/red_background.png") repeat;
   color: #fff;
 }
 
@@ -27,7 +27,7 @@ html.logged-out body {
 /* line 29, ../sass/aiwtc.scss */
 h1 {
   font-family: 'patrickhand-regular';
-  color: #e60a1e;
+  color: #fff;
 }
 
 /* line 35, ../sass/aiwtc.scss */
@@ -46,35 +46,36 @@ h2 {
 /* line 45, ../sass/aiwtc.scss */
 p {
   font-family: "open sans";
+  font-size: 14px;
 }
 
-/* line 49, ../sass/aiwtc.scss */
+/* line 50, ../sass/aiwtc.scss */
 a {
   color: #fff;
 }
-/* line 53, ../sass/aiwtc.scss */
+/* line 54, ../sass/aiwtc.scss */
 a:hover, a:active {
   color: #fff;
 }
 
 /* ---------- LOGIN PAGE ------------*/
-/* line 60, ../sass/aiwtc.scss */
+/* line 61, ../sass/aiwtc.scss */
 img.login_logo {
   width: 100%;
   height: auto;
 }
 
-/* line 65, ../sass/aiwtc.scss */
+/* line 66, ../sass/aiwtc.scss */
 body.login #boxes {
   padding-top: 121px;
 }
 
-/* line 69, ../sass/aiwtc.scss */
+/* line 70, ../sass/aiwtc.scss */
 body.login #register_boxes {
   visibility: hidden;
 }
 
-/* line 73, ../sass/aiwtc.scss */
+/* line 74, ../sass/aiwtc.scss */
 .text-input {
   border: 1px solid #e60a1e;
   border-radius: 3px;
@@ -86,41 +87,39 @@ body.login #register_boxes {
   outline: 0;
 }
 
-/* line 84, ../sass/aiwtc.scss */
+/* line 85, ../sass/aiwtc.scss */
 .submit {
   background-color: #e43949;
-  width: 100%;
   border-radius: 3px;
   border: 1px solid #d60319;
   height: 50px;
   outline: 0;
-  margin-top: 5px;
 }
 
-/* line 94, ../sass/aiwtc.scss */
+/* line 93, ../sass/aiwtc.scss */
 ::-webkit-input-placeholder {
   font-family: "open sans";
 }
 
-/* line 98, ../sass/aiwtc.scss */
+/* line 97, ../sass/aiwtc.scss */
 :-moz-placeholder {
   /* Firefox 18- */
   font-family: "open sans";
 }
 
-/* line 102, ../sass/aiwtc.scss */
+/* line 101, ../sass/aiwtc.scss */
 ::-moz-placeholder {
   /* Firefox 19+ */
   font-family: "open sans";
 }
 
-/* line 106, ../sass/aiwtc.scss */
+/* line 105, ../sass/aiwtc.scss */
 :-ms-input-placeholder {
   font-family: "open sans";
 }
 
 /* ----------  -----------*/
-/* line 112, ../sass/aiwtc.scss */
+/* line 111, ../sass/aiwtc.scss */
 #header_bar {
   background-color: #444;
   color: #fff;
@@ -128,7 +127,7 @@ body.login #register_boxes {
   width: 100%;
   position: fixed;
 }
-/* line 119, ../sass/aiwtc.scss */
+/* line 118, ../sass/aiwtc.scss */
 #header_bar #header_profile {
   float: right;
   border-radius: 10px;
@@ -137,17 +136,17 @@ body.login #register_boxes {
   height: 52px;
   min-width: 200px;
 }
-/* line 127, ../sass/aiwtc.scss */
+/* line 126, ../sass/aiwtc.scss */
 #header_bar #header_profile h2 {
   float: left;
 }
-/* line 131, ../sass/aiwtc.scss */
+/* line 130, ../sass/aiwtc.scss */
 #header_bar #header_profile a {
   height: 54px;
   border-radius: 10px;
   width: 100%;
 }
-/* line 137, ../sass/aiwtc.scss */
+/* line 136, ../sass/aiwtc.scss */
 #header_bar #header_profile img {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -157,13 +156,13 @@ body.login #register_boxes {
   margin: 1px;
 }
 
-/* line 149, ../sass/aiwtc.scss */
+/* line 148, ../sass/aiwtc.scss */
 #menu {
   position: fixed;
   top: 70px;
 }
 
-/* line 154, ../sass/aiwtc.scss */
+/* line 153, ../sass/aiwtc.scss */
 #pushobj {
   margin-top: 70px;
   width: 100%;
@@ -171,7 +170,7 @@ body.login #register_boxes {
   overflow-y: scroll;
 }
 
-/* line 161, ../sass/aiwtc.scss */
+/* line 160, ../sass/aiwtc.scss */
 i.fa-reorder {
   background: url("../images/toggle.png") no-repeat;
   height: 25px;
@@ -179,19 +178,19 @@ i.fa-reorder {
   display: none;
 }
 
-/* line 168, ../sass/aiwtc.scss */
+/* line 167, ../sass/aiwtc.scss */
 .multilevelpushmenu_wrapper li {
   width: 100px;
   height: 100px;
   background-color: #fff;
 }
-/* line 173, ../sass/aiwtc.scss */
+/* line 172, ../sass/aiwtc.scss */
 .multilevelpushmenu_wrapper li:active {
   background-color: #e60a1e;
   color: #fff;
 }
 
-/* line 179, ../sass/aiwtc.scss */
+/* line 178, ../sass/aiwtc.scss */
 #menu ul a {
   height: 100px;
   width: 100px;

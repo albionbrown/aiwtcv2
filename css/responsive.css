@@ -7,19 +7,23 @@ body {
 	position: absolute;
 	top: 0px;
 	left: 228px;
-	color: #444;
+	color: #fff;
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 2em;
 	z-index: 1;
 }
 
-.text-input {
+html.logged-out .text-input {
 	width: 50%;
 	min-width: 150px;
 }
 
-.long {
+html.logged-out .submit {
 	width: 100%;
+}
+
+.long {
+	width: 100% !important;
 }
 
 @media (min-width: 992px) and (max-width: 1199px){
@@ -37,6 +41,12 @@ body {
 @media (max-width: 407px) {
 	.text-input {
 		width: 100% !important;
+	}
+}
+
+@media (max-width: 767px){
+	#boxes {
+		padding-top: 0px !important;
 	}
 }
 

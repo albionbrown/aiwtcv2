@@ -23,7 +23,7 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="http://oss.maxcdn.com/libs/modernizr/2.6.2/modernizr.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="/js/jquery.multilevelpushmenu.min.js"></script>
+        <script src="/js/jquery.multilevelpushmenu.js"></script>
         <script src="/js/responsive.js"></script>
     </head>
     <body>
@@ -39,7 +39,7 @@
         </div>
         <div id="menu">
             <nav>
-                <i class="fa fa-reorder"></i>
+                <h2 class="clearfix"><i class="fa fa-reorder"></i></h2>
                 <ul>
                     <a href="/home"><li class="fa fa-laptop">
                         Home
@@ -68,7 +68,7 @@
                 </ul>
             </nav>
         </div>
-        <div id="pushobj">
+        <div id="pushobj" class="container">
             
             <?php 
 

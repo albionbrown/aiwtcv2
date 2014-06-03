@@ -12,12 +12,12 @@
 }
 
 html.logged-in body {
-	background: url("../images/background.gif") repeat;
+	background-color: #e60a1e;
 	overflow: hidden;
 }
 
 html.logged-out body {
-	background: url("/images/login_background.png") repeat;
+	background: url("/images/red_background.png") repeat;
 	color: #fff;
 }
 
@@ -28,7 +28,7 @@ html.logged-out body {
 
 h1 {
 	font-family: 'patrickhand-regular';
-	color: #e60a1e;
+	color: #fff;
 }
 
 h2,
@@ -44,6 +44,7 @@ h2 {
 
 p {
 	font-family: "open sans";
+	font-size: 14px;
 }
 
 a {
@@ -83,12 +84,10 @@ body.login #register_boxes {
 
 .submit {
 	background-color: #e43949;
-	width: 100%;
 	border-radius: 3px;
 	border: 1px solid #d60319;
 	height: 50px;
 	outline: 0;
-	margin-top: 5px;
 }
 
 ::-webkit-input-placeholder {
