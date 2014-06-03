@@ -85,12 +85,16 @@
 			$fname = strtolower($fname);
 			$sname = strtolower($sname);
 			$location = strtolower($location);
+			//sendemail();
 			$key = 'sdgwe4tgwgsregase';
 			$pwd = $this->encrypt->encode($pwd,$key);
 			$email = $this->encrypt->encode($email, $key);
 			$query = $this->db->query("INSERT INTO users (fname, sname, email, pwd, location) VALUES ('$fname', '$sname', '$email', '$pwd', '$location')");
+		}
+
+		function sendemail($fname, $sname, $email){
 			$this->email->from('no-reply@alliwantthischristmas.co.uk', 'All I Want This Christmas');
-			$this->email->to($this->encrypt->decode($email)); 
+			$this->email->to($email); 
 			$this->email->subject('Registration successful');
 			$this->email->message('Thank you for regsitering with All I Want This Christmas!');	
 			$this->email->send();

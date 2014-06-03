@@ -135,7 +135,6 @@ class Main extends CI_Controller {
 		$location = $_POST['location'];
 		$pwd      = $_POST['password'];
 		$cpwd     = $_POST['confirm'];
-		$this->load->model('login');
 
 		unset($error5);
 		$check = $this->login->dblookupemail($email);
@@ -180,13 +179,7 @@ class Main extends CI_Controller {
 			$this->session->set_flashdata('error3', $error3);
 		}
 
-		if(isset($error1) || isset($error2) || isset($error3) || isset($error4) || isset($error5)){
-			header('Location: /index');
-		}else{
-			$this->login->transfer_details($fname, $sname, $email, $pwd, $location);
-			$this->session->set_flashdata('result', 'Regsitration Successful');
-			header('Location: /index');
-		}
+		header("Location: /index");
 
 	}
 
