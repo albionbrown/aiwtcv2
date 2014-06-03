@@ -123,14 +123,8 @@ class Main extends CI_Controller {
 	{
 		$email = $_POST['email'];
 		$pwd = $_POST['password'];
-		$this->load->model('login');
 		$check = $this->login->checkdb($email, $pwd);
-		if($check == TRUE){
-			header('location: /home');
-		}else{
-			$this->session->set_flashdata('result', 'Incorrect email/password. Please try again.');
-			header('location: /login');
-		}
+		header("location: /index");
 	}
 
 	public function register() {
@@ -187,11 +181,11 @@ class Main extends CI_Controller {
 		}
 
 		if(isset($error1) || isset($error2) || isset($error3) || isset($error4) || isset($error5)){
-			header('Location: /main/log_in');
+			header('Location: /index');
 		}else{
 			$this->login->transfer_details($fname, $sname, $email, $pwd, $location);
 			$this->session->set_flashdata('result', 'Regsitration Successful');
-			header('Location: /main/log_in');
+			header('Location: /index');
 		}
 
 	}

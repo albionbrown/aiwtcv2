@@ -1,13 +1,6 @@
 <?php
-    $userid = $_SESSION['userid'];
-    $query = $this->db->query("SELECT * FROM users WHERE userid='$userid'");
-    foreach($query->result_array() as $row){
-        $fname = $row['fname'];
-        $sname = $row['sname'];
-        $username = ucwords($fname." ".$sname);
-    }
-    //$this->load->model('general');
-    $email = $this->general->getemail();
+    $username = $this->general->getusername();
+    $email    = $this->general->getemail();
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +34,7 @@
         <div id="header_bar">
             <div id="header_profile">
             <?php echo "<h2>".$username."</h2>"; ?>
-            <img src=<?php echo "http://www.gravatar.com/avatar/" . md5(trim($email))?>>
+            <img src=<?php echo "http://www.gravatar.com/avatar/" . md5($this->encrypt->decode($email))?>>
             </div>
         </div>
         <div id="menu">

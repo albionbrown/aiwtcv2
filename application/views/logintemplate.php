@@ -19,8 +19,8 @@
     </head>
     <body class="login container">
 
-    <div class="col-sm-6">
-    	<img src="/images/logo.png" class="login_logo"/>
+    <div id="resp_logo" class="col-sm-6">
+    	<img src="/images/logo.gif" class="login_logo"/>
     </div>
 
 	<div id="boxes" class="col-sm-6 clearfix">
@@ -30,7 +30,7 @@
 				
 				<?php $email_data = array(
 		              'name'        => 'email',
-		              'class'       => 'input col-md-6',
+		              'class'       => 'text-input col-md-6',
 		              'placeholder' => 'Email Address'
 		            );
 
@@ -38,7 +38,7 @@
 
 				$password_data = array(
 		              'name'        => 'password',
-		              'class'       => 'input col-md-6',
+		              'class'       => 'text-input col-md-6',
 		              'placeholder' => 'Password'
 		            );
 
@@ -52,22 +52,17 @@
 		            );
 
 				echo form_submit($form_submit, 'Log in');
-			echo form_close();
-
-			$result = @$_GET['result']; 
-			echo "<p>$result</p>";
-			echo @$_SESSION['userid'];
-		?>
+			echo form_close(); ?>
 		</div>
 
 		<div id="register_boxes" class="col-sm-12">
 
 		<h2>Haven't got an account? Enter your details below!</h2>
-			<?php echo form_open('site/register');?>
+			<?php echo form_open('main/register');?>
 
 				<?php $firstname_data = array(
 						'name' 		=> 'firstname',
-						'class' 	=> 'input col-md-6',
+						'class' 	=> 'text-input col-md-6',
 						'placeholder' => 'First Name'
 					);
 
@@ -75,7 +70,7 @@
 				
 				$surname_data = array(
 						'name' 		=> 'surname',
-						'class' 	=> 'input col-md-6',
+						'class' 	=> 'text-input col-md-6',
 						'placeholder' => 'Surname'
 					);
 
@@ -83,7 +78,7 @@
 				<br>
 				<?php $email_data = array(
 		              'name'        => 'email',
-		              'class'       => 'input col-md-12 long',
+		              'class'       => 'text-input col-md-12 long',
 		              'placeholder' => 'Email Address'
 		            );
 
@@ -91,7 +86,7 @@
 				<br>
 				<?php $location_data = array(
 		              'name'        => 'location',
-		              'class'       => 'input col-md-12 long',
+		              'class'       => 'text-input col-md-12 long',
 		              'placeholder' => 'City'
 		            );
 
@@ -100,7 +95,7 @@
 				<?php $password_data = array(
 		              'name'        => 'password',
 		              'id'          => 'password',
-		              'class'       => 'input col-md-6',
+		              'class'       => 'text-input col-md-6',
 		              'placeholder' => 'Password'
 		            );
 
@@ -109,7 +104,7 @@
 				$confirm_data = array(
 		              'name'        => 'confirm',
 		              'id'          => 'password',
-		              'class'       => 'input col-md-6',
+		              'class'       => 'text-input col-md-6',
 		              'placeholder' => 'Confirm Password'
 		            );
 
@@ -122,20 +117,9 @@
 
 				echo form_submit($form_submit, 'Register') ?>
 			<?php echo form_close();?>
-			<div id="errors">
-			<?php 
-			if($this->session->flashdata('error1') || $this->session->flashdata('error2') || $this->session->flashdata('error3') || $this->session->flashdata('error4') || $this->session->flashdata('error5')){
-				echo @$this->session->flashdata('error1')."<br />";
-				echo @$this->session->flashdata('error2')."<br />";
-				echo @$this->session->flashdata('error3')."<br />";
-				echo @$this->session->flashdata('error4')."<br />";
-				echo @$this->session->flashdata('error5')."<br />";
-			}
-			if($this->session->flashdata('result')){
-				echo "<h1>".$this->session->flashdata('result')."</h1>";
-			}
-			?>
-			</div>
+
+			<p>All I Want This Christmas uses Gravatar for your profile picture. To use your Gravatar, sign up with the same email you registered with Gravatar and you're done! Don't have a Gravatar account? <a href="https://en.gravatar.com/" target="_blank">Click here!</a></p>
+			<div id="errors"></div>
 		</div>
 		</div>
 	</body>

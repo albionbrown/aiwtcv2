@@ -45,6 +45,7 @@
 | the active record class
 */
 /* ----- LOCAL ----- */
+
 $active_group = 'default';
 $active_record = TRUE;
 

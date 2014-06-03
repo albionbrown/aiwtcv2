@@ -15,7 +15,10 @@
 				$pwdfromdb = $row['pwd'];
 				$decodedemail = $this->encrypt->decode($emailfromdb, $key);
 				$decodedpwd = $this->encrypt->decode($pwdfromdb, $key);
-				if($decodedemail == $email && $decodedpwd == $password){
+				//echo $decodedemail;
+				//die($decodedpwd);
+
+				if($decodedemail === $email && $decodedpwd === $password){
 					$query = $this->db->query("SELECT email AND pwd FROM users WHERE email='$emailfromdb' AND pwd='$pwdfromdb'");
 					if($query->num_rows() == 1){
 						$match = TRUE;
@@ -83,15 +86,13 @@
 			$sname = strtolower($sname);
 			$location = strtolower($location);
 			$key = 'sdgwe4tgwgsregase';
-			$fname = $this->encrypt->encode($fname,$key);
-			$sname = $this->encrypt->encode($sname,$key);
 			$pwd = $this->encrypt->encode($pwd,$key);
 			$email = $this->encrypt->encode($email, $key);
 			$query = $this->db->query("INSERT INTO users (fname, sname, email, pwd, location) VALUES ('$fname', '$sname', '$email', '$pwd', '$location')");
-			$this->email->from('alliwantthischristmas@gmail.co.uk', 'All I Want This Christmas');
-			$this->email->to('josh@alphawavemedia.co.uk'); 
-			$this->email->subject('Email Test');
-			$this->email->message('Testing the email class.');	
+			$this->email->from('no-reply@alliwantthischristmas.co.uk', 'All I Want This Christmas');
+			$this->email->to($this->encrypt->decode($email)); 
+			$this->email->subject('Registration successful');
+			$this->email->message('Thank you for regsitering with All I Want This Christmas!');	
 			$this->email->send();
 			if(!$this->email->send()){
 				echo "fail";

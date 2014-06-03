@@ -14,7 +14,7 @@ html.logged-in body {
 
 /* line 19, ../sass/aiwtc.scss */
 html.logged-out body {
-  background-color: #e60a1e;
+  background: url("/images/login_background.png") repeat;
   color: #fff;
 }
 
@@ -48,20 +48,34 @@ p {
   font-family: "open sans";
 }
 
+/* line 49, ../sass/aiwtc.scss */
+a {
+  color: #fff;
+}
+/* line 53, ../sass/aiwtc.scss */
+a:hover, a:active {
+  color: #fff;
+}
+
 /* ---------- LOGIN PAGE ------------*/
-/* line 51, ../sass/aiwtc.scss */
+/* line 60, ../sass/aiwtc.scss */
 img.login_logo {
   width: 100%;
   height: auto;
 }
 
-/* line 56, ../sass/aiwtc.scss */
+/* line 65, ../sass/aiwtc.scss */
 body.login #boxes {
   padding-top: 121px;
 }
 
-/* line 60, ../sass/aiwtc.scss */
-.input {
+/* line 69, ../sass/aiwtc.scss */
+body.login #register_boxes {
+  visibility: hidden;
+}
+
+/* line 73, ../sass/aiwtc.scss */
+.text-input {
   border: 1px solid #e60a1e;
   border-radius: 3px;
   height: 50px;
@@ -72,30 +86,41 @@ body.login #boxes {
   outline: 0;
 }
 
-/* line 71, ../sass/aiwtc.scss */
+/* line 84, ../sass/aiwtc.scss */
+.submit {
+  background-color: #e43949;
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #d60319;
+  height: 50px;
+  outline: 0;
+  margin-top: 5px;
+}
+
+/* line 94, ../sass/aiwtc.scss */
 ::-webkit-input-placeholder {
   font-family: "open sans";
 }
 
-/* line 75, ../sass/aiwtc.scss */
+/* line 98, ../sass/aiwtc.scss */
 :-moz-placeholder {
   /* Firefox 18- */
   font-family: "open sans";
 }
 
-/* line 79, ../sass/aiwtc.scss */
+/* line 102, ../sass/aiwtc.scss */
 ::-moz-placeholder {
   /* Firefox 19+ */
   font-family: "open sans";
 }
 
-/* line 83, ../sass/aiwtc.scss */
+/* line 106, ../sass/aiwtc.scss */
 :-ms-input-placeholder {
   font-family: "open sans";
 }
 
 /* ----------  -----------*/
-/* line 89, ../sass/aiwtc.scss */
+/* line 112, ../sass/aiwtc.scss */
 #header_bar {
   background-color: #444;
   color: #fff;
@@ -103,7 +128,7 @@ body.login #boxes {
   width: 100%;
   position: fixed;
 }
-/* line 96, ../sass/aiwtc.scss */
+/* line 119, ../sass/aiwtc.scss */
 #header_bar #header_profile {
   float: right;
   border-radius: 10px;
@@ -112,17 +137,17 @@ body.login #boxes {
   height: 52px;
   min-width: 200px;
 }
-/* line 104, ../sass/aiwtc.scss */
+/* line 127, ../sass/aiwtc.scss */
 #header_bar #header_profile h2 {
   float: left;
 }
-/* line 108, ../sass/aiwtc.scss */
+/* line 131, ../sass/aiwtc.scss */
 #header_bar #header_profile a {
   height: 54px;
   border-radius: 10px;
   width: 100%;
 }
-/* line 114, ../sass/aiwtc.scss */
+/* line 137, ../sass/aiwtc.scss */
 #header_bar #header_profile img {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -132,13 +157,13 @@ body.login #boxes {
   margin: 1px;
 }
 
-/* line 126, ../sass/aiwtc.scss */
+/* line 149, ../sass/aiwtc.scss */
 #menu {
   position: fixed;
   top: 70px;
 }
 
-/* line 131, ../sass/aiwtc.scss */
+/* line 154, ../sass/aiwtc.scss */
 #pushobj {
   margin-top: 70px;
   width: 100%;
@@ -146,7 +171,7 @@ body.login #boxes {
   overflow-y: scroll;
 }
 
-/* line 138, ../sass/aiwtc.scss */
+/* line 161, ../sass/aiwtc.scss */
 i.fa-reorder {
   background: url("../images/toggle.png") no-repeat;
   height: 25px;
@@ -154,19 +179,19 @@ i.fa-reorder {
   display: none;
 }
 
-/* line 145, ../sass/aiwtc.scss */
+/* line 168, ../sass/aiwtc.scss */
 .multilevelpushmenu_wrapper li {
   width: 100px;
   height: 100px;
   background-color: #fff;
 }
-/* line 150, ../sass/aiwtc.scss */
+/* line 173, ../sass/aiwtc.scss */
 .multilevelpushmenu_wrapper li:active {
   background-color: #e60a1e;
   color: #fff;
 }
 
-/* line 156, ../sass/aiwtc.scss */
+/* line 179, ../sass/aiwtc.scss */
 #menu ul a {
   height: 100px;
   width: 100px;

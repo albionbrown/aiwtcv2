@@ -17,7 +17,7 @@ html.logged-in body {
 }
 
 html.logged-out body {
-	background-color: rgb(230, 10, 30);
+	background: url("/images/login_background.png") repeat;
 	color: #fff;
 }
 
@@ -46,6 +46,15 @@ p {
 	font-family: "open sans";
 }
 
+a {
+	color: #fff;
+
+	&:hover,
+	&:active {
+		color: #fff;
+	}
+}
+
 /* ---------- LOGIN PAGE ------------*/
 
 img.login_logo {
@@ -57,7 +66,11 @@ body.login #boxes {
 	padding-top: 121px;
 }
 
-.input{
+body.login #register_boxes {
+	visibility: hidden;
+}
+
+.text-input {
 	border: 1px solid #e60a1e;
 	border-radius: 3px;
 	height: 50px;
@@ -66,6 +79,16 @@ body.login #boxes {
 	font-family: "open sans";
 	color: #444;
 	outline: 0;
+}
+
+.submit {
+	background-color: #e43949;
+	width: 100%;
+	border-radius: 3px;
+	border: 1px solid #d60319;
+	height: 50px;
+	outline: 0;
+	margin-top: 5px;
 }
 
 ::-webkit-input-placeholder {
