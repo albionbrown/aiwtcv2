@@ -30,7 +30,7 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="page-contrainer">
+        <div class="page-container">
         <div id="header_bar">
             <div id="header_profile">
             <?php echo "<h2>".$username."</h2>"; ?>
@@ -68,14 +68,15 @@
                 </ul>
             </nav>
         </div>
-        <div id="pushobj" class="container">
-            
-            <?php 
+        <div id="pushobj">
+            <div  class="container">
+                
+                <?php 
 
-                echo @$main_content;
+                    echo @$main_content;
 
-            ?>
-
+                ?>
+            </div>
         </div>
         </div>
     </body>

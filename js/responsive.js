@@ -8,18 +8,18 @@ $(document).ready(function(){
 
 	var $windowWidth = $(window).width();
 	var $width = $windowWidth - 228;
-	$('#pushobj').css('width', $width);
+	$('#pushobj>.container').css('width', $width);
 	var $windowHeight = $(window).height();
 	var $height = $windowHeight - 70;
-	$('#pushobj').css('height', $height);
+	$('#pushobj>.container').css('height', $height);
 });
 
 $(window).resize(function () {
 	$( '#menu' ).multilevelpushmenu( 'redraw' );
 	var $windowWidth = $(window).width();
 	var $width = $windowWidth - 228;
-	$('#pushobj').css('width', $width);
+	$('#pushobj>.container').css('width', $width);
 	var $windowHeight = $(window).height();
 	var $height = $windowHeight - 70;
-	$('#pushobj').css('height', $height);
+	$('#pushobj>.container').css('height', $height);
 });

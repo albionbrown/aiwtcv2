@@ -13,7 +13,6 @@
 
 <script type="text/javascript" src="/js/items/make_item_ajax.js"></script>
 
-<div id="form" class="col-md-12">
 <?php 
 $userid=$_SESSION['userid'];
 $query=$this->db->query("SELECT * FROM users WHERE userid='$userid'");
@@ -29,7 +28,7 @@ echo form_open('makeitem', $attributes);
 	$title_data = array(
 		'name' => 'title',
 		'class' => 'text-input col-md-3',
-		'placeholder' => 'Item name',
+		'placeholder' => 'What would you like?',
 	);
 
 	echo form_input($title_data);
@@ -46,7 +45,7 @@ echo form_open('makeitem', $attributes);
 	$link_data = array(
 		'name' => 'link',
 		'class' => 'text-input col-md-3',
-		'placeholder' => 'Got a link to the item?',
+		'placeholder' => 'Where can you get it?',
 	);
 
 	echo form_input($link_data);
@@ -61,7 +60,7 @@ echo form_open('makeitem', $attributes);
 
 echo form_submit($create_data);
 echo form_close(); ?>
-</div>
+
 <div class="errors">
 	<?php if($this->session->flashdata('error')){echo "<p>".$this->session->flashdata('error')."</p>"; } ?>
 </div>

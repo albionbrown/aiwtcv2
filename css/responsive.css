@@ -9,13 +9,11 @@ body {
 	left: 228px;
 	color: #fff;
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 2em;
 	z-index: 1;
 }
 
 html.logged-out .text-input {
 	width: 50%;
-	min-width: 150px;
 }
 
 html.logged-out .submit {
