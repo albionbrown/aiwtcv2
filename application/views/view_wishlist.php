@@ -11,8 +11,6 @@
 		}
 </script>
 
-<script type="text/javascript" src="/js/items/make_item_ajax.js"></script>
-
 <?php 
 $userid=$_SESSION['userid'];
 $query=$this->db->query("SELECT * FROM users WHERE userid='$userid'");
@@ -27,7 +25,7 @@ echo form_open('makeitem', $attributes);
 
 	$title_data = array(
 		'name' => 'title',
-		'class' => 'text-input col-md-3',
+		'class' => 'text-input col-md-3 col-xs-12',
 		'placeholder' => 'What would you like?',
 	);
 
@@ -35,7 +33,7 @@ echo form_open('makeitem', $attributes);
 
 	$desc_data = array(
 		'name' => 'description',
-		'class' => 'text-input col-md-3',
+		'class' => 'text-input col-md-3 col-xs-12',
 		'placeholder' => 'Item description',
 	);
 
@@ -44,7 +42,7 @@ echo form_open('makeitem', $attributes);
 
 	$link_data = array(
 		'name' => 'link',
-		'class' => 'text-input col-md-3',
+		'class' => 'text-input col-md-3 col-xs-12',
 		'placeholder' => 'Where can you get it?',
 	);
 
@@ -54,7 +52,7 @@ echo form_open('makeitem', $attributes);
 	$create_data = array(
 	'name'		=> 'create-item',
 	'id'		=> 'wishlist_create_button',
-	'class'		=> 'submit col-md-3',
+	'class'		=> 'submit col-md-3 col-xs-12',
 	'value'		=> 'create',
 	);
 
