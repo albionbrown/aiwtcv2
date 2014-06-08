@@ -762,6 +762,7 @@
 				var $windowWidth = $(window).width();
 				var $width = $windowWidth - 40;
 				$('#pushobj').css('width', $width);
+				$('.container').css('width', '100%');
 				return $this;
 			}
 

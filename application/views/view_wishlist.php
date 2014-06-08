@@ -34,7 +34,7 @@ echo form_open('makeitem', $attributes);
 	$desc_data = array(
 		'name' => 'description',
 		'class' => 'text-input col-md-3 col-xs-12',
-		'placeholder' => 'Item description',
+		'placeholder' => 'Need to describe it?',
 	);
 
 	echo form_input($desc_data);

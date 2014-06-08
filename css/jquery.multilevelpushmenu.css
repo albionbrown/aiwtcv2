@@ -11,7 +11,7 @@
 	position: absolute;
 	overflow: hidden;
 	top: 0;
-	background-color: #444;
+	background: url("/images/red_background.gif") repeat;
 	width: auto;
 	min-height: 100%;
 	font-family: 'Open Sans Condensed', sans-serif;

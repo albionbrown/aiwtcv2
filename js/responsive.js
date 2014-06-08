@@ -12,6 +12,7 @@ $(document).ready(function(){
 	var $windowHeight = $(window).height();
 	var $height = $windowHeight - 70;
 	$('#pushobj>.container').css('height', $height);
+	$('#pushobj>.container form input').addClass('col-xs-12 col-md-3');
 });
 
 $(window).resize(function () {
@@ -21,5 +22,5 @@ $(window).resize(function () {
 	$('#pushobj>.container').css('width', $width);
 	var $windowHeight = $(window).height();
 	var $height = $windowHeight - 70;
-	$('#pushobj>.container').css('height', $height);
+	$('#pushobj>.container').css('height', $height)
 });
