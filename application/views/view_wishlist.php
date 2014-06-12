@@ -20,7 +20,7 @@ foreach($query->result_array() as $row){
 	echo "<h1>YOUR WISHLIST</h1>";
 }
 
-$attributes = array('class' => 'form', 'id' => 'wishlist_create_item_form');
+$attributes = array('class' => 'form clearfix', 'id' => 'wishlist_create_item_form');
 echo form_open('makeitem', $attributes);
 
 	$title_data = array(
@@ -69,12 +69,12 @@ $userid = $_SESSION['userid'];
 /* Gets all item id's related to user */
 $query = $this->db->query("SELECT * FROM items WHERE userid='$userid'");
 foreach($query->result_array() as $row){ 
-	?><div class="result"><h2>
+	?><div class="result-box col-md-4 col-xs-12"><div class="result">
 	<?php 
 	$itemid = $row['itemid'];
-	echo ucwords($itemname = $row['itemname']); ?></h2>
+	echo "<h2>" . ucwords($itemname = $row['itemname']) . "</h2><br><p>" . $row['itemdescription'] . "<br>" . $row['itemlink'] . "</p>"; ?>
 
-		<input type="button" onClick='delitem(<?php echo $itemid ?>)' class="invite-background" value="delete"/>
+		<input type="button" onClick='delitem(<?php echo $itemid ?>)' class="submit max-width" value="delete"/>
 		<?php echo form_open();
 			$delete_data = array(
 					'value'	=> $itemid,
@@ -84,6 +84,7 @@ foreach($query->result_array() as $row){
 		echo form_close();
 
 	?>
+	</div>
 	</div>
 <?php 
 } 

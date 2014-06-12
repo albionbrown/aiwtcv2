@@ -21,7 +21,7 @@
 					if($query->num_rows() == 1){
 						$_SESSION['userid'] = $row['userid'];
 					}else{
-						$this->session->set_flashdata('log_errors', 'Incorrect email/password');
+						$this->session->set_flashdata('log-errors', 'Incorrect email/password');
 					}
 				}
 			}

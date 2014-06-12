@@ -759,6 +759,10 @@
 				}
 				collapingObjects[ 'collapsingEnded' ] = true;
 				animatedEventCallback( collapingObjects , callbacks );
+				var $windowWidth = $(window).width();
+				var $width = $windowWidth - 245;
+				$('#pushobj').css('width', $width);
+				$('.container').css('width', '100%');
 				return $this;
 			}
 

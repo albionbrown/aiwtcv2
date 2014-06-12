@@ -166,7 +166,7 @@ class Main extends CI_Controller {
 		}
 
 		$errors = serialize($errors);
-		$this->session->set_flashdata('reg_errors', $errors);
+		echo $this->session->set_flashdata('reg_errors', $errors);
 		header("Location: /index");
 
 	}

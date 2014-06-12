@@ -7,20 +7,20 @@ $(document).ready(function(){
 	});
 
 	var $windowWidth = $(window).width();
-	var $width = $windowWidth - 228;
+	var $width = $windowWidth - 245;
 	$('#pushobj>.container').css('width', $width);
 	var $windowHeight = $(window).height();
 	var $height = $windowHeight - 70;
-	$('#pushobj>.container').css('height', $height);
-	$('#pushobj>.container form input').addClass('col-xs-12 col-md-3');
+	$('#pushobj').css('height', $height);
+	//$('#pushobj>.container form input').addClass('col-xs-12 col-md-3');
 });
 
 $(window).resize(function () {
 	$( '#menu' ).multilevelpushmenu( 'redraw' );
 	var $windowWidth = $(window).width();
-	var $width = $windowWidth - 228;
+	var $width = $windowWidth - 245;
 	$('#pushobj>.container').css('width', $width);
 	var $windowHeight = $(window).height();
 	var $height = $windowHeight - 70;
-	$('#pushobj>.container').css('height', $height)
+	$('#pushobj').css('height', $height)
 });

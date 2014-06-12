@@ -29,7 +29,9 @@ foreach($query->result_array() as $row){
 	$sname = $row['sname'];
 	echo "<h1>YOUR GROUPS</h1>";
 }
-echo form_open('main/create_group');
+
+$attributes = array('class' => 'form clearfix', 'id' => 'group_create_group_form');
+echo form_open('main/create_group', $attributes);
 
 ?>
 
@@ -37,7 +39,7 @@ echo form_open('main/create_group');
 
 $input_data = array(
 	'name'		=> 'groupname',
-	'class'		=> 'input',
+	'class'		=> 'text-input col-md-9 col-xs-12',
 	'placeholder' => 'Group name',
 );
 
@@ -45,7 +47,7 @@ echo form_input($input_data);
 
 $create_data = array(
 	'name'		=> 'create-group',
-	'class'		=> 'submit',
+	'class'		=> 'submit col-md-3 col-xs-12',
 	'value'		=> 'create',
 );
 
@@ -56,7 +58,7 @@ echo form_close();
 </div><?php
 
 echo "<p>".@$this->session->flashdata('result')."</p>";
-
+?><div class="row"><?php
 $userid = $_SESSION['userid'];
 /* Gets all group id's related to user */
 $query = $this->db->query("SELECT groupid FROM userstogroups WHERE userid='$userid'");
@@ -71,15 +73,10 @@ foreach($query->result_array() as $row){
 
 	/* Prints each group header */
 	foreach($query->result_array() as $row){ ?>
-		<div class="result-row"><h2>
-		<?php echo $groupname = ucwords($row['groupname']);
+		<div class="result-box col-md-4"><div class="result">
+		<?php echo "<h2>" . $groupname = ucwords($row['groupname']) . "</h2>";
 		$adminuserid = $row['adminuserid'];
-		?>
 		
-		<?php if($row['adminuserid'] == $_SESSION['userid']){ ?><span style="float:right; margin-top: -3px;"><input type="button" onClick='delgroup(<?php echo $groupid ?>)' style="margin-top:0px;" class="invite-background" value="delete"/></span><?php }else{ ?>
-			<span style="float:right; margin-top: 40px;"><input type="button" onClick='leavegroup(<?php echo $groupid ?>)' class="invite-background" value="leave"/></span>
-			<?php } ?>
-		</h2></div><?php
 
 		/* Gets all users in a group */
 		foreach($query->result_array() as $row){
@@ -93,12 +90,21 @@ foreach($query->result_array() as $row){
 				$row = $query->row();
 				$useridofrow = $row->userid;
 				$membername = $row->fname." ".$row->sname;
-				?><div class="result-box capatalise short"><h2><?php echo '<a href=/main/user?uid='.$useridofrow.'>'.$membername.'</a>';
-				?></h2></div><?php
+				?><?php echo '<p><a href=/main/user?uid='.$useridofrow.'>'.$membername.'</a></p>';
+				?><?php
 			}
 		}
+
+		if($adminuserid == $_SESSION['userid']){ ?><input type="button" onClick='delgroup(<?php echo $groupid ?>)' style="margin-top:0px;" class="submit max-width" value="delete"/><?php }else{ ?>
+			<input type="button" onClick='leavegroup(<?php echo $groupid ?>)' class="submit max-width" value="leave"/>
+		<?php } ?>
+		</div></div><?php
+		
+		
 	}	
 }
 
 }?>
+
+</div>
 
