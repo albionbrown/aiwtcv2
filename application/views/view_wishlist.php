@@ -69,7 +69,7 @@ $userid = $_SESSION['userid'];
 /* Gets all item id's related to user */
 $query = $this->db->query("SELECT * FROM items WHERE userid='$userid'");
 foreach($query->result_array() as $row){ 
-	?><div class="result-box col-md-4 col-xs-12"><div class="result">
+	?><div class="content-box col-md-4 col-xs-12"><div class="content">
 	<?php 
 	$itemid = $row['itemid'];
 	echo "<h2>" . ucwords($itemname = $row['itemname']) . "</h2><br><p>" . $row['itemdescription'] . "<br>" . $row['itemlink'] . "</p>"; ?>

@@ -201,19 +201,18 @@ i.fa-reorder {
 }
 
 /* line 188, ../sass/aiwtc.scss */
-.result-box {
+.content-box {
   padding: 15px;
 }
 
 /* line 192, ../sass/aiwtc.scss */
-.result {
+.content {
   color: #e60a1e;
   background-color: #fff;
   border-radius: 3px;
   padding: 15px;
-  text-transform: capitalize;
 }
-/* line 199, ../sass/aiwtc.scss */
-.result a {
+/* line 198, ../sass/aiwtc.scss */
+.content a {
   color: #e60a1e;
 }

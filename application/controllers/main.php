@@ -10,7 +10,7 @@ class Main extends CI_Controller {
 			
 			$data = array(
 				'title' => 'Home | All I Want This Christmas',
-				'main_content' => $this->load->view('home', '', true)
+				'main_content' => $this->load->view('view_dashboard', '', true)
 			);
 
 			$this->parser->parse('admintemplate', $data);
@@ -283,16 +283,16 @@ class Main extends CI_Controller {
 		$this->items->itembought($itemid);
 	}
 
-	public function accept(){
-		$inviteid = $_GET['inviteid'];
-		$this->load->model('Search');
-		$this->Search->acceptinvite($inviteid);
+	public function acceptinvite(){
+		echo $inviteid = $_GET['inviteid'];
+		echo $inviteid = $this->encrypt->decode($inviteid);
+		//$this->Search->acceptinvite($inviteid);
 	}
 
-	public function decline(){
-		$inviteid = $_GET['inviteid'];
-		$this->load->model('Search');
-		$this->Search->declineinvite($inviteid);
+	public function declineinvite(){
+		echo $inviteid = $_GET['inviteid'];
+		echo $inviteid = $this->encrypt->decode($inviteid);
+		//$this->Search->declineinvite($inviteid);
 	}
 
 

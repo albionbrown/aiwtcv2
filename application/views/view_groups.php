@@ -73,7 +73,7 @@ foreach($query->result_array() as $row){
 
 	/* Prints each group header */
 	foreach($query->result_array() as $row){ ?>
-		<div class="result-box col-md-4"><div class="result">
+		<div class="content-box col-md-4"><div class="content">
 		<?php echo "<h2>" . $groupname = ucwords($row['groupname']) . "</h2>";
 		$adminuserid = $row['adminuserid'];
 		
