@@ -3,7 +3,7 @@ $useridofrow= $_GET['uid'];
 if($useridofrow == $_SESSION['userid']){Header('Location: ../site/my_wishlist');}else{
 	$query=$this->db->query("SELECT * FROM users WHERE userid='$useridofrow'");
 	foreach($query->result_array() as $row){
-		$name = $this->encrypt->decode($row['fname'])." ".$this->encrypt->decode($row['sname']);
+		$name = $row['fname'] . " " . $row['sname'];
 	}
 }
 ?>
