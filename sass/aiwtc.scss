@@ -113,9 +113,14 @@ body.login #register_boxes {
 #header_bar{
 	background-color: #444;
 	color: #fff;
-	height: 70px;
+	min-height: 70px;
 	width: 100%;
 	position: fixed;
+
+	#search_box{
+		float: right;
+		
+	}
 
 	#header_profile{
 		float: right;

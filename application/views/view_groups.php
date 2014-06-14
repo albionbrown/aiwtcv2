@@ -90,7 +90,7 @@ foreach($query->result_array() as $row){
 				$row = $query->row();
 				$useridofrow = $row->userid;
 				$membername = $row->fname." ".$row->sname;
-				?><?php echo '<p><a href=/main/user?uid='.$useridofrow.'>'.$membername.'</a></p>';
+				?><?php echo '<p><a href=/main/user?uid='.base64_encode($useridofrow).'>'. ucfirst($membername).'</a></p>';
 				?><?php
 			}
 		}

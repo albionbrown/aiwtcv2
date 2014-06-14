@@ -1,6 +1,8 @@
 <?php
     $username = $this->general->getusername();
     $email    = $this->general->getemail();
+    $userid = $_SESSION['userid'];
+    $encrypteduserid = base64_encode($userid);
 ?>
 
 <!DOCTYPE html>
@@ -32,8 +34,20 @@
         <![endif]-->
         <div class="page-container">
         <div id="header_bar">
+            <div id="search_box">
+            <?php 
+            $attributes = array('class' => 'form clearfix', 'id' => 'search_form');
+            echo form_open('/search', $attributes);
+            $input_data = array(
+                'name'      => 'searchentry',
+                'class'     => 'text-input col-md-4 col-xs-12',
+                'placeholder' => 'Search for somebody',
+            );
+            echo form_input($input_data);
+            ?>
+            </div>
             <div id="header_profile">
-            <?php echo "<h2>".$username."</h2>"; ?>
+            <?php echo '<h2><a href="/main/user?uid='.$encrypteduserid.'">'.$username.'</a></h2>'; ?>
             <img src=<?php echo "http://www.gravatar.com/avatar/" . md5($this->encrypt->decode($email))?>>
             </div>
         </div>
@@ -42,7 +56,7 @@
                 <h2 class="clearfix"><i class="fa fa-reorder"></i></h2>
                 <ul>
                     <a href="/home"><li class="fa fa-laptop">
-                        Home
+                        Dashboard
                     </li></a>
                     <a href="/my_wishlist"><li class="fa fa-laptop">
                         <img src="/images/my_wishlist.png" height="100%" width="100%">

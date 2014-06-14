@@ -38,7 +38,7 @@
 		$query = $this->db->query("SELECT * FROM items WHERE useridgetting='$userid' AND itembought='0'");
 		foreach($query->result_array() as $row){
 			$itemname = $row['itemname'];
-			$itemforuserid = $row['userid'];
+			$itemforuserid = base64_encode($row['userid']);
 
 			$query = $this->db->query("SELECT * FROM users WHERE userid='$itemforuserid'");
 			foreach($query->result_array() as $row){

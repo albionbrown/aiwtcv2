@@ -125,11 +125,15 @@ body.login #register_boxes {
 #header_bar {
   background-color: #444;
   color: #fff;
-  height: 70px;
+  min-height: 70px;
   width: 100%;
   position: fixed;
 }
 /* line 120, ../sass/aiwtc.scss */
+#header_bar #search_box {
+  float: right;
+}
+/* line 125, ../sass/aiwtc.scss */
 #header_bar #header_profile {
   float: right;
   border-radius: 10px;
@@ -138,17 +142,17 @@ body.login #register_boxes {
   height: 52px;
   min-width: 200px;
 }
-/* line 128, ../sass/aiwtc.scss */
+/* line 133, ../sass/aiwtc.scss */
 #header_bar #header_profile h2 {
   float: left;
 }
-/* line 132, ../sass/aiwtc.scss */
+/* line 137, ../sass/aiwtc.scss */
 #header_bar #header_profile a {
   height: 54px;
   border-radius: 10px;
   width: 100%;
 }
-/* line 138, ../sass/aiwtc.scss */
+/* line 143, ../sass/aiwtc.scss */
 #header_bar #header_profile img {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -158,37 +162,37 @@ body.login #register_boxes {
   margin: 1px;
 }
 
-/* line 150, ../sass/aiwtc.scss */
+/* line 155, ../sass/aiwtc.scss */
 #menu {
   position: fixed;
   top: 70px;
 }
-/* line 154, ../sass/aiwtc.scss */
+/* line 159, ../sass/aiwtc.scss */
 #menu ul a {
   margin: 2px 0;
   padding: 0px;
 }
-/* line 158, ../sass/aiwtc.scss */
+/* line 163, ../sass/aiwtc.scss */
 #menu ul a li {
   width: 100%;
   height: 50px;
   background-color: #e43949;
   font-family: 'patrickhand-regular';
 }
-/* line 164, ../sass/aiwtc.scss */
+/* line 169, ../sass/aiwtc.scss */
 #menu ul a li:active {
   background-color: #e60a1e;
   color: #fff;
 }
 
-/* line 172, ../sass/aiwtc.scss */
+/* line 177, ../sass/aiwtc.scss */
 #pushobj {
   margin-top: 70px;
   overflow-y: scroll;
   border-left: 2px #fff solid;
 }
 
-/* line 178, ../sass/aiwtc.scss */
+/* line 183, ../sass/aiwtc.scss */
 i.fa-reorder {
   background: url("../images/toggle.png") no-repeat;
   height: 25px;
@@ -196,24 +200,24 @@ i.fa-reorder {
   display: none;
 }
 
-/* line 185, ../sass/aiwtc.scss */
+/* line 190, ../sass/aiwtc.scss */
 .max-width {
   width: 100%;
 }
 
-/* line 189, ../sass/aiwtc.scss */
+/* line 194, ../sass/aiwtc.scss */
 .content-box {
   padding: 15px;
 }
 
-/* line 193, ../sass/aiwtc.scss */
+/* line 198, ../sass/aiwtc.scss */
 .content {
   color: #e60a1e;
   background-color: #fff;
   border-radius: 3px;
   padding: 15px;
 }
-/* line 199, ../sass/aiwtc.scss */
+/* line 204, ../sass/aiwtc.scss */
 .content a {
   color: #e60a1e;
 }

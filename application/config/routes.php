@@ -46,6 +46,7 @@ $route['groups'] = "main/groups";
 $route['gifts'] = "main/gifts";
 $route['profile'] = "main/profile";
 $route['user'] = "main/user";
+$route['search'] = "main/search";
 $route['login'] = "main/login";
 $route['logout'] = "main/logout";
 $route['verify_login'] = "../models/login";

@@ -17,8 +17,8 @@
 				$decodedpwd = $this->encrypt->decode($pwdfromdb, $key);
 
 				if($decodedemail === $email && $decodedpwd === $password){
-					$query = $this->db->query("SELECT email AND pwd FROM users WHERE email='$emailfromdb' AND pwd='$pwdfromdb'");
-					if($query->num_rows() == 1){
+					$query = $this->db->query("SELECT * FROM users WHERE email='$emailfromdb' AND pwd='$pwdfromdb'");
+					if($query->num_rows() == 1 && $row['activated'] == 1){
 						$_SESSION['userid'] = $row['userid'];
 					}else{
 						$this->session->set_flashdata('log-errors', 'Incorrect email/password');
@@ -82,14 +82,14 @@
 			$fname = strtolower($fname);
 			$sname = strtolower($sname);
 			$location = strtolower($location);
-			//sendemail();
+			sendemail($email);
 			$key = 'sdgwe4tgwgsregase';
 			$pwd = $this->encrypt->encode($pwd,$key);
 			$email = $this->encrypt->encode($email, $key);
 			$query = $this->db->query("INSERT INTO users (fname, sname, email, pwd, location) VALUES ('$fname', '$sname', '$email', '$pwd', '$location')");
 		}
 
-		function sendemail($fname, $sname, $email){
+		function sendemail($email){
 			$this->email->from('no-reply@alliwantthischristmas.co.uk', 'All I Want This Christmas');
 			$this->email->to($email); 
 			$this->email->subject('Registration successful');

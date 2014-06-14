@@ -2,18 +2,21 @@
 	class Search extends CI_Model{
 
 		function search_main($entry){
-			//$entry = strtolower($entry);
+			$entry = strtolower($entry);
 			$type = $this->searchstring($entry);
 			if($type == "email"){
 				$this->session->set_flashdata('type', $type);
-				header('location: ../site/search?entry='.$entry);
+				return $entry;
 			}elseif($type == "name"){
 				$fname = strstr($entry," ",true);
 				$len = strlen($fname) + 1;
 				$entrylen = strlen($entry);
 				$sname = substr($entry, $len, $entrylen);
-				$this->session->set_flashdata('type', $type);
-				header('location: ../site/search?fname='.$fname."&sname=".$sname);
+				$entry = array();
+				$entry['fname'] = $fname;
+				$entry['sname'] = $sname;
+				serialize($entry);
+				return $entry;
 			}
 		}	
 	
@@ -29,7 +32,7 @@
 
 		function newuseringroup($invitetouserid,$groupid){
 			$this->db->query("INSERT INTO userstogroups (userid, groupid) VALUES ($invitetouserid,$groupid)");
-			header('Location: ../site/search');
+			header('Location: /search');
 		}
 
 		function checkifuseringroup($invitetouserid, $groupid){
@@ -53,7 +56,7 @@
 		function sendinvite($invitetouserid, $groupid){
 			$invitefromuserid = $_SESSION['userid'];
 			$query = $this->db->query("INSERT INTO groupinvites (invitefromuserid, invitetouserid, groupid) VALUES ('$invitefromuserid', '$invitetouserid','$groupid')");
-			header('Location: ../site/search?invite=sent');
+			header('Location: /search?invite=sent');
 		}
 
 		function acceptinvite($inviteid){
@@ -64,13 +67,13 @@
 				$this->db->query("INSERT INTO userstogroups (userid, groupid) VALUES ('$userid', '$groupid')");
 			}
 			$this->db->query("DELETE FROM groupinvites WHERE inviteid='$inviteid'");
-			header('Location: ../site/groups');
+			header('Location: /groups');
 		}
 
 		function declineinvite($inviteid){
 			//echo "hello";
 			$this->db->query("DELETE FROM groupinvites WHERE inviteid='$inviteid'");
-			header('Location: ../site/home');
+			header('Location: /home');
 		}
 }
 

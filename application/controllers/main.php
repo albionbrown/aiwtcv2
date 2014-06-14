@@ -171,10 +171,23 @@ class Main extends CI_Controller {
 
 	}
 
-	public function model_search(){
-		$entry = $_POST['search_box'];
+	public function search(){
+		$searchentry = $_POST['searchentry'];
 		$this->load->model('Search');
-		$this->Search->search_main($entry);
+		$searchentry = $this->Search->search_main($searchentry);
+		serialize($searchentry);
+		$this->session->set_flashdata('entry', $searchentry);
+
+		if(!isset($_SESSION['userid'])){
+			header('Location: /log_in');
+		}else{
+			$data = array(
+				'title' => 'Search | All I Want This Christmas',
+	            'main_content' => $this->load->view('view_search', '', true)
+			);
+
+			//$this->parser->parse('admintemplate', $data);
+		}
 	}
 
 	public function invite(){
