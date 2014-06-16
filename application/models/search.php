@@ -2,10 +2,10 @@
 	class Search extends CI_Model{
 
 		function search_main($entry){
-			$entry = strtolower($entry);
 			$type = $this->searchstring($entry);
 			if($type == "email"){
 				$this->session->set_flashdata('type', $type);
+				$entry = array('type' => $type, 'email' => $entry);
 				return $entry;
 			}elseif($type == "name"){
 				$fname = strstr($entry," ",true);
@@ -13,8 +13,10 @@
 				$entrylen = strlen($entry);
 				$sname = substr($entry, $len, $entrylen);
 				$entry = array();
+				$this->session->set_flashdata('type', $type);
 				$entry['fname'] = $fname;
 				$entry['sname'] = $sname;
+				$entry['type'] = $type;
 				serialize($entry);
 				return $entry;
 			}

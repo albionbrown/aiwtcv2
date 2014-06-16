@@ -34,21 +34,21 @@
         <![endif]-->
         <div class="page-container">
         <div id="header_bar">
-            <div id="search_box">
+        <div id="header_profile" class="col-md-3">
+            <?php echo '<h2><a href="/main/user?uid='.$encrypteduserid.'">'.$username.'</a></h2>'; ?>
+            <img src=<?php echo "http://www.gravatar.com/avatar/" . md5($this->encrypt->decode($email))?>>
+            </div>
+            <div id="search_box" class="col-md-3">
             <?php 
             $attributes = array('class' => 'form clearfix', 'id' => 'search_form');
             echo form_open('/search', $attributes);
             $input_data = array(
                 'name'      => 'searchentry',
-                'class'     => 'text-input col-md-4 col-xs-12',
+                'class'     => 'text-input max-width',
                 'placeholder' => 'Search for somebody',
             );
             echo form_input($input_data);
             ?>
-            </div>
-            <div id="header_profile">
-            <?php echo '<h2><a href="/main/user?uid='.$encrypteduserid.'">'.$username.'</a></h2>'; ?>
-            <img src=<?php echo "http://www.gravatar.com/avatar/" . md5($this->encrypt->decode($email))?>>
             </div>
         </div>
         <div id="menu">

@@ -175,7 +175,6 @@ class Main extends CI_Controller {
 		$searchentry = $_POST['searchentry'];
 		$this->load->model('Search');
 		$searchentry = $this->Search->search_main($searchentry);
-		serialize($searchentry);
 		$this->session->set_flashdata('entry', $searchentry);
 
 		if(!isset($_SESSION['userid'])){
@@ -186,7 +185,7 @@ class Main extends CI_Controller {
 	            'main_content' => $this->load->view('view_search', '', true)
 			);
 
-			//$this->parser->parse('admintemplate', $data);
+			$this->parser->parse('admintemplate', $data);
 		}
 	}
 

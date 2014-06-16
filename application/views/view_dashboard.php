@@ -1,6 +1,6 @@
 <h1>YOUR DASHBOARD</h1>
 
-<div id="group-invites-box" class="content-box col-md-6">
+<div id="group-invites-box" class="content-box col-md-5">
 	<div class="content">
 
 	<h2>Group Invites</h2>
@@ -30,22 +30,26 @@
 	</div>
 </div>
 
-<div id="present-tracking-box" class="content-box box col-md-3">
+<div id="present-tracking-box" class="content-box box col-md-4">
 	<div class="content">
 	<h2>Quick Shopping List</h2>
 	<?php
 		$userid = $_SESSION['userid'];
 		$query = $this->db->query("SELECT * FROM items WHERE useridgetting='$userid' AND itembought='0'");
-		foreach($query->result_array() as $row){
-			$itemname = $row['itemname'];
-			$itemforuserid = base64_encode($row['userid']);
-
-			$query = $this->db->query("SELECT * FROM users WHERE userid='$itemforuserid'");
+		if($query->num_rows() > 0){
 			foreach($query->result_array() as $row){
-				$username = ucfirst($row['fname'] . " " . $row['sname']);
-			}
+				$itemname = $row['itemname'];
+				$itemforuserid = base64_encode($row['userid']);
 
-			echo '<p>' . ucfirst($itemname) . ' for <a href="/user?uid=' . $itemforuserid . '">' . $username . '</a></p>';
+				$query = $this->db->query("SELECT * FROM users WHERE userid='$itemforuserid'");
+				foreach($query->result_array() as $row){
+					$username = ucfirst($row['fname'] . " " . $row['sname']);
+				}
+
+				echo '<p>' . ucfirst($itemname) . ' for <a href="/user?uid=' . $itemforuserid . '">' . $username . '</a></p>';
+			}
+		}else{
+			echo '<p>You are not getting any presents yet</p>';
 		}
 	?>
 	</div>
