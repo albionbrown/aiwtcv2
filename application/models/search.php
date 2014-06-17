@@ -3,22 +3,23 @@
 
 		function search_main($entry){
 			$type = $this->searchstring($entry);
-			if($type == "email"){
-				$this->session->set_flashdata('type', $type);
-				$entry = array('type' => $type, 'email' => $entry);
-				return $entry;
-			}elseif($type == "name"){
+			if($type === 1){
+				$entryarray = array();
+				$entryarray['email'] = $entry;
+				$entryarray['type'] = 'email';
+				$entryarray = serialize($entryarray);
+				header('location: /search?q=' . $entryarray);
+			}elseif($type === 0){
 				$fname = strstr($entry," ",true);
 				$len = strlen($fname) + 1;
 				$entrylen = strlen($entry);
 				$sname = substr($entry, $len, $entrylen);
-				$entry = array();
-				$this->session->set_flashdata('type', $type);
-				$entry['fname'] = $fname;
-				$entry['sname'] = $sname;
-				$entry['type'] = $type;
-				serialize($entry);
-				return $entry;
+				$entryarray = array();
+				$entryarray['fname'] = $fname;
+				$entryarray['sname'] = $sname;
+				$entryarray['type'] = 'name';
+				$entryarray = serialize($entryarray);
+				header('location: /search?q=' . $entryarray);
 			}
 		}	
 	
@@ -26,9 +27,9 @@
 			$char = "@";
 			$check = strpos($entry, $char);
 			if($check){
-				return "email";
+				return 1;
 			}else{
-				return "name";
+				return 0;
 			}
 		}
 

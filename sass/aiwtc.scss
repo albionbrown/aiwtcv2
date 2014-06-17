@@ -57,6 +57,17 @@ a {
 	}
 }
 
+#logo {
+	width: 50px;
+	float: left;
+
+	img {
+		max-width: 100%;
+		height: auto;
+		border-radius: 3px;
+	}
+}
+
 /* ---------- LOGIN PAGE ------------*/
 
 img.login_logo {
@@ -111,43 +122,45 @@ body.login #register_boxes {
 /* ----------  -----------*/
 
 #header_bar{
-	background-color: #444;
+	background-color: #e60a1e;
 	color: #fff;
 	min-height: 70px;
 	width: 100%;
 	position: fixed;
 	padding: 10px;
+	border-bottom: 2px solid #fff;
 
 	#search_box{
-		float: right;
-
+		width: 100%;
+		max-width:300px;
+		float: left;
 	}
 
 	#header_profile{
-		float: right;
+		float: left;
 		border-radius: 3px;
-		background-color: #626161;
+		background-color: #fff;
 		margin: 0 10px;
 		height: 50px;
-		min-width: 200px;
+		min-width: 300px;
 
 		h2 {
 			float: left;
+			margin: 14px 10px;
 		}
 
 		a {
 			height: 54px;
-			border-radius: 10px;
 			width: 100%;
+			color: #e60a1e;
 		}
 
 		img {
-			border-top-right-radius: 10px;
-			border-bottom-right-radius: 10px;
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
 			height: 50px;
 			width: 50px;
 			float: right;
-			margin: 1px;
 		}
 
 	}
@@ -208,5 +221,9 @@ i.fa-reorder{
 
 	a {
 		color: #e60a1e;
+	}
+
+	h2 {
+		margin-left: 0px;
 	}
 }

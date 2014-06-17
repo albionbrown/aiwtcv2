@@ -113,6 +113,26 @@ class Main extends CI_Controller {
 		$this->parser->parse('logintemplate', $data);
 	}
 
+	public function search_model(){
+		$searchentry = $_POST['searchentry'];
+		$this->load->model('Search');
+		$this->Search->search_main($searchentry);
+	}
+
+	public function search(){
+
+		if(!isset($_SESSION['userid'])){
+			header('Location: /log_in');
+		}else{
+			$data = array(
+				'title' => 'Search | All I Want This Christmas',
+	            'main_content' => $this->load->view('view_search', '', true)
+			);
+
+			$this->parser->parse('admintemplate', $data);
+		}
+	}
+
 	public function logout()
 	{
 		unset($_SESSION['userid']);
@@ -169,24 +189,6 @@ class Main extends CI_Controller {
 		echo $this->session->set_flashdata('reg_errors', $errors);
 		header("Location: /index");
 
-	}
-
-	public function search(){
-		$searchentry = $_POST['searchentry'];
-		$this->load->model('Search');
-		$searchentry = $this->Search->search_main($searchentry);
-		$this->session->set_flashdata('entry', $searchentry);
-
-		if(!isset($_SESSION['userid'])){
-			header('Location: /log_in');
-		}else{
-			$data = array(
-				'title' => 'Search | All I Want This Christmas',
-	            'main_content' => $this->load->view('view_search', '', true)
-			);
-
-			$this->parser->parse('admintemplate', $data);
-		}
 	}
 
 	public function invite(){

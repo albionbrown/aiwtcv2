@@ -1,27 +1,35 @@
 <?php
-$entry = $this->session->flashdata('entry');
+$entryarray = $_GET['q'];
+$entryarray = unserialize($entryarray);
+$type = $entryarray['type'];
 
-$type = $entry['type'];
-
-if($type === 'email'){
-	$email = $this->encrypt->encode($entry['email']);
-
-	$query = $this->db->query("SELECT * FROM users WHERE email = '$email'");
-	
-}elseif($type === 'name'){
-	$fname = $entry['fname'];
-	$sname = $entry['sname'];
-
-	$query = $this->db->query("SELECT * FROM users WHERE fname = '$fname' AND sname = '$sname'");
+if($type == "email"){
+	$searchentry = $entryarray['email'];
+	$check = $this->db->query("SELECT email FROM users");
+	foreach($check->result_array() as $row){
+		$encodeddemailfromdb = $row['email'];
+		$decodedemailfromdb = $this->encrypt->decode($encodeddemailfromdb);
+		if($decodedemailfromdb == $searchentry){
+			$string = "SELECT * FROM users WHERE email = '$encodeddemailfromdb'";
+			$queryarray = array('string' => $string);
+		}
+	}
+}elseif($type == "name"){
+	$fname = $entryarray['fname'];
+	$sname = $entryarray['sname'];
+	$string = "SELECT * FROM users WHERE fname = '$fname' AND sname = '$sname'";
+	$queryarray = array('string' => $string);
 }
 
+$querystring = $queryarray['string'];
+$query = $this->db->query($querystring);
 if($query->num_rows() > 0){
 	foreach($query->result_array() as $row){
 
 		$name = $row['fname'] . ' ' . $row['sname'];
 		$location = $row['location'];
 
-		?><div class="content-box">
+		?><div class="content-box col-md-3">
 		<div class="content"><?php
 		echo '<h2>' . ucfirst($name) . '</h2>';
 		echo '<p>' . ucfirst($location) . '</p>';
@@ -30,6 +38,10 @@ if($query->num_rows() > 0){
 		</div><?php
 	}
 }else{
-	echo '<p>Sorry, we couldn&#39;t find anybody with that name!</p>';
+	if($type === 'name'){
+		echo '<p>Sorry, we couldn&#39;t find anybody with that name</p>';
+	}else{
+		echo '<p>Sorry, we couldn&#39;t find anybody with that email</p>';
+	}
 }
 ?>
