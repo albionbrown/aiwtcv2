@@ -1,4 +1,7 @@
 <h1>YOUR DASHBOARD</h1>
+<div class="dashboard-messages">
+<?php echo $this->session->flashdata('messages'); ?>
+</div>
 
 <div id="present-tracking-box" class="content-box box col-md-5">
 	

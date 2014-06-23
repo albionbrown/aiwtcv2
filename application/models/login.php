@@ -18,11 +18,9 @@
 
 				if($decodedemail === $email && $decodedpwd === $password){
 					$query = $this->db->query("SELECT * FROM users WHERE email='$emailfromdb' AND pwd='$pwdfromdb'");
-					if($query->num_rows() == 1 && $row['activated'] == 1){
+					if($query->num_rows() == 1){
 						$_SESSION['userid'] = $row['userid'];
-					}else{
-						$this->session->set_flashdata('log-errors', 'Incorrect email/password');
-					}
+					}else{}
 				}
 			}
 			return $match;
@@ -82,7 +80,7 @@
 			$fname = strtolower($fname);
 			$sname = strtolower($sname);
 			$location = strtolower($location);
-			sendemail($email);
+			//sendemail($email);
 			$key = 'sdgwe4tgwgsregase';
 			$pwd = $this->encrypt->encode($pwd,$key);
 			$email = $this->encrypt->encode($email, $key);

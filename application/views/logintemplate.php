@@ -56,7 +56,9 @@
 			echo form_close(); ?>
 		</div>
 		<div id="log_errors" class="clearfix"><p>
-			<?php echo @$this->session->flashdata('log-errors'); ?>
+		<?php
+				echo "<p>" . $this->session->flashdata('log_errors') . "</p>";
+			?>
 		</p></div>
 
 		<div id="register_boxes" class="col-sm-12">
@@ -123,7 +125,10 @@
 			echo form_close(); ?>
 			<div id="reg_errors">
 			<?php
-				echo "<p>" . $errors = unserialize($this->session->flashdata('reg_errors')) . "</p>";
+			$reg_errors = $this->session->flashdata('reg_errors');
+			while($reg_errors){
+				echo "<p>" . array_pop($reg_errors) . "</p>";
+			}
 			?>
 			</div>
 			<p>All I Want This Christmas uses Gravatar for your profile picture. To use your Gravatar, sign up with the same email you registered with Gravatar and you're done! Don't have a Gravatar account? <a href="https://en.gravatar.com/" target="_blank">Click here!</a></p>

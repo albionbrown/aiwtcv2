@@ -37,11 +37,11 @@
         <div id="logo">
         <a href="/home"><img src="/images/logo.gif" title="All I Want This Christmas" alt="All I Want This Christmas"/></a>
         </div>
-        <div id="header_profile" class="">
+            <div id="header_profile" class="">
             <?php echo '<h2><a href="/main/user?uid='.$encrypteduserid.'">'.$username.'</a></h2>'; ?>
             <img src=<?php echo "http://www.gravatar.com/avatar/" . md5($this->encrypt->decode($email))?>>
             </div>
-            <div id="search_box" class="">
+            <div id="search_box">
             <?php 
             $attributes = array('class' => 'form clearfix', 'id' => 'search_form');
             echo form_open('/main/search_model', $attributes);
@@ -51,6 +51,7 @@
                 'placeholder' => 'Search for somebody',
             );
             echo form_input($input_data);
+            echo form_close();
             ?>
             </div>
         </div>

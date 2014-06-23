@@ -144,6 +144,9 @@ class Main extends CI_Controller {
 		$email = $_POST['email'];
 		$pwd = $_POST['password'];
 		$check = $this->login->checkdb($email, $pwd);
+		if(!$check){
+			$this->session->set_flashdata('log_errors', 'Invalid email/passsord');
+		}
 		header("location: /index");
 	}
 
@@ -160,73 +163,54 @@ class Main extends CI_Controller {
 		$errors = array();
 
 		$check = $this->login->dblookupemail($email);
-		if($check == TRUE){
+		if($check){
 			array_push($errors, "This email has already been registered");
 		}
 
 		$check = $this->login->check_email($email);
-		if($check == FALSE){
+		if(!$check){
 			array_push($errors, "Invalid email address");
 		}
 
 		$check = $this->login->pwdlength($pwd);
-		if($check == FALSE){
+		if(!$check){
 			array_push($errors, "Your password is not long enough");
-		}elseif($check == TRUE){
+		}else{
 			$check = $this->login->pwdmatch($pwd, $cpwd);
-			if($check == FALSE){
+			if(!$check){
 				array_push($errors, "Your passwords do not match");
 			}
 		}
 
 
 		$check = $this->login->namecheck($fname, $sname);
-		if($check == FALSE){
+		if(!$check){
 			array_push($errors, "Please enter your first name and surname");
 		}
 
-		$errors = serialize($errors);
-		echo $this->session->set_flashdata('reg_errors', $errors);
+		if($errors){
+			$this->session->set_flashdata('reg_errors', $errors);
+		}else{
+			$this->login->transfer_details($fname, $sname, $email, $pwd, $location);
+		}
+		
 		header("Location: /index");
 
 	}
 
 	public function invite(){
-		$arrayrow=$_POST['groups'];
+		$arrayrow = $_POST['groups'];
+		$groupids = $this->session->flashdata('groupids');
+		$groupnames = $this->session->flashdata('groupnames');
+		$groupids = unserialize($groupids);
+		$groupnames = unserialize($groupnames);
 		$userid = $_SESSION['userid'];
-		$options = array();
-		$query = $this->db->query("SELECT groupid FROM userstogroups WHERE userid='$userid'");
-		foreach($query->result_array() as $row){
-			$groupid = $row['groupid'];
-			$query = $this->db->query("SELECT * FROM groups WHERE groupid='$groupid'");
-			foreach($query->result_array() as $row){
-				$groupname = $row['groupname'];
-				array_push($options,$groupname);
-			}
-		}
+		$groupid = $groupids[$arrayrow];
+		$useridofrow = $_POST['useridofrow'];
 
-		$groupname = $options[$arrayrow];
-		//run query to get all group ids from group that have session user id then run query below
-		$userid = $_SESSION['userid'];
-		$invitetouserid = $this->session->flashdata('useridofrow');
-		$query = $this->db->query("SELECT groupid FROM userstogroups WHERE userid='$userid'");
-		foreach($query->result_array() as $row){
-			$groupid = $row['groupid'];
-			$query = $this->db->query("SELECT * FROM groups WHERE groupname='$groupname' AND groupid='$groupid'");
-			foreach ($query->result_array() as $row){
-				$this->load->model('search');
-				$check = $this->search->checkifuseringroup($invitetouserid, $groupid);
-				$check2 = $this->search->checkifuserinvited($invitetouserid, $groupid);
-				if($check == FALSE && $check2 == FALSE){
-					//$this->search->newuseringroup($invitetouserid,$groupid);
-					$this->search->sendinvite($invitetouserid,$groupid);
-					//echo $invitetouserid;
-				}elseif($check == TRUE || $check2 == TRUE){
-					$this->session->set_flashdata('error', 'This user has already been invited to the group');
-					header('Location: ../site/search');
-				}
-			}
-		}
+		$query = $this->db->query("INSERT INTO groupinvites (invitefromuserid, invitetouserid, groupid) VALUES($userid, $useridofrow, $groupid)");
+		$this->session->set_flashdata('messages', 'Invite sent!');
+		header('location: /index');
 	}
 
 	//WRITE FUNCTION WHERE IF LOGGED IN USER IS NOT IN ANY GROUPS... ECHO NOT IN ANY GROUPS

@@ -245,3 +245,13 @@ i.fa-reorder {
 .content h2 {
   margin-left: 0px;
 }
+
+/* line 231, ../sass/aiwtc.scss */
+.centre-text {
+  text-align: center;
+}
+
+/* line 235, ../sass/aiwtc.scss */
+.gravimg {
+  border-radius: 100%;
+}
