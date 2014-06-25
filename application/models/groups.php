@@ -52,4 +52,13 @@
 			if(strlen($groupname) < 1){return FALSE;}else{return TRUE;}
 		}
 
+		function checkdbforuser($useridofrow, $groupid){
+			$match = FALSE;
+			$query = $this->db->query("SELECT * FROM userstogroups WHERE userid='$useridofrow' AND groupid='$groupid'");
+			if($query->num_rows() > 0){
+				$match = TRUE;
+			}
+			return $match;
+		}
+
 }

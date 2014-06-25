@@ -63,7 +63,7 @@ echo form_close(); ?>
 	<?php if($this->session->flashdata('error')){echo "<p>".$this->session->flashdata('error')."</p>"; } ?>
 </div>
 
-<div id="wishlist_results">
+<div id="wishlist-results">
 <?php
 $userid = $_SESSION['userid'];
 /* Gets all item id's related to user */

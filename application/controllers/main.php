@@ -208,13 +208,17 @@ class Main extends CI_Controller {
 		$groupid = $groupids[$arrayrow];
 		$useridofrow = $_POST['useridofrow'];
 
-		$query = $this->db->query("INSERT INTO groupinvites (invitefromuserid, invitetouserid, groupid) VALUES($userid, $useridofrow, $groupid)");
-		$this->session->set_flashdata('messages', 'Invite sent!');
-		header('location: /index');
+		$this->load->model('groups');
+		$check = $this->groups->checkdbforuser($useridofrow, $groupid);
+		if($check == FALSE){
+			$query = $this->db->query("INSERT INTO groupinvites (invitefromuserid, invitetouserid, groupid) VALUES($userid, $useridofrow, $groupid)");
+			$this->session->set_flashdata('messages', 'Invite sent!');
+			header('location: /index');
+		}else{
+			$this->session->set_flashdata('messages', 'The user you are trying to invite is already in that group');
+			header('location: /index');
+		}
 	}
-
-	//WRITE FUNCTION WHERE IF LOGGED IN USER IS NOT IN ANY GROUPS... ECHO NOT IN ANY GROUPS
-	//DO SAME FOR ITEMS
 
 	public function makeitem(){
 		$itemname = $_POST['title'];
@@ -270,7 +274,7 @@ class Main extends CI_Controller {
 	}
 
 	public function getitem(){
-		echo $itemid = $_GET['itemid'];
+		$itemid = base64_decode($_GET['itemid']);
 		$this->load->model('items');
 		$this->items->getitem($itemid);
 	}
@@ -282,15 +286,15 @@ class Main extends CI_Controller {
 	}
 
 	public function acceptinvite(){
-		echo $inviteid = $_GET['inviteid'];
-		echo $inviteid = $this->encrypt->decode($inviteid);
-		//$this->Search->acceptinvite($inviteid);
+		$inviteid = base64_decode($_GET['inviteid']);
+		$this->load->model('Search');
+		$this->Search->acceptinvite($inviteid);
 	}
 
 	public function declineinvite(){
-		echo $inviteid = $_GET['inviteid'];
-		echo $inviteid = $this->encrypt->decode($inviteid);
-		//$this->Search->declineinvite($inviteid);
+		$inviteid = base64_decode($_GET['inviteid']);
+		$this->load->model('Search');
+		$this->Search->declineinvite($inviteid);
 	}
 
 

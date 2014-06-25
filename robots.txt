@@ -1,0 +1,2 @@
+# robot.txt for All I Want This Christmas
+User-agent: *

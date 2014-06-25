@@ -3,10 +3,6 @@
 <?php echo $this->session->flashdata('messages'); ?>
 </div>
 
-<div id="present-tracking-box" class="content-box box col-md-5">
-	
-</div>
-
 <div id="group-invites-box" class="content-box col-md-3">
 	<div class="content">
 
@@ -18,7 +14,7 @@
 		foreach($query->result_array() as $row){
 			$invitefrom = $row['invitefromuserid'];
 			$groupid = $row['groupid'];
-			$inviteid = $this->encrypt->encode($row['inviteid']);
+			$inviteid = base64_encode($row['inviteid']);
 			$query = $this->db->query("SELECT groupname FROM groups WHERE groupid='$groupid'");
 			foreach($query->result_array() as $row){
 				$groupname = $row['groupname'];
@@ -47,7 +43,6 @@
 			foreach($query->result_array() as $row){
 				$itemname = $row['itemname'];
 				$itemforuserid = base64_encode($row['userid']);
-
 				$query = $this->db->query("SELECT * FROM users WHERE userid='$itemforuserid'");
 				foreach($query->result_array() as $row){
 					$username = ucfirst($row['fname'] . " " . $row['sname']);

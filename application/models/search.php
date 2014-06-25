@@ -56,12 +56,6 @@
 			}
 		}
 
-		function sendinvite($invitetouserid, $groupid){
-			$invitefromuserid = $_SESSION['userid'];
-			$query = $this->db->query("INSERT INTO groupinvites (invitefromuserid, invitetouserid, groupid) VALUES ('$invitefromuserid', '$invitetouserid','$groupid')");
-			header('Location: /search?invite=sent');
-		}
-
 		function acceptinvite($inviteid){
 			$query = $this->db->query("SELECT * FROM groupinvites WHERE inviteid='$inviteid'");
 			foreach ($query->result_array() as $row){
@@ -74,7 +68,6 @@
 		}
 
 		function declineinvite($inviteid){
-			//echo "hello";
 			$this->db->query("DELETE FROM groupinvites WHERE inviteid='$inviteid'");
 			header('Location: /home');
 		}
