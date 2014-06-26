@@ -17,16 +17,84 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="/js/jquery.multilevelpushmenu.min.js"></script>
         <script src="/js/responsive.js"></script>
+        <script src="/js/login.js"></script>
     </head>
     <body class="login container">
 
     <div id="resp_logo" class="col-sm-6">
     	<img src="/images/logo.gif" class="login_logo"/>
+
+    	<?php 
+    		$pwdrecoverform = array('class' => 'pwd-recover-form', 'name' => 'pwd-recover');
+    		echo form_open('main/pwd_recover', $pwdrecoverform);
+
+    		echo "<h2>First, enter your email</h2>";
+				
+				$email_data = array(
+		              'name'        => 'email',
+		              'class'       => 'text-input col-md-12',
+		              'placeholder' => 'Email'
+		            );
+				echo form_input($email_data);
+
+				$form_submit = array(
+		              'name'        => 'submit',
+		              'class'       => 'submit col-md-12',
+		              'value' => 'Recover my password'
+		            );
+
+				echo form_submit($form_submit);
+			echo form_close(); 
+
+			$pwdrecoverform = array('class' => 'pwd-recover-form', 'name' => 'pwd-recover-2');
+    		echo form_open('main/pwd_recover_confirm', $pwdrecoverform);
+
+    		echo "<h2>Second, reset your password</h2>";
+				
+				$email_data = array(
+		              'name'        => 'email',
+		              'class'       => 'text-input col-md-12',
+		              'placeholder' => 'Email'
+		            );
+				echo form_input($email_data);
+
+				$code_data = array(
+		              'name'        => 'code',
+		              'class'       => 'text-input col-md-12',
+		              'placeholder' => 'Code'
+		            );
+				echo form_input($code_data);
+
+				$password_data = array(
+		              'name'        => 'password',
+		              'class'       => 'text-input col-md-6',
+		              'placeholder' => 'Password'
+		            );
+
+				echo form_password($password_data);
+
+				$password_data = array(
+		              'name'        => 'password-repeat',
+		              'class'       => 'text-input col-md-6',
+		              'placeholder' => 'Confirm Password'
+		            );
+
+				echo form_password($password_data);
+
+				$form_submit = array(
+		              'name'        => 'submit',
+		              'class'       => 'submit col-md-12',
+		              'value' => 'Recover my password'
+		            );
+
+				echo form_submit($form_submit);
+			echo form_close(); ?>
     </div>
 
 	<div id="boxes" class="col-sm-6 clearfix">
 
 		<div id="login_boxes" class="col-sm-12">
+		<h2>Already got an account? Log in here!</h2>
 			<?php echo form_open('main/verify_login');?>
 				
 				<?php $email_data = array(
@@ -54,6 +122,7 @@
 
 				echo form_submit($form_submit, 'Log in');
 			echo form_close(); ?>
+			<a class="pwd-recover-toggle">Forgotten your password?</a>
 		</div>
 		<div id="log_errors" class="clearfix"><p>
 		<?php
@@ -63,7 +132,7 @@
 
 		<div id="register_boxes" class="col-sm-12">
 
-		<h2>Haven't got an account? Enter your details below!</h2>
+		<h2>Haven&#145;t got an account? Enter your details below!</h2>
 			<?php echo form_open('main/register');?>
 
 				<?php $firstname_data = array(
@@ -131,8 +200,10 @@
 			}
 			?>
 			</div>
-			<p>All I Want This Christmas uses Gravatar for your profile picture. To use your Gravatar, sign up with the same email you registered with Gravatar and you're done! Don't have a Gravatar account? <a href="https://en.gravatar.com/" target="_blank">Click here!</a></p>
+			<p>All I Want This Christmas uses Gravatar for your profile picture. To use your Gravatar, sign up with the same email you registered with Gravatar and you&#145;re done! Don&#145;t have a Gravatar account? <a href="https://en.gravatar.com/" target="_blank">Click here!</a></p>
 		</div>
 		</div>
 	</body>
 </html>
+
+

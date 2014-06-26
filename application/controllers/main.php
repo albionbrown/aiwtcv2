@@ -141,61 +141,203 @@ class Main extends CI_Controller {
 
 	public function verify_login()
 	{
-		$email = $_POST['email'];
-		$pwd = $_POST['password'];
-		$check = $this->login->checkdb($email, $pwd);
-		if(!$check){
-			$this->session->set_flashdata('log_errors', 'Invalid email/passsord');
+		// set up autoloader
+		require ('/vendor/autoload.php');
+
+		// configure database
+		 $dsn = 'mysql:dbname=alliwant_staging;host=localhost';
+		 $u = 'alliwant_staging';
+		 $p = 'aiwtc8159login';
+		Cartalyst\Sentry\Facades\Native\Sentry::setupDatabaseResolver(
+		  new PDO($dsn, $u, $p));
+
+		// check for form submission
+		if (isset($_POST['submit'])) {
+		  try {
+		    // validate input
+		    $username = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+		    $password = strip_tags(trim($_POST['password']));
+		    
+		    // set login credentials
+		    $credentials = array(
+		      'email'    => $username,
+		      'password' => $password,
+		    );
+
+		    // authenticate
+		    $currentUser = Cartalyst\Sentry\Facades\Native\Sentry::
+		      authenticate($credentials, false);
+		  } catch (Exception $e) {
+		    $this->session->set_flashdata('log_errors', 'Invalid email/password. Please try again.');
+		  }
 		}
 		header("location: /index");
 	}
 
 	public function register() {
 
-		$fname    = $_POST['firstname'];
-		$sname    = $_POST['surname'];
-		$email    = $_POST['email'];
-		$location = $_POST['location'];
-		$pwd      = $_POST['password'];
-		$cpwd     = $_POST['confirm'];
+		if (isset($_POST['submit'])) {
+			  // set up autoloader
+			  require ('/vendor/autoload.php');
 
-		unset($errors);
-		$errors = array();
+			  // configure database
+			  $dsn      = 'mysql:dbname=alliwant_staging;host=localhost';
+			  $u = 'alliwant_staging';
+			  $p = 'aiwtc8159login';
+			  Cartalyst\Sentry\Facades\Native\Sentry::setupDatabaseResolver(
+			    new PDO($dsn, $u, $p));
+			  
+			  // validate input and create user record
+			  // send activation code by email to user
+			  try {
+			    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+			    $fname = strip_tags($_POST['firstname']);
+			    $lname = strip_tags($_POST['surname']);
+			    $password = strip_tags($_POST['password']);
+			    $cpassword = strip_tags($_POST['confirm']);
+			    $location = strip_tags($_POST['location']);
 
-		$check = $this->login->dblookupemail($email);
-		if($check){
-			array_push($errors, "This email has already been registered");
-		}
+			    unset($errors);
+				$errors = array();
 
-		$check = $this->login->check_email($email);
-		if(!$check){
-			array_push($errors, "Invalid email address");
-		}
+				$check = $this->login->dblookupemail($email);
+				if($check){
+					array_push($errors, "This email has already been registered");
+				}
 
-		$check = $this->login->pwdlength($pwd);
-		if(!$check){
-			array_push($errors, "Your password is not long enough");
-		}else{
-			$check = $this->login->pwdmatch($pwd, $cpwd);
-			if(!$check){
-				array_push($errors, "Your passwords do not match");
+				$check = $this->login->check_email($email);
+				if(!$check){
+					array_push($errors, "Invalid email address");
+				}
+
+				$check = $this->login->pwdlength($password);
+				if(!$check){
+					array_push($errors, "Your password is not long enough");
+				}else{
+					$check = $this->login->pwdmatch($password, $cpassword);
+					if(!$check){
+						array_push($errors, "Your passwords do not match");
+					}
+				}
+
+
+				$check = $this->login->namecheck($fname, $sname);
+				if(!$check){
+					array_push($errors, "Please enter your first name and surname");
+				}
+
+			    $user = Cartalyst\Sentry\Facades\Native\Sentry::createUser(array(
+			        'email'    => $email,
+			        'password' => $password,
+			        'first_name' => $fname,
+			        'last_name' => $lname,
+			        'activated' => false
+			    ));
+
+			    $code = $user->getActivationCode();
+			    
+			    $subject = 'Your activation code';
+			    $message = 'Code: ' . $code;
+			    $headers = 'From: no-reply@alliwantthischristmas.co.uk';
+			    if (!mail($email, $subject, $message, $headers)) {
+			      throw new Exception('Email could not be sent.');
+			    }    
+			    
+			    exit;
+			  } catch (Exception $e) {
+
+			    exit;
+			  }
 			}
-		}
-
-
-		$check = $this->login->namecheck($fname, $sname);
-		if(!$check){
-			array_push($errors, "Please enter your first name and surname");
-		}
-
-		if($errors){
-			$this->session->set_flashdata('reg_errors', $errors);
-		}else{
-			$this->login->transfer_details($fname, $sname, $email, $pwd, $location);
-		}
 		
 		header("Location: /index");
 
+	}
+
+	public function pwd_recover(){
+		if (isset($_POST['submit'])) {
+		  // set up autoloader
+		  require ('/vendor/autoload.php');
+
+		  // configure database
+		   $dsn = 'mysql:dbname=alliwant_staging;host=localhost';
+			$u = 'alliwant_staging';
+			$p = 'aiwtc8159login';
+		  Cartalyst\Sentry\Facades\Native\Sentry::setupDatabaseResolver(
+		    new PDO($dsn, $u, $p));
+		  
+		  // validate input and find user record
+		  // send reset code by email to user
+		  try {
+		    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+		    $user = Cartalyst\Sentry\Facades\Native\Sentry::findUserByCredentials(array(
+		      'email' => $email
+		    ));
+		    
+		    $code = $user->getResetPasswordCode();
+
+		    $subject = 'Your password reset code';
+		    $message = 'Code: ' . $code;
+		    $headers = 'From: no-reply@alliwantthischristmas.co.uk';
+		    if (!mail($email, $subject, $message, $headers)) {
+		      throw new Exception('Email could not be sent.');
+		    }    
+		    
+		    exit;
+		  } catch (Exception $e) {
+
+		    exit;
+		  }
+		}
+
+		header("Location: /index");
+	}
+
+	public function pwd_recover_confirm(){
+		if (isset($_POST['code']) && $_POST['email']) {
+
+		  // set up autoloader
+		  require ('/vendor/autoload.php');
+
+		  // configure database
+		   $dsn = 'mysql:dbname=alliwant_staging;host=localhost';
+			$u = 'alliwant_staging';
+			$p = 'aiwtc8159login';
+		  Cartalyst\Sentry\Facades\Native\Sentry::setupDatabaseResolver(
+		    new PDO($dsn, $u, $p));
+
+		  // find user by email address
+		  // attempt password reset
+		  try {
+		    $code = strip_tags($_POST['code']);
+		    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+		    $password = htmlentities($_POST['password']);
+		    $password_repeat = htmlentities($_POST['password-repeat']);
+		    if ($password != $password_repeat) {
+		      throw new Exception ('Passwords do not match.');
+		    }
+		    
+		    $user = Cartalyst\Sentry\Facades\Native\Sentry::findUserByCredentials(array(
+		      'email' => $email
+		    ));
+		    
+		    if ($user->checkResetPasswordCode($code)) {
+		      if ($user->attemptResetPassword($code, $password)) {
+		        echo 'Password successfully reset.';
+		        exit;
+		      } else {
+		        throw new Exception('User password could not be reset.');  
+		      }
+		    } else {
+		      throw new Exception('User password could not be reset.');  
+		    }
+		  } catch (Exception $e) {
+
+		    exit;
+		  }
+		}
+
+		header("Location: /index");
 	}
 
 	public function invite(){

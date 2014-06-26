@@ -132,8 +132,14 @@ body.login #register_boxes {
   font-family: "open sans";
 }
 
+/* line 122, ../sass/aiwtc.scss */
+.pwd-recover-form {
+  display: none;
+  padding-top: 121px;
+}
+
 /* ----------  -----------*/
-/* line 124, ../sass/aiwtc.scss */
+/* line 129, ../sass/aiwtc.scss */
 #header_bar {
   background-color: #e60a1e;
   color: #fff;
@@ -143,13 +149,13 @@ body.login #register_boxes {
   padding: 10px;
   border-bottom: 2px solid #fff;
 }
-/* line 133, ../sass/aiwtc.scss */
+/* line 138, ../sass/aiwtc.scss */
 #header_bar #search_box {
   width: 100%;
   max-width: 300px;
   float: left;
 }
-/* line 139, ../sass/aiwtc.scss */
+/* line 144, ../sass/aiwtc.scss */
 #header_bar #header_profile {
   float: left;
   border-radius: 3px;
@@ -158,18 +164,18 @@ body.login #register_boxes {
   height: 50px;
   min-width: 300px;
 }
-/* line 147, ../sass/aiwtc.scss */
+/* line 152, ../sass/aiwtc.scss */
 #header_bar #header_profile h2 {
   float: left;
   margin: 14px 10px;
 }
-/* line 152, ../sass/aiwtc.scss */
+/* line 157, ../sass/aiwtc.scss */
 #header_bar #header_profile a {
   height: 54px;
   width: 100%;
   color: #e60a1e;
 }
-/* line 158, ../sass/aiwtc.scss */
+/* line 163, ../sass/aiwtc.scss */
 #header_bar #header_profile img {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -178,41 +184,41 @@ body.login #register_boxes {
   float: right;
 }
 
-/* line 169, ../sass/aiwtc.scss */
+/* line 174, ../sass/aiwtc.scss */
 #menu {
   position: fixed;
   top: 70px;
 }
-/* line 173, ../sass/aiwtc.scss */
+/* line 178, ../sass/aiwtc.scss */
 #menu ul a {
   margin: 2px 0;
   padding: 0px;
 }
-/* line 177, ../sass/aiwtc.scss */
+/* line 182, ../sass/aiwtc.scss */
 #menu ul a li {
   width: 100%;
   height: 50px;
   background-color: #e43949;
   font-family: 'patrickhand-regular';
 }
-/* line 183, ../sass/aiwtc.scss */
+/* line 188, ../sass/aiwtc.scss */
 #menu ul a li:active {
   background-color: #e60a1e;
   color: #fff;
 }
 
-/* line 191, ../sass/aiwtc.scss */
+/* line 196, ../sass/aiwtc.scss */
 #pushobj {
   margin-top: 70px;
   overflow-y: scroll;
   border-left: 2px #fff solid;
 }
-/* line 196, ../sass/aiwtc.scss */
+/* line 201, ../sass/aiwtc.scss */
 #pushobj .container {
   min-width: 400px;
 }
 
-/* line 201, ../sass/aiwtc.scss */
+/* line 206, ../sass/aiwtc.scss */
 i.fa-reorder {
   background: url("../images/toggle.png") no-repeat;
   height: 25px;
@@ -220,38 +226,38 @@ i.fa-reorder {
   display: none;
 }
 
-/* line 208, ../sass/aiwtc.scss */
+/* line 213, ../sass/aiwtc.scss */
 .max-width {
   width: 100%;
 }
 
-/* line 212, ../sass/aiwtc.scss */
+/* line 217, ../sass/aiwtc.scss */
 .content-box {
   padding: 15px;
 }
 
-/* line 216, ../sass/aiwtc.scss */
+/* line 221, ../sass/aiwtc.scss */
 .content {
   color: #e60a1e;
   background-color: #fff;
   border-radius: 3px;
   padding: 15px;
 }
-/* line 222, ../sass/aiwtc.scss */
+/* line 227, ../sass/aiwtc.scss */
 .content a {
   color: #e60a1e;
 }
-/* line 226, ../sass/aiwtc.scss */
+/* line 231, ../sass/aiwtc.scss */
 .content h2 {
   margin-left: 0px;
 }
 
-/* line 231, ../sass/aiwtc.scss */
+/* line 236, ../sass/aiwtc.scss */
 .centre-text {
   text-align: center;
 }
 
-/* line 235, ../sass/aiwtc.scss */
+/* line 240, ../sass/aiwtc.scss */
 .gravimg {
   border-radius: 100%;
 }

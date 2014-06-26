@@ -12,11 +12,11 @@ body {
 	z-index: 1;
 }
 
-html.logged-out .text-input {
+html.logged-out #boxes .text-input {
 	width: 50%;
 }
 
-html.logged-out .submit {
+html.logged-out #boxes .submit {
 	width: 100%;
 }
 
