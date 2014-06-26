@@ -7,9 +7,47 @@ body {
 	position: absolute;
 	top: 0px;
 	left: 228px;
-	color: #444;
+	color: #fff;
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 2em;
 	z-index: 1;
 }
+
+html.logged-out #boxes .text-input {
+	width: 50%;
+}
+
+html.logged-out #boxes .submit {
+	width: 100%;
+}
+
+.long {
+	width: 100% !important;
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+	#resp_logo {
+		padding-top: 23px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+	#resp_logo {
+		padding-top: 47px;
+	}
+}
+
+@media (max-width: 407px) {
+	.text-input {
+		width: 100% !important;
+	}
+}
+
+@media (max-width: 767px){
+	#boxes {
+		padding-top: 0px !important;
+	}
+}
+
+
+
 

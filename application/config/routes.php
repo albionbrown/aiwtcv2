@@ -41,9 +41,17 @@
 $route['default_controller'] = "main";
 $route['index'] = "main/index";
 $route['home'] = "main/index";
+$route['my_wishlist'] = "main/my_wishlist";
+$route['groups'] = "main/groups";
+$route['gifts'] = "main/gifts";
+$route['profile'] = "main/profile";
+$route['user'] = "main/user";
+$route['search'] = "main/search";
 $route['login'] = "main/login";
 $route['logout'] = "main/logout";
 $route['verify_login'] = "../models/login";
+
+$route['makeitem'] = "main/makeitem";
 $route['404_override'] = '';
 
 
