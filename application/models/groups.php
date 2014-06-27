@@ -27,7 +27,7 @@
 
 		function leavegroup($groupid){
 			$userid = $_SESSION['userid'];
-			$query = $this->db->query("DELETE FROM userstogroups WHERE id='$groupid' AND id='$userid'");
+			$query = $this->db->query("DELETE FROM userstogroups WHERE groupid='$groupid' AND userid='$userid'");
 			header('Location: /groups');
 		}
 

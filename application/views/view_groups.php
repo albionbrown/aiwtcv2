@@ -57,7 +57,7 @@ echo form_close();
 
 </div><?php
 
-echo "<p>".@$this->session->flashdata('result')."</p>";
+echo "<p>".@$this->session->flashdata('errors')."</p>";
 ?><div class="row"><?php
 $userid = $_SESSION['userid'];
 /* Gets all group id's related to user */

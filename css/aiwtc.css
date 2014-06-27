@@ -48,23 +48,24 @@ h2 {
 p {
   font-family: "open sans";
   font-size: 14px;
+  margin: 0px;
 }
 
-/* line 51, ../sass/aiwtc.scss */
+/* line 52, ../sass/aiwtc.scss */
 a {
   color: #fff;
 }
-/* line 55, ../sass/aiwtc.scss */
+/* line 56, ../sass/aiwtc.scss */
 a:hover, a:active {
   color: #fff;
 }
 
-/* line 60, ../sass/aiwtc.scss */
+/* line 61, ../sass/aiwtc.scss */
 #logo {
   width: 50px;
   float: left;
 }
-/* line 64, ../sass/aiwtc.scss */
+/* line 65, ../sass/aiwtc.scss */
 #logo img {
   max-width: 100%;
   height: auto;
@@ -72,23 +73,23 @@ a:hover, a:active {
 }
 
 /* ---------- LOGIN PAGE ------------*/
-/* line 73, ../sass/aiwtc.scss */
+/* line 74, ../sass/aiwtc.scss */
 img.login_logo {
   width: 100%;
   height: auto;
 }
 
-/* line 78, ../sass/aiwtc.scss */
+/* line 79, ../sass/aiwtc.scss */
 body.login #boxes {
   padding-top: 121px;
 }
 
-/* line 82, ../sass/aiwtc.scss */
+/* line 83, ../sass/aiwtc.scss */
 body.login #register_boxes {
   visibility: hidden;
 }
 
-/* line 86, ../sass/aiwtc.scss */
+/* line 87, ../sass/aiwtc.scss */
 .text-input {
   border: 1px solid #e60a1e;
   border-radius: 3px;
@@ -100,7 +101,7 @@ body.login #register_boxes {
   outline: 0;
 }
 
-/* line 97, ../sass/aiwtc.scss */
+/* line 98, ../sass/aiwtc.scss */
 .submit {
   background-color: #e43949;
   border-radius: 3px;
@@ -108,38 +109,39 @@ body.login #register_boxes {
   height: 50px;
   color: #fff;
   outline: 0;
+  text-transform: uppercase;
 }
 
-/* line 106, ../sass/aiwtc.scss */
+/* line 108, ../sass/aiwtc.scss */
 ::-webkit-input-placeholder {
   font-family: "open sans";
 }
 
-/* line 110, ../sass/aiwtc.scss */
+/* line 112, ../sass/aiwtc.scss */
 :-moz-placeholder {
   /* Firefox 18- */
   font-family: "open sans";
 }
 
-/* line 114, ../sass/aiwtc.scss */
+/* line 116, ../sass/aiwtc.scss */
 ::-moz-placeholder {
   /* Firefox 19+ */
   font-family: "open sans";
 }
 
-/* line 118, ../sass/aiwtc.scss */
+/* line 120, ../sass/aiwtc.scss */
 :-ms-input-placeholder {
   font-family: "open sans";
 }
 
-/* line 122, ../sass/aiwtc.scss */
+/* line 124, ../sass/aiwtc.scss */
 .pwd-recover-form {
   display: none;
   padding-top: 121px;
 }
 
 /* ----------  -----------*/
-/* line 129, ../sass/aiwtc.scss */
+/* line 131, ../sass/aiwtc.scss */
 #header_bar {
   background-color: #e60a1e;
   color: #fff;
@@ -149,13 +151,13 @@ body.login #register_boxes {
   padding: 10px;
   border-bottom: 2px solid #fff;
 }
-/* line 138, ../sass/aiwtc.scss */
+/* line 140, ../sass/aiwtc.scss */
 #header_bar #search_box {
   width: 100%;
   max-width: 300px;
   float: left;
 }
-/* line 144, ../sass/aiwtc.scss */
+/* line 146, ../sass/aiwtc.scss */
 #header_bar #header_profile {
   float: left;
   border-radius: 3px;
@@ -164,18 +166,18 @@ body.login #register_boxes {
   height: 50px;
   min-width: 300px;
 }
-/* line 152, ../sass/aiwtc.scss */
+/* line 154, ../sass/aiwtc.scss */
 #header_bar #header_profile h2 {
   float: left;
   margin: 14px 10px;
 }
-/* line 157, ../sass/aiwtc.scss */
+/* line 159, ../sass/aiwtc.scss */
 #header_bar #header_profile a {
   height: 54px;
   width: 100%;
-  color: #e60a1e;
+  color: #00B229;
 }
-/* line 163, ../sass/aiwtc.scss */
+/* line 165, ../sass/aiwtc.scss */
 #header_bar #header_profile img {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -183,42 +185,74 @@ body.login #register_boxes {
   width: 50px;
   float: right;
 }
+/* line 175, ../sass/aiwtc.scss */
+#header_bar #countdown {
+  width: 100%;
+  max-width: 150px;
+  background-color: #fff;
+  color: #e60a1e;
+  height: 50px;
+  border-radius: 3px;
+  float: left;
+  margin: 0 10px;
+}
+/* line 184, ../sass/aiwtc.scss */
+#header_bar #countdown p {
+  font-family: 'patrickhand-regular';
+  font-size: 36px;
+}
 
-/* line 174, ../sass/aiwtc.scss */
+/* line 191, ../sass/aiwtc.scss */
 #menu {
   position: fixed;
   top: 70px;
 }
-/* line 178, ../sass/aiwtc.scss */
+/* line 195, ../sass/aiwtc.scss */
 #menu ul a {
   margin: 2px 0;
-  padding: 0px;
+  padding: 11px;
+  background-color: #e43949;
+  height: 50px;
 }
-/* line 182, ../sass/aiwtc.scss */
+/* line 201, ../sass/aiwtc.scss */
+#menu ul a:hover {
+  text-decoration: none;
+}
+/* line 205, ../sass/aiwtc.scss */
+#menu ul a:active {
+  background-color: #fff;
+  color: #e60a1e;
+  text-decoration: none;
+}
+/* line 211, ../sass/aiwtc.scss */
 #menu ul a li {
   width: 100%;
-  height: 50px;
-  background-color: #e43949;
-  font-family: 'patrickhand-regular';
 }
-/* line 188, ../sass/aiwtc.scss */
-#menu ul a li:active {
-  background-color: #e60a1e;
-  color: #fff;
+/* line 214, ../sass/aiwtc.scss */
+#menu ul a li h2 {
+  font-family: 'patrickhand-regular';
+  font-size: 28px;
+  margin: 0px;
+}
+/* line 220, ../sass/aiwtc.scss */
+#menu ul a li .menu-icon {
+  max-height: 36px;
+  float: right;
+  color: #444;
 }
 
-/* line 196, ../sass/aiwtc.scss */
+/* line 229, ../sass/aiwtc.scss */
 #pushobj {
   margin-top: 70px;
   overflow-y: scroll;
   border-left: 2px #fff solid;
 }
-/* line 201, ../sass/aiwtc.scss */
+/* line 234, ../sass/aiwtc.scss */
 #pushobj .container {
   min-width: 400px;
 }
 
-/* line 206, ../sass/aiwtc.scss */
+/* line 239, ../sass/aiwtc.scss */
 i.fa-reorder {
   background: url("../images/toggle.png") no-repeat;
   height: 25px;
@@ -226,38 +260,39 @@ i.fa-reorder {
   display: none;
 }
 
-/* line 213, ../sass/aiwtc.scss */
+/* line 246, ../sass/aiwtc.scss */
 .max-width {
   width: 100%;
 }
 
-/* line 217, ../sass/aiwtc.scss */
+/* line 250, ../sass/aiwtc.scss */
 .content-box {
   padding: 15px;
 }
 
-/* line 221, ../sass/aiwtc.scss */
+/* line 254, ../sass/aiwtc.scss */
 .content {
   color: #e60a1e;
   background-color: #fff;
   border-radius: 3px;
   padding: 15px;
 }
-/* line 227, ../sass/aiwtc.scss */
+/* line 260, ../sass/aiwtc.scss */
 .content a {
   color: #e60a1e;
 }
-/* line 231, ../sass/aiwtc.scss */
+/* line 264, ../sass/aiwtc.scss */
 .content h2 {
   margin-left: 0px;
+  color: #00B229;
 }
 
-/* line 236, ../sass/aiwtc.scss */
+/* line 270, ../sass/aiwtc.scss */
 .centre-text {
   text-align: center;
 }
 
-/* line 240, ../sass/aiwtc.scss */
+/* line 274, ../sass/aiwtc.scss */
 .gravimg {
   border-radius: 100%;
 }

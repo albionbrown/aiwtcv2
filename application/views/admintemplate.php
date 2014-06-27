@@ -21,12 +21,14 @@
         <link rel="stylesheet" href="/css/bootstrap.css">
         <link rel="stylesheet" href="/css/responsive.css">
         <link rel="stylesheet" href="/css/aiwtc.css">
+        <link rel="stylesheet" href="/css/fonts/css/font-awesome.css">
         <link rel="icon" type="image/png" href="/images/favicon.png">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="http://oss.maxcdn.com/libs/modernizr/2.6.2/modernizr.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="/js/jquery.multilevelpushmenu.js"></script>
         <script src="/js/responsive.js"></script>
+        <script src="/js/countdown.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -39,7 +41,7 @@
         </div>
             <div id="header_profile" class="">
             <?php echo '<h2><a href="/main/user?uid='.$encrypteduserid.'">'.$username.'</a></h2>'; ?>
-            <img src=<?php echo "http://www.gravatar.com/avatar/" . md5($this->encrypt->decode($email))?>>
+            <img src=<?php echo "http://www.gravatar.com/avatar/" . md5($email)?>>
             </div>
             <div id="search_box">
             <?php 
@@ -54,34 +56,39 @@
             echo form_close();
             ?>
             </div>
+
+            <div id="countdown">
+                <p class="days">00</p>
+                <p class="timeRefDays">days</p>
+            </div>
         </div>
         <div id="menu">
             <nav>
                 <h2 class="clearfix"><i class="fa fa-reorder"></i></h2>
                 <ul>
-                    <a href="/home"><li class="fa fa-laptop">
-                        Dashboard
+                    <a href="/home"><li>
+                        <h2>DASHBOARD<i class="fa fa-tachometer menu-icon"></i></h2>
                     </li></a>
-                    <a href="/my_wishlist"><li class="fa fa-laptop">
-                        <img src="/images/my_wishlist.png" height="100%" width="100%">
+                    <a href="/my_wishlist"><li>
+                       <h2> MY WISHLIST<i class="fa fa-gift menu-icon"></i></h2>
                     </li></a>
-                    <a href="/groups"><li class="fa fa-laptop">
-                        Groups
+                    <a href="/groups"><li>
+                        <h2>GROUPS<i class="fa fa-users menu-icon"></i></h2>
                     </li></a>
-                    <a href="/gifts"><li class="fa fa-laptop">
-                        <img src="/images/shopping_list.png" height="100%" width="100%">
+                    <a href="/gifts"><li>
+                        <h2>SHOPPING LIST<i class="fa fa-list-ol menu-icon"></i></h2>
                     </li></a>
-                    <a href="http://www.google.co.uk"><li class="fa fa-laptop">
-                        Gift ideas
+                    <a href="http://www.google.co.uk"><li>
+                        <h2>GIFT IDEAS<i class="fa fa-lightbulb-o menu-icon"></i></h2>
                     </li></a>
-                    <a href="http://www.google.co.uk"><li class="fa fa-laptop">
-                        <img src="/images/help.png" height="100%" width="100%">
+                    <a href="http://www.google.co.uk"><li>
+                        <h2>HELP<i class="fa fa-question menu-icon"></i></h2>
                     </li></a>
-                    <a href="/profile"><li class="fa fa-laptop">
-                        <img src="/images/profile.png" height="100%" width="100%">
+                    <a href="/profile"><li>
+                        <h2>PROFILE<i class="fa fa-user menu-icon"></i></h2>
                     </li></a>
-                    <a href="/logout"><li class="fa fa-laptop">
-                        <img src="/images/logout.png" height="100%" width="100%">
+                    <a href="/logout"><li>
+                        <h2>LOGOUT<i class="fa fa-sign-out menu-icon"></i></h2>
                     </li></a>
                 </ul>
             </nav>

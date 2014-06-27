@@ -249,7 +249,13 @@ class Main extends CI_Controller {
 			        'last_name' => $lname,
 			        'activated' => true
 			    ));
- 
+
+			    $this->email->from('no-reply@alliwantthischristmas.co.uk', 'All I Want This Christmas');
+				$this->email->to($email);
+				$this->email->subject('Registration complete');
+				$this->email->message('Your registration with All I Want This Christmas has been successfull. You can now sign in and start organising your christmas!');	
+				$this->email->send();
+ 				
 			    header('Location: /index');
 			    exit;
 			  } catch (Exception $e) {
@@ -392,11 +398,11 @@ class Main extends CI_Controller {
 		$this->load->model('groups');
 		$check = $this->groups->checkname($groupname);
 		if($check == FALSE){
-			$this->session->set_flashdata('result','Please enter a group name');
+			$this->session->set_flashdata('errors','Please enter a group name');
 		}else{
 			$check = $this->groups->checkdbforgroup($groupname);
 			if($check == TRUE){
-				$this->session->set_flashdata('result','You already belong in a group with that name');
+				$this->session->set_flashdata('errors','You already belong in a group with that name');
 			}else{
 				$this->groups->transferdata($groupname);
 			}
