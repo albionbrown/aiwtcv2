@@ -1,0 +1,85 @@
+[25-Jun-2014 21:37:21 Europe/London] PHP Parse error:  syntax error, unexpected 'Cartalyst' (T_STRING) in /home/alliwant/public_html/staging/application/controllers/main.php on line 151
+[25-Jun-2014 21:37:58 Europe/London] PHP Parse error:  syntax error, unexpected 'Cartalyst' (T_STRING) in /home/alliwant/public_html/staging/application/controllers/main.php on line 278
+[25-Jun-2014 21:58:54 Europe/London] PHP Fatal error:  require(): Failed opening required 'vendor\autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/alliwant/public_html/staging/application/controllers/main.php on line 181
+[25-Jun-2014 21:59:44 Europe/London] PHP Fatal error:  require(): Failed opening required '/vendor\autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/alliwant/public_html/staging/application/controllers/main.php on line 181
+[25-Jun-2014 22:01:21 Europe/London] PHP Fatal error:  require(): Failed opening required '\vendor\autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/alliwant/public_html/staging/application/controllers/main.php on line 181
+[25-Jun-2014 22:02:25 Europe/London] PHP Fatal error:  require(): Failed opening required '/vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/alliwant/public_html/staging/application/controllers/main.php on line 181
+[25-Jun-2014 22:03:10 Europe/London] PHP Fatal error:  require(): Failed opening required '/vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/alliwant/public_html/staging/application/controllers/main.php on line 181
+[25-Jun-2014 22:03:49 Europe/London] PHP Fatal error:  require(): Failed opening required '/vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/alliwant/public_html/staging/application/controllers/main.php on line 181
+[25-Jun-2014 22:07:35 Europe/London] PHP Fatal error:  require(): Failed opening required '/vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/alliwant/public_html/staging/application/controllers/main.php on line 181
+[26-Jun-2014 09:36:30 Europe/London] PHP Fatal error:  require(): Failed opening required '/staging/vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/alliwant/public_html/staging/application/controllers/main.php on line 181
+[28-Jun-2014 12:51:33 Europe/London] PHP Parse error:  syntax error, unexpected '*' in /home/alliwant/public_html/staging/application/config/database.php on line 87
+[28-Jun-2014 12:52:30 Europe/London] PHP Fatal error:  require(): Failed opening required '/vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/alliwant/public_html/staging/application/controllers/main.php on line 197
+[28-Jun-2014 12:53:06 Europe/London] PHP Fatal error:  require(): Failed opening required '/staging/vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/alliwant/public_html/staging/application/controllers/main.php on line 197
+[29-Jun-2014 12:49:53 Europe/London] PHP Fatal error:  require(): Failed opening required 'vendor\autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/alliwant/public_html/staging/application/controllers/main.php on line 140
+[29-Jun-2014 12:50:04 Europe/London] PHP Fatal error:  require(): Failed opening required 'vendor\autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/alliwant/public_html/staging/application/controllers/main.php on line 140
+[29-Jun-2014 20:03:36 Europe/London] PHP Fatal error:  Class 'Cartalyst\Sentry\Facades\Native\Sentry' not found in /home/alliwant/public_html/staging/application/views/view_dashboard.php on line 46
+[29-Jun-2014 20:09:14 Europe/London] PHP Fatal error:  Class 'Cartalyst\Sentry\Facades\Native\Sentry' not found in /home/alliwant/public_html/staging/application/views/view_dashboard.php on line 46
+[29-Jun-2014 20:10:22 Europe/London] PHP Fatal error:  Class 'Cartalyst\Sentry\Facades\Native\Sentry' not found in /home/alliwant/public_html/staging/application/views/view_dashboard.php on line 51
+[29-Jun-2014 20:10:23 Europe/London] PHP Fatal error:  Class 'Cartalyst\Sentry\Facades\Native\Sentry' not found in /home/alliwant/public_html/staging/application/views/view_dashboard.php on line 51
+[29-Jun-2014 20:49:24 Europe/London] PHP Fatal error:  Class 'Cartalyst\Sentry\Facades\Native\Sentry' not found in /home/alliwant/public_html/staging/application/views/view_dashboard.php on line 51
+[29-Jun-2014 20:49:52 Europe/London] PHP Fatal error:  Uncaught exception 'Cartalyst\Sentry\Users\UserNotFoundException' with message 'A user could not be found with ID [Mg==].' in /home/alliwant/public_html/staging/vendor/cartalyst/sentry/src/Cartalyst/Sentry/Users/Eloquent/Provider.php:77
+Stack trace:
+#0 /home/alliwant/public_html/staging/vendor/cartalyst/sentry/src/Cartalyst/Sentry/Sentry.php(573): Cartalyst\Sentry\Users\Eloquent\Provider->findById('Mg==')
+#1 /home/alliwant/public_html/staging/vendor/cartalyst/sentry/src/Cartalyst/Sentry/Facades/Facade.php(65): Cartalyst\Sentry\Sentry->findUserById('Mg==')
+#2 /home/alliwant/public_html/staging/application/views/view_dashboard.php(56): Cartalyst\Sentry\Facades\Facade::__callStatic('findUserById', Array)
+#3 /home/alliwant/public_html/staging/application/views/view_dashboard.php(56): Cartalyst\Sentry\Facades\Native\Sentry::findUserById('Mg==')
+#4 /home/alliwant/public_html/staging/system/core/Loader.php(833): include('/home/alliwant/...')
+#5 /home/alliwant/public_html/staging/system/core/Loader.php(419): CI_Loade in /home/alliwant/public_html/staging/vendor/cartalyst/sentry/src/Cartalyst/Sentry/Users/Eloquent/Provider.php on line 77
+[29-Jun-2014 21:06:28 Europe/London] PHP Fatal error:  Uncaught exception 'BadMethodCallException' with message 'Call to undefined method Illuminate\Database\Query\Builder::getUsername()' in /home/alliwant/public_html/staging/vendor/illuminate/database/Illuminate/Database/Query/Builder.php:1658
+Stack trace:
+#0 [internal function]: Illuminate\Database\Query\Builder->__call('getUsername', Array)
+#1 [internal function]: Illuminate\Database\Query\Builder->getUsername()
+#2 /home/alliwant/public_html/staging/vendor/illuminate/database/Illuminate/Database/Eloquent/Builder.php(786): call_user_func_array(Array, Array)
+#3 [internal function]: Illuminate\Database\Eloquent\Builder->__call('getUsername', Array)
+#4 [internal function]: Illuminate\Database\Eloquent\Builder->getUsername()
+#5 /home/alliwant/public_html/staging/vendor/illuminate/database/Illuminate/Database/Eloquent/Model.php(2653): call_user_func_array(Array, Array)
+#6 /home/alliwant/public_html/staging/application/views/view_dashboard.php(57): Illuminate\Database\Eloquent\Model->__call('getUsername', Array)
+#7 / in /home/alliwant/public_html/staging/vendor/illuminate/database/Illuminate/Database/Query/Builder.php on line 1658
+[29-Jun-2014 21:08:09 Europe/London] PHP Fatal error:  Uncaught exception 'BadMethodCallException' with message 'Call to undefined method Illuminate\Database\Query\Builder::getFirst_name()' in /home/alliwant/public_html/staging/vendor/illuminate/database/Illuminate/Database/Query/Builder.php:1658
+Stack trace:
+#0 [internal function]: Illuminate\Database\Query\Builder->__call('getFirst_name', Array)
+#1 [internal function]: Illuminate\Database\Query\Builder->getFirst_name()
+#2 /home/alliwant/public_html/staging/vendor/illuminate/database/Illuminate/Database/Eloquent/Builder.php(786): call_user_func_array(Array, Array)
+#3 [internal function]: Illuminate\Database\Eloquent\Builder->__call('getFirst_name', Array)
+#4 [internal function]: Illuminate\Database\Eloquent\Builder->getFirst_name()
+#5 /home/alliwant/public_html/staging/vendor/illuminate/database/Illuminate/Database/Eloquent/Model.php(2653): call_user_func_array(Array, Array)
+#6 /home/alliwant/public_html/staging/application/views/view_dashboard.php(57): Illuminate\Database\Eloquent\Model->__call('getFirst_name', in /home/alliwant/public_html/staging/vendor/illuminate/database/Illuminate/Database/Query/Builder.php on line 1658
+[29-Jun-2014 21:08:32 Europe/London] PHP Fatal error:  Uncaught exception 'BadMethodCallException' with message 'Call to undefined method Illuminate\Database\Query\Builder::first_name()' in /home/alliwant/public_html/staging/vendor/illuminate/database/Illuminate/Database/Query/Builder.php:1658
+Stack trace:
+#0 [internal function]: Illuminate\Database\Query\Builder->__call('first_name', Array)
+#1 [internal function]: Illuminate\Database\Query\Builder->first_name()
+#2 /home/alliwant/public_html/staging/vendor/illuminate/database/Illuminate/Database/Eloquent/Builder.php(786): call_user_func_array(Array, Array)
+#3 [internal function]: Illuminate\Database\Eloquent\Builder->__call('first_name', Array)
+#4 [internal function]: Illuminate\Database\Eloquent\Builder->first_name()
+#5 /home/alliwant/public_html/staging/vendor/illuminate/database/Illuminate/Database/Eloquent/Model.php(2653): call_user_func_array(Array, Array)
+#6 /home/alliwant/public_html/staging/application/views/view_dashboard.php(57): Illuminate\Database\Eloquent\Model->__call('first_name', Array)
+#7 /home/a in /home/alliwant/public_html/staging/vendor/illuminate/database/Illuminate/Database/Query/Builder.php on line 1658
+[29-Jun-2014 21:08:33 Europe/London] PHP Fatal error:  Uncaught exception 'BadMethodCallException' with message 'Call to undefined method Illuminate\Database\Query\Builder::first_name()' in /home/alliwant/public_html/staging/vendor/illuminate/database/Illuminate/Database/Query/Builder.php:1658
+Stack trace:
+#0 [internal function]: Illuminate\Database\Query\Builder->__call('first_name', Array)
+#1 [internal function]: Illuminate\Database\Query\Builder->first_name()
+#2 /home/alliwant/public_html/staging/vendor/illuminate/database/Illuminate/Database/Eloquent/Builder.php(786): call_user_func_array(Array, Array)
+#3 [internal function]: Illuminate\Database\Eloquent\Builder->__call('first_name', Array)
+#4 [internal function]: Illuminate\Database\Eloquent\Builder->first_name()
+#5 /home/alliwant/public_html/staging/vendor/illuminate/database/Illuminate/Database/Eloquent/Model.php(2653): call_user_func_array(Array, Array)
+#6 /home/alliwant/public_html/staging/application/views/view_dashboard.php(57): Illuminate\Database\Eloquent\Model->__call('first_name', Array)
+#7 /home/a in /home/alliwant/public_html/staging/vendor/illuminate/database/Illuminate/Database/Query/Builder.php on line 1658
+[30-Jun-2014 11:17:48 Europe/London] PHP Parse error:  syntax error, unexpected ')' in /home/alliwant/public_html/staging/application/views/view_gifts.php on line 13
+[30-Jun-2014 11:19:51 Europe/London] PHP Parse error:  syntax error, unexpected '$itemname' (T_VARIABLE), expecting ',' or ';' in /home/alliwant/public_html/staging/application/views/view_gifts.php on line 14
+[30-Jun-2014 14:19:15 Europe/London] PHP Parse error:  syntax error, unexpected 'value' (T_STRING), expecting ')' in /home/alliwant/public_html/staging/application/views/view_gifts.php on line 25
+[30-Jun-2014 15:06:13 Europe/London] PHP Parse error:  syntax error, unexpected ''value'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/alliwant/public_html/staging/application/views/admintemplate.php on line 59
+[30-Jun-2014 15:06:39 Europe/London] PHP Parse error:  syntax error, unexpected ''value'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/alliwant/public_html/staging/application/views/admintemplate.php on line 59
+[30-Jun-2014 17:22:56 Europe/London] PHP Parse error:  syntax error, unexpected 'header' (T_STRING) in /home/alliwant/public_html/staging/application/controllers/main.php on line 260
+[30-Jun-2014 17:23:20 Europe/London] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/alliwant/public_html/staging/application/controllers/main.php on line 496
+[30-Jun-2014 17:23:44 Europe/London] PHP Fatal error:  require(): Failed opening required 'vendor\autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/alliwant/public_html/staging/application/controllers/main.php on line 140
+[30-Jun-2014 17:24:23 Europe/London] PHP Fatal error:  require(): Failed opening required 'vendor\autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/alliwant/public_html/staging/application/controllers/main.php on line 140
+[30-Jun-2014 17:27:14 Europe/London] PHP Fatal error:  require(): Failed opening required 'vendor\autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/alliwant/public_html/staging/application/controllers/main.php on line 140
+[30-Jun-2014 17:28:37 Europe/London] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/alliwant/public_html/staging/application/controllers/main.php on line 148
+[02-Jul-2014 10:28:38 Europe/London] PHP Parse error:  syntax error, unexpected ''<ol>'' (T_CONSTANT_ENCAPSED_STRING) in /home/alliwant/public_html/staging/application/views/view_dashboard.php on line 59
+[06-Jul-2014 19:56:29 Europe/London] PHP Parse error:  syntax error, unexpected '$count' (T_VARIABLE) in /home/alliwant/public_html/staging/application/views/view_groups.php on line 65
+[06-Jul-2014 19:57:20 Europe/London] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in /home/alliwant/public_html/staging/application/views/view_groups.php on line 66
+[06-Jul-2014 19:57:21 Europe/London] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in /home/alliwant/public_html/staging/application/views/view_groups.php on line 66
+[11-Jul-2014 21:21:37 Europe/London] PHP Parse error:  syntax error, unexpected '/' in /home/alliwant/public_html/staging/application/views/view_dashboard.php on line 18
+[14-Jul-2014 21:11:32 Europe/London] PHP Parse error:  syntax error, unexpected '$noofgiftstotal' (T_VARIABLE), expecting '(' in /home/alliwant/public_html/staging/application/views/view_dashboard.php on line 48
+[16-Jul-2014 21:14:15 Europe/London] PHP Parse error:  syntax error, unexpected ';' in /home/alliwant/public_html/staging/application/views/view_profile.php on line 81

@@ -44,7 +44,7 @@
 | The $active_record variables lets you determine whether or not to load
 | the active record class
 */
-/* ----- LOCAL ----- */
+/* ----- LOCAL ----- 
 $active_group = 'default';
 $active_record = TRUE;
 
@@ -63,16 +63,28 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+<<<<<<< Updated upstream
 
 /* ----- LIVE ----- */
 /*
+=======
+*/
+/* ----- LIVE ----- */
+
+>>>>>>> Stashed changes
 $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
+<<<<<<< Updated upstream
 $db['default']['username'] = '';
 $db['default']['password'] = '';
 $db['default']['database'] = '';
+=======
+$db['default']['username'] = 'alliwant_josh';
+$db['default']['password'] = 'aiwtc8159login';
+$db['default']['database'] = 'alliwant_staging';
+>>>>>>> Stashed changes
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
@@ -84,7 +96,7 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
-*/
+
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

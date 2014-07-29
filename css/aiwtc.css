@@ -1,263 +1,60 @@
-@font-face {
-  font-family: 'patrickhand-regular';
-  src: url("fonts/patrickhand-regular.eot");
-  src: url("fonts/patrickhand-regular.eot?#iefix") format("embedded-opentype"), url("fonts/patrickhand-regular.woff") format("woff"), url("fonts/patrickhand-regular.ttf") format("truetype"), url("fonts/patrickhand-regular.svg#patrick_handregular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
+/*
+Syntax error: Invalid CSS after "	}": expected "}", was "<<<<<<< Updated..."
+        on line 172 of C:/xampp/htdocs/staging/sass/aiwtc.scss
 
-/* line 14, ../sass/aiwtc.scss */
-html.logged-in body {
-  background-color: #e60a1e;
-  overflow: hidden;
-}
-
-/* line 19, ../sass/aiwtc.scss */
-html.logged-out body {
-  background: url("/images/red_background.png") repeat;
-  color: #fff;
-}
-
-/* line 24, ../sass/aiwtc.scss */
-.page-container {
-  width: 100%;
-  height: 100%;
-}
-
-/* line 29, ../sass/aiwtc.scss */
-h1 {
-  font-family: 'patrickhand-regular';
-  color: #fff;
-}
-
-/* line 35, ../sass/aiwtc.scss */
-h2,
-h3 {
-  font-family: "open sans";
-  margin: 5px;
-  font-weight: 300;
-}
-
-/* line 41, ../sass/aiwtc.scss */
-h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-/* line 46, ../sass/aiwtc.scss */
-p {
-  font-family: "open sans";
-  font-size: 14px;
-}
-
-/* line 51, ../sass/aiwtc.scss */
-a {
-  color: #fff;
-}
-/* line 55, ../sass/aiwtc.scss */
-a:hover, a:active {
-  color: #fff;
-}
-
-/* line 60, ../sass/aiwtc.scss */
-#logo {
-  width: 50px;
-  float: left;
-}
-/* line 64, ../sass/aiwtc.scss */
-#logo img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 3px;
-}
-
-/* ---------- LOGIN PAGE ------------*/
-/* line 73, ../sass/aiwtc.scss */
-img.login_logo {
-  width: 100%;
-  height: auto;
-}
-
-/* line 78, ../sass/aiwtc.scss */
-body.login #boxes {
-  padding-top: 121px;
-}
-
-/* line 82, ../sass/aiwtc.scss */
-body.login #register_boxes {
-  visibility: hidden;
-}
-
-/* line 86, ../sass/aiwtc.scss */
-.text-input {
-  border: 1px solid #e60a1e;
-  border-radius: 3px;
-  height: 50px;
-  padding: 0px 0px 0px 10px;
-  font-size: 15px;
-  font-family: "open sans";
-  color: #444;
-  outline: 0;
-}
-
-/* line 97, ../sass/aiwtc.scss */
-.submit {
-  background-color: #e43949;
-  border-radius: 3px;
-  border: 1px solid #d60319;
-  height: 50px;
-  color: #fff;
-  outline: 0;
-}
-
-/* line 106, ../sass/aiwtc.scss */
-::-webkit-input-placeholder {
-  font-family: "open sans";
-}
-
-/* line 110, ../sass/aiwtc.scss */
-:-moz-placeholder {
-  /* Firefox 18- */
-  font-family: "open sans";
-}
-
-/* line 114, ../sass/aiwtc.scss */
-::-moz-placeholder {
-  /* Firefox 19+ */
-  font-family: "open sans";
-}
-
-/* line 118, ../sass/aiwtc.scss */
-:-ms-input-placeholder {
-  font-family: "open sans";
-}
-
-/* line 122, ../sass/aiwtc.scss */
-.pwd-recover-form {
-  display: none;
-  padding-top: 121px;
-}
-
-/* ----------  -----------*/
-/* line 129, ../sass/aiwtc.scss */
-#header_bar {
-  background-color: #e60a1e;
-  color: #fff;
-  min-height: 70px;
-  width: 100%;
-  position: fixed;
-  padding: 10px;
-  border-bottom: 2px solid #fff;
-}
-/* line 138, ../sass/aiwtc.scss */
-#header_bar #search_box {
-  width: 100%;
-  max-width: 300px;
-  float: left;
-}
-/* line 144, ../sass/aiwtc.scss */
-#header_bar #header_profile {
-  float: left;
-  border-radius: 3px;
-  background-color: #fff;
-  margin: 0 10px;
-  height: 50px;
-  min-width: 300px;
-}
-/* line 152, ../sass/aiwtc.scss */
-#header_bar #header_profile h2 {
-  float: left;
-  margin: 14px 10px;
-}
-/* line 157, ../sass/aiwtc.scss */
-#header_bar #header_profile a {
-  height: 54px;
-  width: 100%;
-  color: #e60a1e;
-}
-/* line 163, ../sass/aiwtc.scss */
-#header_bar #header_profile img {
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  height: 50px;
-  width: 50px;
-  float: right;
-}
-
-/* line 174, ../sass/aiwtc.scss */
-#menu {
-  position: fixed;
-  top: 70px;
-}
-/* line 178, ../sass/aiwtc.scss */
-#menu ul a {
-  margin: 2px 0;
-  padding: 0px;
-}
-/* line 182, ../sass/aiwtc.scss */
-#menu ul a li {
-  width: 100%;
-  height: 50px;
-  background-color: #e43949;
-  font-family: 'patrickhand-regular';
-}
-/* line 188, ../sass/aiwtc.scss */
-#menu ul a li:active {
-  background-color: #e60a1e;
-  color: #fff;
-}
-
-/* line 196, ../sass/aiwtc.scss */
-#pushobj {
-  margin-top: 70px;
-  overflow-y: scroll;
-  border-left: 2px #fff solid;
-}
-/* line 201, ../sass/aiwtc.scss */
-#pushobj .container {
-  min-width: 400px;
-}
-
-/* line 206, ../sass/aiwtc.scss */
-i.fa-reorder {
-  background: url("../images/toggle.png") no-repeat;
-  height: 25px;
-  width: 25px;
-  display: none;
-}
-
-/* line 213, ../sass/aiwtc.scss */
-.max-width {
-  width: 100%;
-}
-
-/* line 217, ../sass/aiwtc.scss */
-.content-box {
-  padding: 15px;
-}
-
-/* line 221, ../sass/aiwtc.scss */
-.content {
-  color: #e60a1e;
-  background-color: #fff;
-  border-radius: 3px;
-  padding: 15px;
-}
-/* line 227, ../sass/aiwtc.scss */
-.content a {
-  color: #e60a1e;
-}
-/* line 231, ../sass/aiwtc.scss */
-.content h2 {
-  margin-left: 0px;
-}
-
-/* line 236, ../sass/aiwtc.scss */
-.centre-text {
-  text-align: center;
-}
-
-/* line 240, ../sass/aiwtc.scss */
-.gravimg {
-  border-radius: 100%;
-}
+Backtrace:
+C:/xampp/htdocs/staging/sass/aiwtc.scss:172
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.13/lib/sass/scss/parser.rb:1149:in `expected'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.13/lib/sass/scss/parser.rb:1085:in `expected'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.13/lib/sass/scss/parser.rb:1080:in `tok!'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.13/lib/sass/scss/parser.rb:536:in `block'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.13/lib/sass/scss/parser.rb:529:in `ruleset'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.13/lib/sass/scss/parser.rb:553:in `block_child'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.13/lib/sass/scss/parser.rb:546:in `block_contents'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.13/lib/sass/scss/parser.rb:82:in `stylesheet'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.13/lib/sass/scss/parser.rb:27:in `parse'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.13/lib/sass/engine.rb:342:in `_to_tree'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.13/lib/sass/engine.rb:315:in `_render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.13/lib/sass/engine.rb:262:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `block (2 levels) in compile'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `block in compile'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `block (2 levels) in run'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `block in run'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:147:in `recompile'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `run_callback'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/fssm-0.2.10/lib/fssm/path.rb:55:in `callback_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/fssm-0.2.10/lib/fssm/path.rb:35:in `update'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/fssm-0.2.10/lib/fssm/state/directory.rb:39:in `block in modified'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `each'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `modified'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/fssm-0.2.10/lib/fssm/state/directory.rb:18:in `refresh'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block (2 levels) in run'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `each'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block in run'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `loop'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `run'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/fssm-0.2.10/lib/fssm/monitor.rb:26:in `run'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/fssm-0.2.10/lib/fssm.rb:70:in `monitor'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:87:in `perform'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/bin/compass:30:in `block in <top (required)>'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/bin/compass:44:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/bin/compass:44:in `<top (required)>'
+C:/Ruby193/bin/compass:23:in `load'
+C:/Ruby193/bin/compass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"	}\": expected \"}\", was \"<<<<<<< Updated...\"\A         on line 172 of C:/xampp/htdocs/staging/sass/aiwtc.scss"; }

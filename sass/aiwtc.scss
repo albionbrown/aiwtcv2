@@ -169,6 +169,29 @@ body.login #register_boxes {
 		}
 
 	}
+<<<<<<< Updated upstream
+=======
+
+	#countdown {
+		width: 100%;
+		max-width: 150px;
+		background-color: #fff;
+		color: #e60a1e;
+		height: 50px;
+		border-radius: 3px;
+		float: left;
+		margin: 0 10px;
+		p.days{
+			font-family: 'patrickhand-regular';
+			font-size: 30px;
+			line-height: 30px;
+		}
+
+		p.timeRefDays {
+
+		}
+	}
+>>>>>>> Stashed changes
 }
 
 #menu {
@@ -185,9 +208,22 @@ body.login #register_boxes {
 			background-color: #e43949;
 			font-family: 'patrickhand-regular';
 
+<<<<<<< Updated upstream
 			&:active{
 				background-color: #e60a1e;
 				color: #fff;
+=======
+			h2 {
+				font-family: 'patrickhand-regular';
+				font-size: 28px;
+				margin: 0px;
+			}
+
+			.menu-icon {
+				max-height: 36px;
+				float: right;
+				color: #444;;
+>>>>>>> Stashed changes
 			}
 		}
 	}

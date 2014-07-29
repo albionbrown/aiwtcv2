@@ -126,7 +126,7 @@
 		</div>
 		<div id="log_errors" class="clearfix"><p>
 		<?php
-				echo "<p>" . $this->session->flashdata('log_errors') . "</p>";
+				echo "<p>" . $this->session->flashdata('log_messages') . "</p>";
 			?>
 		</p></div>
 

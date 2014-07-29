@@ -37,7 +37,7 @@ html.logged-out #boxes .submit {
 }
 
 @media (max-width: 407px) {
-	.text-input {
+	.login .text-input {
 		width: 100% !important;
 	}
 }
@@ -46,8 +46,17 @@ html.logged-out #boxes .submit {
 	#boxes {
 		padding-top: 0px !important;
 	}
+	
+	#header_profile {
+		//display: none;
+	}
 }
 
+@media (max-width: 819px){
+	#countdown {
+		//display: none;
+	}
+}
 
 
 

@@ -44,6 +44,7 @@ $route['home'] = "main/index";
 $route['my_wishlist'] = "main/my_wishlist";
 $route['groups'] = "main/groups";
 $route['gifts'] = "main/gifts";
+$route['shopping_list'] = "main/gifts";
 $route['profile'] = "main/profile";
 $route['user'] = "main/user";
 $route['search'] = "main/search";

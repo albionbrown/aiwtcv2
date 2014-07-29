@@ -14,7 +14,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{title}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
         <meta name="description" content="">
 
         <link rel="stylesheet" href="/css/jquery.multilevelpushmenu.css">
@@ -34,26 +34,50 @@
         <![endif]-->
         <div class="page-container">
         <div id="header_bar">
-        <div id="logo">
+        <div id="logo" class="header_item">
         <a href="/home"><img src="/images/logo.gif" title="All I Want This Christmas" alt="All I Want This Christmas"/></a>
         </div>
+<<<<<<< Updated upstream
             <div id="header_profile" class="">
             <?php echo '<h2><a href="/main/user?uid='.$encrypteduserid.'">'.$username.'</a></h2>'; ?>
             <img src=<?php echo "http://www.gravatar.com/avatar/" . md5($this->encrypt->decode($email))?>>
             </div>
             <div id="search_box">
+=======
+            <div id="search_box" class="header_item">
+>>>>>>> Stashed changes
             <?php 
             $attributes = array('class' => 'form clearfix', 'id' => 'search_form');
             echo form_open('/main/search_model', $attributes);
             $input_data = array(
                 'name'      => 'searchentry',
-                'class'     => 'text-input max-width',
+                'class'     => 'text-input',
                 'placeholder' => 'Search for somebody',
             );
             echo form_input($input_data);
+            
+            $submit_data = array(
+            'name' => 'submit',
+            'value' => 'Search',
+            'class' => 'submit',
+            );
+            
+            echo form_submit($submit_data);
             echo form_close();
             ?>
             </div>
+<<<<<<< Updated upstream
+=======
+
+            <div class="float-right header_item">
+            <div id="header_profile">
+            <?php echo '<h2><a href="/main/user?uid='.$encrypteduserid.'">'.$username.'</a></h2>'; ?>
+            <img src=<?php echo "http://www.gravatar.com/avatar/" . md5($email)?>>
+            </div></div>
+            <div id="countdown" class="header_item">
+                <p class="days">00</p>
+            </div>
+>>>>>>> Stashed changes
         </div>
         <div id="menu">
             <nav>
@@ -68,6 +92,7 @@
                     <a href="/groups"><li class="fa fa-laptop">
                         Groups
                     </li></a>
+<<<<<<< Updated upstream
                     <a href="/gifts"><li class="fa fa-laptop">
                         <img src="/images/shopping_list.png" height="100%" width="100%">
                     </li></a>
@@ -76,6 +101,16 @@
                     </li></a>
                     <a href="http://www.google.co.uk"><li class="fa fa-laptop">
                         <img src="/images/help.png" height="100%" width="100%">
+=======
+                    <a href="/shopping_list"><li>
+                        <h2>SHOPPING LIST<i class="fa fa-list-ol menu-icon"></i></h2>
+                    </li></a>
+                    <!--<a href="#"><li>
+                        <h2>GIFT IDEAS<i class="fa fa-lightbulb-o menu-icon"></i></h2>
+                    </li></a> -->
+                    <a href="http://www.google.co.uk"><li>
+                        <h2>HELP<i class="fa fa-question menu-icon"></i></h2>
+>>>>>>> Stashed changes
                     </li></a>
                     <a href="/profile"><li class="fa fa-laptop">
                         <img src="/images/profile.png" height="100%" width="100%">

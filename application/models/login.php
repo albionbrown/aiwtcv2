@@ -17,7 +17,7 @@
 				$decodedpwd = $this->encrypt->decode($pwdfromdb, $key);
 
 				if($decodedemail === $email && $decodedpwd === $password){
-					$query = $this->db->query("SELECT * FROM users WHERE email='$emailfromdb' AND pwd='$pwdfromdb'");
+					$query = $this->db->query("SELECT * FROM users WHERE email='$emailfromdb' AND password='$pwdfromdb'");
 					if($query->num_rows() == 1){
 						$_SESSION['userid'] = $row['userid'];
 					}else{}

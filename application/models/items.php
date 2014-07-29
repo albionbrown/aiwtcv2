@@ -16,12 +16,12 @@
 		public function getitem($itemid){
 			$userid = $_SESSION['userid'];
 			$query = $this->db->query("UPDATE items SET useridgetting='$userid' WHERE itemid='$itemid'");
-			header('Location: main/gifts');
+			header('Location: /gifts');
 		}
 
 		public function itembought($itemid){
-			$query = $this->db->query("UPDATE items SET itembought='yes' WHERE itemid='$itemid'");
-			header('Location: main/gifts');
+			$query = $this->db->query("UPDATE items SET itembought=1 WHERE itemid='$itemid'");
+			header('Location: /gifts');
 		}
 
 		public function checkdbforitem($itemname){
@@ -32,5 +32,10 @@
 				return TRUE;
 			}
 		}
+		
+		public function revertitem($itemid){
+		$query = $this->db->query("UPDATE items SET useridgetting=0 WHERE itemid='$itemid'");
+		header('Location: /gifts');
+	}
 
 }

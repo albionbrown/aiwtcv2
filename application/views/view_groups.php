@@ -57,22 +57,37 @@ echo form_close();
 
 </div><?php
 
+<<<<<<< Updated upstream
 echo "<p>".@$this->session->flashdata('result')."</p>";
 ?><div class="row"><?php
+=======
+echo "<p>".@$this->session->flashdata('errors')."</p>";
+
+>>>>>>> Stashed changes
 $userid = $_SESSION['userid'];
 /* Gets all group id's related to user */
 $query = $this->db->query("SELECT groupid FROM userstogroups WHERE userid='$userid'");
+$count = 0;
 foreach($query->result_array() as $row){ 
 
 	/* Gets number of members in the group */
 	$groupid = $row['groupid'];
+<<<<<<< Updated upstream
 	$query = $this->db->query("SELECT userid FROM userstogroups WHERE groupid='$groupid'");
 	$no_members = $query->num_rows();
 	/* Gets information about group */
 	$query = $this->db->query("SELECT * FROM groups WHERE groupid='$groupid'");
 
+=======
+	$query = $this->db->query("SELECT * FROM groups WHERE id='$groupid'");
+	
+>>>>>>> Stashed changes
 	/* Prints each group header */
-	foreach($query->result_array() as $row){ ?>
+	foreach($query->result_array() as $row){
+	if($count == 0){
+		?><div class="row"><?php }
+		$count++;
+	?>
 		<div class="content-box col-md-4"><div class="content">
 		<?php echo "<h2>" . $groupname = ucwords($row['groupname']) . "</h2>";
 		$adminuserid = $row['adminuserid'];
@@ -99,12 +114,12 @@ foreach($query->result_array() as $row){
 			<input type="button" onClick='leavegroup(<?php echo $groupid ?>)' class="submit max-width" value="leave"/>
 		<?php } ?>
 		</div></div><?php
-		
-		
+		if($count == 3){
+			$count = 0;
+			?></div><?php
+		}
 	}	
 }
 
 }?>
-
-</div>
 

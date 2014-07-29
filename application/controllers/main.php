@@ -135,18 +135,39 @@ class Main extends CI_Controller {
 
 	public function logout()
 	{
+<<<<<<< Updated upstream
 		unset($_SESSION['userid']);
 		header('location: index');
+=======
+
+		// set up autoloader
+		require ('vendor/autoload.php');
+
+		// configure database
+		$dsn      = 'mysql:dbname=alliwant_staging;host=localhost';
+		$u = 'alliwant_josh';
+		$p = 'aiwtc8159login';
+		Cartalyst\Sentry\Facades\Native\Sentry::setupDatabaseResolver(
+		  new PDO($dsn, $u, $p));
+		unset($_SESSION['userid']);
+		// log user out
+		Cartalyst\Sentry\Facades\Native\Sentry::logout();
+		header('location: /index');
+>>>>>>> Stashed changes
 	}
 
 	public function verify_login()
 	{
 		// set up autoloader
-		require ('/vendor/autoload.php');
+		require ('vendor/autoload.php');
 
 		// configure database
 		 $dsn = 'mysql:dbname=alliwant_staging;host=localhost';
+<<<<<<< Updated upstream
 		 $u = 'alliwant_staging';
+=======
+		 $u = 'alliwant_josh';
+>>>>>>> Stashed changes
 		 $p = 'aiwtc8159login';
 		Cartalyst\Sentry\Facades\Native\Sentry::setupDatabaseResolver(
 		  new PDO($dsn, $u, $p));
@@ -168,7 +189,11 @@ class Main extends CI_Controller {
 		    $currentUser = Cartalyst\Sentry\Facades\Native\Sentry::
 		      authenticate($credentials, false);
 		  } catch (Exception $e) {
+<<<<<<< Updated upstream
 		    $this->session->set_flashdata('log_errors', 'Invalid email/password. Please try again.');
+=======
+				$this->session->set_flashdata('log_messages', 'Invalid email/password. Please try again.');
+>>>>>>> Stashed changes
 		  }
 		}
 		header("location: /index");
@@ -178,11 +203,15 @@ class Main extends CI_Controller {
 
 		if (isset($_POST['submit'])) {
 			  // set up autoloader
-			  require ('/vendor/autoload.php');
+			  require ('vendor/autoload.php');
 
 			  // configure database
 			  $dsn      = 'mysql:dbname=alliwant_staging;host=localhost';
+<<<<<<< Updated upstream
 			  $u = 'alliwant_staging';
+=======
+			  $u = 'alliwant_josh';
+>>>>>>> Stashed changes
 			  $p = 'aiwtc8159login';
 			  Cartalyst\Sentry\Facades\Native\Sentry::setupDatabaseResolver(
 			    new PDO($dsn, $u, $p));
@@ -191,11 +220,11 @@ class Main extends CI_Controller {
 			  // send activation code by email to user
 			  try {
 			    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-			    $fname = strip_tags($_POST['firstname']);
-			    $lname = strip_tags($_POST['surname']);
+			    $fname = strip_tags(strtolower($_POST['firstname']));
+			    $lname = strip_tags(strtolower($_POST['surname']));
 			    $password = strip_tags($_POST['password']);
 			    $cpassword = strip_tags($_POST['confirm']);
-			    $location = strip_tags($_POST['location']);
+			    $location = strip_tags(strtolower($_POST['location']));
 
 			    unset($errors);
 				$errors = array();
@@ -231,6 +260,7 @@ class Main extends CI_Controller {
 			        'password' => $password,
 			        'first_name' => $fname,
 			        'last_name' => $lname,
+<<<<<<< Updated upstream
 			        'activated' => false
 			    ));
 
@@ -243,6 +273,19 @@ class Main extends CI_Controller {
 			      throw new Exception('Email could not be sent.');
 			    }    
 			    
+=======
+			        'location' => $location,
+ 			        'activated' => true
+			    ));
+
+			    $this->email->from('no-reply@alliwantthischristmas.co.uk', 'All I Want This Christmas');
+				$this->email->to($email);
+				$this->email->subject('Registration complete');
+				$this->email->message('Your registration with All I Want This Christmas has been successful. You can now sign in and start organising your christmas!');	
+				$this->email->send();
+ 				$this->session->set_flashdata('log_messages', 'Your registration has been successful. An email has been sent to your email address.');
+			    header('Location: /index');
+>>>>>>> Stashed changes
 			    exit;
 			  } catch (Exception $e) {
 
@@ -257,11 +300,15 @@ class Main extends CI_Controller {
 	public function pwd_recover(){
 		if (isset($_POST['submit'])) {
 		  // set up autoloader
-		  require ('/vendor/autoload.php');
+		  require ('vendor/autoload.php');
 
 		  // configure database
 		   $dsn = 'mysql:dbname=alliwant_staging;host=localhost';
+<<<<<<< Updated upstream
 			$u = 'alliwant_staging';
+=======
+			$u = 'alliwant_josh';
+>>>>>>> Stashed changes
 			$p = 'aiwtc8159login';
 		  Cartalyst\Sentry\Facades\Native\Sentry::setupDatabaseResolver(
 		    new PDO($dsn, $u, $p));
@@ -297,11 +344,15 @@ class Main extends CI_Controller {
 		if (isset($_POST['code']) && $_POST['email']) {
 
 		  // set up autoloader
-		  require ('/vendor/autoload.php');
+		  require ('vendor/autoload.php');
 
 		  // configure database
 		   $dsn = 'mysql:dbname=alliwant_staging;host=localhost';
+<<<<<<< Updated upstream
 			$u = 'alliwant_staging';
+=======
+			$u = 'alliwant_josh';
+>>>>>>> Stashed changes
 			$p = 'aiwtc8159login';
 		  Cartalyst\Sentry\Facades\Native\Sentry::setupDatabaseResolver(
 		    new PDO($dsn, $u, $p));
@@ -371,7 +422,7 @@ class Main extends CI_Controller {
 			$this->session->set_flashdata('error', 'Remember a name for the gift!');
 		}else{
 			$userid = $_SESSION['userid'];
-			$bought = "no";
+			$bought = 0;
 			$itemname = strtolower($itemname);
 			$itemdesc = strtolower($itemdesc);
 			$this->db->query("INSERT INTO items (userid,itemname,itemdescription,itemlink,itembought) VALUES ('$userid','$itemname','$itemdesc','$itemlink','$bought')");
@@ -422,7 +473,7 @@ class Main extends CI_Controller {
 	}
 
 	public function boughtitem(){
-		$itemid = $_GET['itemid'];
+		$itemid = base64_decode($_GET['itemid']);
 		$this->load->model('items');
 		$this->items->itembought($itemid);
 	}
@@ -438,16 +489,22 @@ class Main extends CI_Controller {
 		$this->load->model('Search');
 		$this->Search->declineinvite($inviteid);
 	}
+	
+	public function revertitem(){
+		$itemid = base64_decode($_GET['itemid']);
+		$this->load->model('items');
+		$this->items->revertitem($itemid);
+	}
 
 
 	public function profile_changes(){
 		$pwd = $_POST['pwd'];
 		$newpwd = $_POST['newpwd'];
 		$cnewpwd = $_POST['cnewpwd'];
-		$fname = $_POST['fname'];
-		$sname = $_POST['sname'];
+		$fname = strtolower($_POST['fname']);
+		$sname = strtolower($_POST['sname']);
 		$email = $_POST['email'];
-		$location = $_POST['location'];
+		$location = strtolower($_POST['location']);
 		$this->load->model('profile');
 		$pwdcheck = $this->profile->pwdvalid($pwd);
 		if($pwdcheck == TRUE){
@@ -457,5 +514,28 @@ class Main extends CI_Controller {
 			header('Location: main/profile');
 		}
 	}
-}
+	
+	public function profile_delete() {
+		if (isset($_GET['uid'])) {
+  // set up autoloader
+  require ('vendor\autoload.php');
 
+  // configure database
+  $dsn      = 'mysql:dbname=appdata;host=localhost';
+  $u = 'sentry';
+  $p = 'g39ejdl';
+  Cartalyst\Sentry\Facades\Native\Sentry::setupDatabaseResolver(
+    new PDO($dsn, $u, $p));
+
+  // find user by id and delete
+  try {
+    $id = strip_tags(base64_decode($_POST['id']));    
+    $user = Cartalyst\Sentry\Facades\Native\Sentry::findUserById($id);
+    $user->delete();
+    unset($_SESSION['userid']);
+  } catch (Exception $e) {
+    echo 'Sorry! The account could not be deleted at this time.';
+  }
+}
+	}
+}

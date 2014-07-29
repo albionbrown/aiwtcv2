@@ -1,6 +1,5 @@
 .multilevelpushmenu_wrapper {
 	position: absolute;
-	overflow: hidden;
 	min-width: 100%;
 	min-height: 100%;
 	margin: 0;
@@ -11,7 +10,7 @@
 	position: absolute;
 	overflow: hidden;
 	top: 0;
-	background: url("/images/red_background.gif") repeat;
+	background-color: #e60a1e;
 	width: auto;
 	min-height: 100%;
 	font-family: 'Open Sans Condensed', sans-serif;
@@ -38,7 +37,7 @@
 }
 
 .multilevelpushmenu_wrapper .multilevelpushmenu_inactive {
-	background: #444;
+	background: #e60a1e;
 }
 
 .multilevelpushmenu_wrapper h2 {

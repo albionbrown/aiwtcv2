@@ -14,15 +14,27 @@ class profile extends CI_Model{
 
 	function pwdvalid($pwd){
 		
-		$userid = $_SESSION['userid'];
-		$query = $this->db->query("SELECT * FROM users WHERE userid='$userid'");
-		foreach($query->result_array() as $row){
-			if($this->encrypt->decode($row['pwd']) == $pwd){
-				return TRUE;
-			}else{
-				return FALSE;
-			}
-		}
+		$id = $_SESSION['userid'];
+		$match = FALSE;
+		// set up autoloader
+require ('vendor\autoload.php');
+
+// configure database
+$dsn = 'mysql:dbname=alliwant_staging;host=localhost';
+$u = 'alliwant_josh';
+$p = 'aiwtc8159login';
+Cartalyst\Sentry\Facades\Native\Sentry::setupDatabaseResolver(
+  new PDO($dsn, $u, $p));
+  
+  try {
+    $id = strip_tags($_POST['id']);    
+    $user = Cartalyst\Sentry\Facades\Native\Sentry::findUserById($id);
+    $curpwd = $user->password;
+    if($pwd == $curpad){
+    	$match = TRUE;
+    }
+    }
+    return $match
 	} 
 
 	function checkifpwd($newpwd, $cnewpwd){
@@ -31,7 +43,7 @@ class profile extends CI_Model{
 				if($newpwd == $cnewpwd){
 					$userid = $_SESSION['userid'];
 					$newpwd = $this->encrypt->encode($newpwd);
-					$this->db->query("UPDATE users SET pwd='$newpwd' WHERE userid='$userid'");
+					$this->db->query("UPDATE users SET password='$newpwd' WHERE id='$userid'");
 				}else{$this->session->set_flashdata('result', 'Your new passwords do not match');}
 			}else{$this->session->set_flashdata('result', 'Your new password is not long enough');}
 		}
@@ -42,7 +54,7 @@ class profile extends CI_Model{
 			$fname = strtolower($fname);
 			$fname = $this->encrypt->encode($fname);
 			$userid = $_SESSION['userid'];
-			$this->db->query("UPDATE users SET fname='$fname' WHERE userid='$userid'");
+			$this->db->query("UPDATE users SET first_name='$fname' WHERE id='$userid'");
 		}
 	}
 
@@ -51,7 +63,7 @@ class profile extends CI_Model{
 			$sname = strtolower($sname);
 			$sname = $this->encrypt->encode($sname);
 			$userid = $_SESSION['userid'];
-			$this->db->query("UPDATE users SET sname='$sname' WHERE userid='$userid'");
+			$this->db->query("UPDATE users SET last_name='$sname' WHERE id='$userid'");
 		}
 	}
 
@@ -59,7 +71,7 @@ class profile extends CI_Model{
 		if($email != ""){
 			$email = $this->encrypt->encode($email);
 			$userid = $_SESSION['userid'];
-			$this->db->query("UPDATE users SET email='$email' WHERE userid='$userid'");
+			$this->db->query("UPDATE users SET email='$email' WHERE id='$userid'");
 		}
 	}
 
@@ -67,9 +79,52 @@ class profile extends CI_Model{
 		if($location != ""){
 			$location = strtolower($location);
 			$userid = $_SESSION['userid'];
-			$this->db->query("UPDATE users SET location='$location' WHERE userid='$userid'");
+			$this->db->query("UPDATE users SET location='$location' WHERE id='$userid'");
 		}
 	}
 
 
 }
+	function makechanges(){
+// set up autoloader
+require ('vendor\autoload.php');
+
+// configure database
+$dsn = 'mysql:dbname=alliwant_staging;host=localhost';
+$u = 'alliwant_josh';
+$p = 'aiwtc8159login';
+Cartalyst\Sentry\Facades\Native\Sentry::setupDatabaseResolver(
+  new PDO($dsn, $u, $p));
+
+if (isset($_POST['submit'])) {
+
+  try {
+    $id = strip_tags($_POST['id']);    
+    $user = Cartalyst\Sentry\Facades\Native\Sentry::findUserById($id);    
+    $user->email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $user->first_name = strip_tags($_POST['first_name']);
+    $user->last_name = strip_tags($_POST['last_name']);
+    $user->password = strip_tags($_POST['password']);
+    
+    if ($user->save()) {
+      echo 'User successfully updated.';
+      exit;
+    } else {
+      throw new Exception('User could not be updated.');
+    }
+  } catch (Exception $e) {
+    echo 'User could not be created.';
+    exit;
+  }
+
+} else if (isset($_GET['id'])) {
+
+  try {
+    $id = strip_tags($_GET['id']);    
+    $user = Cartalyst\Sentry\Facades\Native\Sentry::findUserById($id);
+    $userArr = $user->toArray();
+  } catch (Exception $e) {
+    echo 'User could not be found.';
+    exit;
+  }
+ }

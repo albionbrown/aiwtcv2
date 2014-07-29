@@ -1,4 +1,4 @@
-<?php if(!isset($_SESSION['userid'])){ ?><h2>Please log in to view your gifts</h2> <?php }else{
+<?php
 
 	echo "<h1>YOUR SHOPPING LIST</h1>";
 	$userid = $_SESSION['userid'];
@@ -9,18 +9,32 @@
 		$itemname = $row['itemname'];
 		$itemid = $row['itemid'];
 		$bought = $row['itembought'];
-		$query = $this->db->query("SELECT * FROM users WHERE userid='$userid'");
-		foreach($query->result_array() as $row){$username = $this->encrypt->decode($row['fname'])." ".$this->encrypt->decode($row['sname']);}
-		?><div class="result-box"><h2><?php echo $itemname." for ".$username;
+		$query = $this->db->query("SELECT * FROM users WHERE id='$userid'");
+		foreach($query->result_array() as $row){
+			$username = ucfirst($row['first_name']." ".$row['last_name']);
+		}
+		?><div class="content-box col-md-4 col-xs-12"><div class="content clearfix"><?php echo "<h2>".ucwords($itemname)." for ".$username."</h2>";
 
-		if($bought=="no"){
+		if($bought==0){
 
-			echo form_open('site/boughtitem?itemid='.$itemid);
+			echo form_open('main/boughtitem?itemid='.base64_encode($itemid));
 
 			$button_data = array(
 				'name' => 'bought-item',
-				'class' => 'invite-background gifts',
-				'value' => "Have you bought this gift?",
+				'class' => 'submit col-lg-6 col-md-12 col-sm-6 col-xs-12',
+				'value' => "I have got this!",
+			);
+
+			echo form_submit($button_data);
+
+			echo form_close();
+			
+			echo form_open('main/revertitem?itemid='.base64_encode($itemid));
+
+			$button_data = array(
+				'name' => 'revert-item',
+				'class' => 'submit col-lg-6 col-md-12 col-sm-6 col-xs-12',
+				'value' => "Drop this gift",
 			);
 
 			echo form_submit($button_data);
@@ -29,17 +43,17 @@
 
 			}else{
 
-				echo "<p class='got-item'>I have bought this item!</p>";
+				echo "<p class='got-item'>Present bought!</p>";
 
 			}
 
 		
 
-		?></h2></div><?php
+		?></div></div><?php
 	}
 }else{
-	echo "<h2>You are not getting any gifts for anybody yet! :(</h2>";
+	echo "<p>You are not getting any gifts for anybody yet! :(</p>";
 }
 
-}
+
 ?>

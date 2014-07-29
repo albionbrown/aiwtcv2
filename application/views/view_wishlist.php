@@ -67,8 +67,13 @@ echo form_close(); ?>
 <?php
 $userid = $_SESSION['userid'];
 /* Gets all item id's related to user */
+$count = 0;
 $query = $this->db->query("SELECT * FROM items WHERE userid='$userid'");
-foreach($query->result_array() as $row){ 
+foreach($query->result_array() as $row){
+
+if($count == 0){
+	?><div class="row"><?php }
+	$count++;
 	?><div class="content-box col-md-4 col-xs-12"><div class="content">
 	<?php 
 	$itemid = $row['itemid'];
@@ -86,7 +91,11 @@ foreach($query->result_array() as $row){
 	?>
 	</div>
 	</div>
-<?php 
+<?php
+if($count == 3){
+	$count = 0;
+	?></div><?php
+}
 } 
 ?>
 </div>

@@ -27,6 +27,7 @@ if($type == "email"){
 $querystring = $queryarray['string'];
 $query = $this->db->query($querystring);
 if($query->num_rows() > 0){
+$count = 0;
 	foreach($query->result_array() as $row){
 
 		$name = $row['fname'] . ' ' . $row['sname'];
@@ -36,6 +37,10 @@ if($query->num_rows() > 0){
 		if($useridofrow == $_SESSION['userid']){
 
 		}else{
+		if($count == 0){
+		?><div class="row"><?php }
+			$count++;
+			
 			?><div class="content-box col-md-3 centre-text">
 			<div class="content"><?php
 			echo '<h2>' . ucwords($name) . '</h2>';
@@ -80,6 +85,10 @@ if($query->num_rows() > 0){
 						</p>
 			</div>
 			</div><?php
+			if($count == 3){
+			$count = 0;
+			?></div><?php
+			}
 		}
 	}
 }
