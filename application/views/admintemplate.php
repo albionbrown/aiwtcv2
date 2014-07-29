@@ -38,11 +38,15 @@
         <a href="/home"><img src="/images/logo.gif" title="All I Want This Christmas" alt="All I Want This Christmas"/></a>
         </div>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             <div id="header_profile" class="">
             <?php echo '<h2><a href="/main/user?uid='.$encrypteduserid.'">'.$username.'</a></h2>'; ?>
             <img src=<?php echo "http://www.gravatar.com/avatar/" . md5($this->encrypt->decode($email))?>>
             </div>
             <div id="search_box">
+=======
+            <div id="search_box" class="header_item">
+>>>>>>> Stashed changes
 =======
             <div id="search_box" class="header_item">
 >>>>>>> Stashed changes
@@ -93,6 +97,7 @@
                         Groups
                     </li></a>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                     <a href="/gifts"><li class="fa fa-laptop">
                         <img src="/images/shopping_list.png" height="100%" width="100%">
                     </li></a>
@@ -102,6 +107,8 @@
                     <a href="http://www.google.co.uk"><li class="fa fa-laptop">
                         <img src="/images/help.png" height="100%" width="100%">
 =======
+=======
+>>>>>>> Stashed changes
                     <a href="/shopping_list"><li>
                         <h2>SHOPPING LIST<i class="fa fa-list-ol menu-icon"></i></h2>
                     </li></a>

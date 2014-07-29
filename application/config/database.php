@@ -64,10 +64,13 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 /* ----- LIVE ----- */
 /*
 =======
+=======
+>>>>>>> Stashed changes
 */
 /* ----- LIVE ----- */
 
@@ -84,6 +87,9 @@ $db['default']['database'] = '';
 $db['default']['username'] = 'alliwant_josh';
 $db['default']['password'] = 'aiwtc8159login';
 $db['default']['database'] = 'alliwant_staging';
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

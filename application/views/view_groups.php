@@ -58,8 +58,13 @@ echo form_close();
 </div><?php
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 echo "<p>".@$this->session->flashdata('result')."</p>";
 ?><div class="row"><?php
+=======
+echo "<p>".@$this->session->flashdata('errors')."</p>";
+
+>>>>>>> Stashed changes
 =======
 echo "<p>".@$this->session->flashdata('errors')."</p>";
 
@@ -73,11 +78,16 @@ foreach($query->result_array() as $row){
 	/* Gets number of members in the group */
 	$groupid = $row['groupid'];
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	$query = $this->db->query("SELECT userid FROM userstogroups WHERE groupid='$groupid'");
 	$no_members = $query->num_rows();
 	/* Gets information about group */
 	$query = $this->db->query("SELECT * FROM groups WHERE groupid='$groupid'");
 
+=======
+	$query = $this->db->query("SELECT * FROM groups WHERE id='$groupid'");
+	
+>>>>>>> Stashed changes
 =======
 	$query = $this->db->query("SELECT * FROM groups WHERE id='$groupid'");
 	

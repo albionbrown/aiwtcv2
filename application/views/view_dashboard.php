@@ -66,6 +66,7 @@
 			foreach($query->result_array() as $row){
 				$itemname = $row['itemname'];
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 				$itemforuserid = base64_encode($row['userid']);
 				$query = $this->db->query("SELECT * FROM users WHERE userid='$itemforuserid'");
 				foreach($query->result_array() as $row){
@@ -74,6 +75,8 @@
 
 				echo '<p>' . ucfirst($itemname) . ' for <a href="/user?uid=' . $itemforuserid . '">' . $username . '</a></p>';
 =======
+=======
+>>>>>>> Stashed changes
 				$itemforuserid = $row['userid'];
 				
 				// set up autoloader
@@ -91,6 +94,9 @@
 				echo '<ol>';
 				echo '<li><p>' . ucfirst($itemname) . ' for <a href="/user?uid=' . $itemforuserid . '">' . $username . '</a></p></li>';
 				echo '</ol>';
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 			}
 		}else{
@@ -100,4 +106,8 @@
 	</div>
 </div>
 
+<<<<<<< Updated upstream
 </div>
+=======
+</div>
+>>>>>>> Stashed changes

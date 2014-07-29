@@ -136,9 +136,12 @@ class Main extends CI_Controller {
 	public function logout()
 	{
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		unset($_SESSION['userid']);
 		header('location: index');
 =======
+=======
+>>>>>>> Stashed changes
 
 		// set up autoloader
 		require ('vendor/autoload.php');
@@ -153,6 +156,9 @@ class Main extends CI_Controller {
 		// log user out
 		Cartalyst\Sentry\Facades\Native\Sentry::logout();
 		header('location: /index');
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 	}
 
@@ -164,7 +170,11 @@ class Main extends CI_Controller {
 		// configure database
 		 $dsn = 'mysql:dbname=alliwant_staging;host=localhost';
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		 $u = 'alliwant_staging';
+=======
+		 $u = 'alliwant_josh';
+>>>>>>> Stashed changes
 =======
 		 $u = 'alliwant_josh';
 >>>>>>> Stashed changes
@@ -190,7 +200,11 @@ class Main extends CI_Controller {
 		      authenticate($credentials, false);
 		  } catch (Exception $e) {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		    $this->session->set_flashdata('log_errors', 'Invalid email/password. Please try again.');
+=======
+				$this->session->set_flashdata('log_messages', 'Invalid email/password. Please try again.');
+>>>>>>> Stashed changes
 =======
 				$this->session->set_flashdata('log_messages', 'Invalid email/password. Please try again.');
 >>>>>>> Stashed changes
@@ -208,7 +222,11 @@ class Main extends CI_Controller {
 			  // configure database
 			  $dsn      = 'mysql:dbname=alliwant_staging;host=localhost';
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			  $u = 'alliwant_staging';
+=======
+			  $u = 'alliwant_josh';
+>>>>>>> Stashed changes
 =======
 			  $u = 'alliwant_josh';
 >>>>>>> Stashed changes
@@ -261,6 +279,7 @@ class Main extends CI_Controller {
 			        'first_name' => $fname,
 			        'last_name' => $lname,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			        'activated' => false
 			    ));
 
@@ -274,6 +293,8 @@ class Main extends CI_Controller {
 			    }    
 			    
 =======
+=======
+>>>>>>> Stashed changes
 			        'location' => $location,
  			        'activated' => true
 			    ));
@@ -305,7 +326,11 @@ class Main extends CI_Controller {
 		  // configure database
 		   $dsn = 'mysql:dbname=alliwant_staging;host=localhost';
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			$u = 'alliwant_staging';
+=======
+			$u = 'alliwant_josh';
+>>>>>>> Stashed changes
 =======
 			$u = 'alliwant_josh';
 >>>>>>> Stashed changes
@@ -349,7 +374,11 @@ class Main extends CI_Controller {
 		  // configure database
 		   $dsn = 'mysql:dbname=alliwant_staging;host=localhost';
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			$u = 'alliwant_staging';
+=======
+			$u = 'alliwant_josh';
+>>>>>>> Stashed changes
 =======
 			$u = 'alliwant_josh';
 >>>>>>> Stashed changes
@@ -536,6 +565,12 @@ class Main extends CI_Controller {
   } catch (Exception $e) {
     echo 'Sorry! The account could not be deleted at this time.';
   }
+<<<<<<< Updated upstream
 }
 	}
 }
+=======
+}
+	}
+}
+>>>>>>> Stashed changes
